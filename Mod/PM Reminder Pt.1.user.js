@@ -4,7 +4,7 @@
 // @description Remind yourself you forgetful piece of shit
 // @include     *kat.cr/user/*/moderation/*
 // @include     *kickass.to/user/*/moderation/*
-// @version     1
+// @version     1.2
 // @grant       none
 // ==/UserScript==
 
@@ -19,6 +19,7 @@ $('#sendPM').parent().after(`
    <option value="0">5.79</option>
    <option value="1">Photo Faker</option>
    <option value="2">DJ Faker</option>
+   <option value="3">ATIODE.exe</option>
 </select>
 <select name="actionType" class="mtSel" id="actionType" style="width:170px;">
   <option value="Actions">Actions</option>
@@ -31,6 +32,7 @@ $('#sendPM').parent().after(`
   <option value="0">Rep abuser</option>
   <option value="1">Cheevo abuser</option>
   <option value="2">Spammer</option>
+  <option value="3">GPlus</option>
 </select>
 `);
 
@@ -67,7 +69,12 @@ https://kat.cr/user/DjDaark/
 https://kat.cr/user/BlackhatDjs/
 https://kat.cr/user/CrazyDjSolo/
 
-Same UL request, same IP.`
+Same UL request, same IP.`,
+  `ATIODE.exe Faker:
+https://kat.cr/user/Ksmith65/moderation/
+https://kat.cr/user/Shonuz/moderation/
+
+Infected torrents that start at computer boot. The actual files are also installed to prevent suspicion.`
 ];
 
 var template_action = [
@@ -84,7 +91,11 @@ Proof: `,
   `Achievement abuser.
 Proof: `,
   `Spammer.
-Proof: `
+Proof: `,
+  `Posting malicious GPlus links:
+
+[quote]Working Activator here - https://plus.google.com/103623234181507656191/posts/cqnfX6Xr79i[/quote]
+https://www.virustotal.com/en/file/9eab07677f29549c9803ad9f0ad4caf65b4a2837cef7b1a1c5e639dc56331e69/analysis/1445710504/`
 ]
 
 $(document).delegate('#fakerType', 'change', function faker() {

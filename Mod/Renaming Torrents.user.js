@@ -6,7 +6,7 @@
 // @include     *kat.cr/user/*/uploads/*
 // @include     *kickass.to/usearch/*/*
 // @include     *kat.cr/usearch/*/*
-// @version     1.1
+// @version     1.2
 // @grant       none
 // ==/UserScript==
  
@@ -19,7 +19,7 @@ $('.data tr:not(.firstr)').each(function() {
   var title = $('.cellMainLink', $(this)).text();
   var hash = $('[href^="/torrents/edit/"]', $(this)).attr('href').split('/')[3];
   var txt = removeURLs(title).replace(/\"/, '&quot;');
-  $(this).prepend('<td>'+(title!=txt ? '<i class="inlineTitleChange ka ka16 ka-pencil" torhash="'+hash+'" title="'+txt+'"></i>' : '')+'</td>');
+  $(this).prepend('<td>'+(title!=txt ? '<i class="inlineTitleChange ka ka16 ka-edit" torhash="'+hash+'" title="'+txt+'"></i>' : '')+'</td>');
 });
 
 function removeURLs(txt) {
