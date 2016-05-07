@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Get Blocked Users
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  Get a list of your blocked users.
 // @author       PXgamer
 // @match        *kat.cr/*
 // @grant        none
 // ==/UserScript==
 
-(function() {
+function gbu() {
     'use strict';
 
     var returnedData;
@@ -26,4 +26,4 @@
         },
         returnData: "json"
     });
-})();
+}
