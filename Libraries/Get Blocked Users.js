@@ -26,4 +26,6 @@ function gbu() {
         },
         returnData: "json"
     });
+	
+	return blockedUsers;
 }
