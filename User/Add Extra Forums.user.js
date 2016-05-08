@@ -11,7 +11,7 @@
 
 
 $(function(){
-    $('#forum_private_forums').after('<tbody id="fcf">'+
+    $('#wrapperInner div.mainpart table tbody tr td.communityLayout table thead').after('<tbody id="fcf">'+
                                          '<td colspan="4" title="Click to hide" data-show-title="Click to show" data-hide-title="Click to hide" class="forumGroupName lightivorybg thin white left font14px" style="cursor: pointer" rel="custom_forums">'+
                                              '<a class="plain white">'+
                                                  'Custom Forums'+
