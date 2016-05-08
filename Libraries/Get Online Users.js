@@ -1,10 +1,9 @@
 // ==UserScript==
 // @name         Get Online Users
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Get list of users from Community page
 // @author       PXgamer
-// @match        *kat.cr/*
 // @grant        none
 // ==/UserScript==
 
@@ -17,6 +16,7 @@ function gou() {
     $.ajax({
         type: "GET",
         url: "/community/",
+        async: false,
         success: function (data) {
             returnedData = data;
             while (matches = searchString.exec(returnedData.html)) {

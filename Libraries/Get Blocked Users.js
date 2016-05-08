@@ -1,10 +1,9 @@
 // ==UserScript==
 // @name         Get Blocked Users
 // @namespace    PXgamer
-// @version      0.5
+// @version      0.6
 // @description  Get a list of your blocked users.
 // @author       PXgamer
-// @match        *kat.cr/*
 // @grant        none
 // ==/UserScript==
 
@@ -17,6 +16,7 @@ function gbu() {
     $.ajax({
         type: "GET",
         url: "/settings/privacy/",
+        async: false,
         success: function (data) {
             returnedData = data;
             while (matches = searchString.exec(returnedData.html)) {
