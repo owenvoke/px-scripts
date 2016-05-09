@@ -4,7 +4,7 @@
 // @description Adds more cheevos
 // @include     *kat.cr/achievements*
 // @author      PXgamer
-// @version     0.3
+// @version     0.4
 // @grant       none
 // ==/UserScript==
 
@@ -19,7 +19,7 @@ $(function(){
 
     if (loc.substr(loc.length - 14) == "/achievements/") {
         for (i = 0; i < cheevoTitles.length; i++) {
-            $('table.achTable tr td.leftpad20px.width100perc ul').append(
+            $('table.achTable tr td.leftpad20px.width100perc ul:first').append(
                 '<li> <span class="achBadge specialAchBack assignedAchievement"><a href="/achievements/'+encodeURIComponent(cheevoTitles[i])+'" title=""><span class="specialAchIcon"></span><span class="achTitle">'+cheevoTitles[i]+'</span></a></span> <strong>x 1</strong>  <span class="achDesc">'+cheevoDescriptions[i]+'</span> </li>'
             );
         }
