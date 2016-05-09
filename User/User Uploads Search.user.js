@@ -17,7 +17,7 @@
         $('tr td div.torrentname div a.cellMainLink').each(function() {
             $(this).parent().parent().parent().parent().show();
         });
-        var searchParam = $('input#uploadsSearch').val();
+        var searchParam = $('input#uploadsSearch').val().toLowerCase();
         $('tr td div.torrentname div a.cellMainLink').each(function() {
         if ($(this).html().toLowerCase().indexOf(searchParam) === -1) {
           $(this).parent().parent().parent().parent().hide();
