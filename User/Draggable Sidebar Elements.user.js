@@ -4,7 +4,7 @@
 // @include     *kat.cr/*
 // @exclude.    *kat.cr/settings*
 // @description Fully mushable sidebar
-// @version     1.7
+// @version     1.8
 // @grant       none
 // ==/UserScript==
 
