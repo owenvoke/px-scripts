@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Get User Hash
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Get any user's hash, for various activities
 // @author       PXgamer
 // @grant        none
