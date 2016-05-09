@@ -4,7 +4,7 @@
 // @description Adds more cheevos
 // @include     *kat.cr/achievements*
 // @author      PXgamer
-// @version     0.1
+// @version     0.2
 // @grant       none
 // ==/UserScript==
 
