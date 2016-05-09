@@ -8,7 +8,7 @@
 // ==/UserScript==
 
 function guh(username) {
-        var re = /<a href="\/bookmarks\/[a-z]+\/[a-z]+\/([a-z0-9]+)\/" class="postLink kaButton smallButton normalText"><i class="ka ka-bookmark"><\/i>/ig, matches, ret = [];
+        var re = /<a href="\/bookmarks\/[a-z]+\/[a-z]+\/([a-z0-9]+)\/" class="[a-z]+Link kaButton smallButton normalText"><i class="ka ka-bookmark"><\/i>/ig, matches, ret = [];
         $.ajax({
             type: "GET",
             url: "/user/"+encodeURIComponent(username)+"/",
