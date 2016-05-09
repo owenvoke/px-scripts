@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Signature Hide on Profiles
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Hide signature on profiles
 // @author       PXgamer
 // @include      *kat.cr/user/*/
@@ -15,5 +15,5 @@
 })();
 
 $('#toggleSig').on('click', function() {
-    $('#wrapperInner > div.mainpart > table > tbody > tr > td:nth-child(1) > div:nth-child(6) > div > div.leftpad10px > table > tbody > tr:nth-child(6) > td:nth-child(2)').toggle();
+    $('#toggleSig').parent().parent().parent().next().toggle();
 });
