@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Create history list
 // @namespace    PXgamer
-// @version      0.1
-// @description  Creates a list of your download history, can be output to a TXT.
+// @version      0.2
+// @description  Creates a list of your download history.
 // @author       PXgamer
 // @match        *kat.cr/account/history*
 // @grant        GM_setValue
@@ -23,5 +23,7 @@
     $('a[title="Download torrent file"]').each(function() {
         all.torrents.push($(this).attr('href'));
     });
-	
+
+    console.log(all);
+
 })();
