@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Block From Profile and Posts
 // @namespace    PXgamer
-// @version      1.2
+// @version      1.3
 // @description  Block users from on their profile and/or posts
 // @author       PXgamer & Keka
 // @include      *kat.cr/*
@@ -17,7 +17,7 @@ var blockedArray = gbu(); // blocked users list
 $(window).load(function(){
     if (window.location.href.search("\/user\/") != -1){
         var who  = $.trim($("h1.nickname").html().split('<')[0]);
-        var bm   = $('a.postLink.kaButton.smallButton.normalText[href^="/bookmarks/"');
+        var bm   = $('a.kaButton.smallButton.normalText[href^="/bookmarks/"');
         var hash = bm.attr('href').split('/')[4];
         if(blockedArray.indexOf(who) !== -1){bm.after(' <span title="unblock user" class="kaButton smallButton greenButton normalText unBlockUser"><i id="unBlockUser" data-whoBlock="'+hash+'" class="ka ka-delete"></i> unblock user</span>');}
         else{bm.after(' <span title="block user" class="kaButton smallButton redButton normalText blockUser"><i id="blockUser" data-whoBlock="'+who+'" class="ka ka-delete"></i> block user</span>');}
