@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Custom Key Commands
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  Allows custom key commands in text fields, so far I have added Bold and Italic
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -12,11 +12,13 @@
 (function() {
     'use strict';
 
-    var arrShortCut = [{ name: 'Bold', key: 66, fx: 'bold' }, { name: 'Italic', key: 73, fx: 'italic'}];
+    var arrShortCut = [{ name: 'Bold', key: 66, fx: 'bold' }, { name: 'Italic', key: 73, fx: 'italic'}, { name: 'Preview', key: 13, fx: 'preview'}];
 
     var ctrl = 17; // CTRL Key
     var ctrlKeyActived = false;
     var ta = $('textarea#replytext');
+    var isBBaction = false;
+    var previewAction = false;
 
     $(document).keyup(function(e) {
         if (e.which == ctrl) ctrlKeyActived = false;
@@ -39,21 +41,33 @@
             case 'bold':
                 strings[0] = "[b]";
                 strings[2] = "[/b]";
+                isBBaction = true;
                 break;
             case 'italic':
                 strings[0] = "[i]";
                 strings[2] = "[/i]";
+                isBBaction = true;
+                break;
+            case 'preview':
+                isBBaction = false;
+                previewAction = true;
                 break;
             default:
                 strings[0] = "";
                 strings[2] = "";
+                isBBaction = false;
         }
-        if (window.getSelection) {
-            strings[1] = window.getSelection().toString();
-        } else if (document.selection && document.selection.type != "Control") {
-            strings[1] = document.selection.createRange().text;
-        }
+        if (isBBaction === true) {
+            if (window.getSelection) {
+                strings[1] = window.getSelection().toString();
+            } else if (document.selection && document.selection.type != "Control") {
+                strings[1] = document.selection.createRange().text;
+            }
 
-        ta.selection('replace', { text: strings[0]+strings[1]+strings[2] });
+            ta.selection('replace', { text: strings[0]+strings[1]+strings[2] });
+        }
+        if (previewAction === true) {
+            $('span.ka.ka-preview.bbedit-preview[data-preview="#post_preview"]').click();
+        }
     }
 })();
