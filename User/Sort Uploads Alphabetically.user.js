@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sort Uploads Alphabetically
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Sort user uploads alphabetically
 // @author       PXgamer
 // @match        *kat.cr/user/*/uploads/
@@ -22,7 +22,6 @@
         var html = $(this).html();
         rows.push({"title":title, "html":html});
     });
-    console.log(rows);
 
     $('.sortAlpha').on('click', function() {
         var sortName = 'title';
