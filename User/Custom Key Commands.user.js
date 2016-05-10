@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Custom Key Commands
 // @namespace    PXgamer
-// @version      0.5
+// @version      0.6
 // @description  Allows custom key commands in text fields, so far I have added Bold and Italic
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -16,7 +16,7 @@
 
     var ctrl = 17; // CTRL Key
     var ctrlKeyActived = false;
-    var ta = $('textarea#replytext');
+    var ta = $('.quicksubmit');
     var isBBaction = false;
     var previewAction = false;
 
@@ -70,7 +70,7 @@
             ta.selection('replace', { text: strings[0]+strings[1]+strings[2] });
         }
         if (previewAction === true) {
-            $('span.ka.ka-preview.bbedit-preview[data-preview="#post_preview"]').click();
+            $('span.ka.ka-preview.bbedit-preview').click();
         }
     }
 })();
