@@ -5,7 +5,7 @@
 // @description  Allows custom key commands in text fields, so far I have added Bold and Italic
 // @author       PXgamer
 // @include      *kat.cr/*
-// @require      https://madapaja.github.io/jquery.selection/src/jquery.selection.js
+// @require      https://greasyfork.org/scripts/19569-jquery-selection-jquery-plugin/code/jQueryselection%20-%20jQuery%20Plugin.js
 // @grant        none
 // ==/UserScript==
 
