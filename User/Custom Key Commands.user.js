@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-    var arrShortCut = [{ name: 'Bold', key: 66, fx: 'bold' }, { name: 'Italic', key: 73, fx: 'italic'}, { name: 'Preview', key: 13, fx: 'preview'}];
+    var arrShortCut = [{ name: 'Bold', key: 66, fx: 'bold' }, { name: 'Italic', key: 73, fx: 'italic'}, { name: 'Preview', key: 32, fx: 'preview'}];
 
     var ctrl = 17; // CTRL Key
     var ctrlKeyActived = false;
