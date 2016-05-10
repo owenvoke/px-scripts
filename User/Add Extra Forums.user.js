@@ -4,7 +4,7 @@
 // @author       PXgamer
 // @description  add extra forums
 // @include      *kat.cr/community/
-// @version      0.3
+// @version      0.4
 // @grant        none
 
 // ==/UserScript==
