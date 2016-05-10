@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         TPB Torrent Downloads
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Piratebay download via torrents
 // @author       PXgamer
-// @match        *thepiratebay.se/*
+// @include      *thepiratebay.se/*
 // @grant        none
 // ==/UserScript==
 
