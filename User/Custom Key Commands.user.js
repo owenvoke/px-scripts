@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Custom Key Commands
 // @namespace    PXgamer
-// @version      0.4
+// @version      0.5
 // @description  Allows custom key commands in text fields, so far I have added Bold and Italic
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -42,11 +42,13 @@
                 strings[0] = "[b]";
                 strings[2] = "[/b]";
                 isBBaction = true;
+                previewAction = false;
                 break;
             case 'italic':
                 strings[0] = "[i]";
                 strings[2] = "[/i]";
                 isBBaction = true;
+                previewAction = false;
                 break;
             case 'preview':
                 isBBaction = false;
@@ -56,6 +58,7 @@
                 strings[0] = "";
                 strings[2] = "";
                 isBBaction = false;
+                previewAction = false;
         }
         if (isBBaction === true) {
             if (window.getSelection) {
