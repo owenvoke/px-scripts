@@ -2,9 +2,9 @@
 // @name        Draggable Sidebar Elements
 // @namespace   PXgamer
 // @include     *kat.cr/*
-// @exclude.    *kat.cr/settings*
+// @exclude     *kat.cr/settings*
 // @description Fully mushable sidebar
-// @version     1.8
+// @version     1.9
 // @grant       none
 // ==/UserScript==
 
