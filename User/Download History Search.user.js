@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Download History Search
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Search your account downloads.
 // @author       PXgamer
 // @match        *kat.cr/account/history/*
@@ -16,7 +16,7 @@
         $('#wrapperInner div.mainpart table tbody tr td:nth-child(1) table tbody tr td:nth-child(2) div.markeredBlock.torType a.cellMainLink').each(function() {
             $(this).parent().parent().parent().show();
         });
-        var searchParam = $('input#historySearch').val();
+        var searchParam = $('input#historySearch').val().toLowerCase();
         $('#wrapperInner div.mainpart table tbody tr td:nth-child(1) table tbody tr td:nth-child(2) div.markeredBlock.torType a.cellMainLink').each(function() {
         if ($(this).html().toLowerCase().indexOf(searchParam) === -1) {
           $(this).parent().parent().parent().hide();
