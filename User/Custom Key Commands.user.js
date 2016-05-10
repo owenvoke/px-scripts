@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Custom Key Commands
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Allows custom key commands in text fields, so far I have added Bold and Italic
 // @author       PXgamer
 // @match        *kat.cr/*
@@ -15,10 +15,9 @@
 
     var ctrl = 17; // CTRL Key
     var ctrlKeyActived = false;
+    var ta = $('textarea#replytext');
 
     $(document).keyup(function(e) {
-
-        var ta = $('textarea[name="content"');
         if (e.which == ctrl) ctrlKeyActived = false;
     }).keydown(function(e) {
         if (e.which == ctrl) ctrlKeyActived = true;
