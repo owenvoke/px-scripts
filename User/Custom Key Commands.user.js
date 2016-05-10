@@ -18,7 +18,7 @@
 
     $(document).keyup(function(e) {
 
-        var ta = $('div.form-group textarea.form-control');
+        var ta = $('textarea[name="content"');
         if (e.which == ctrl) ctrlKeyActived = false;
     }).keydown(function(e) {
         if (e.which == ctrl) ctrlKeyActived = true;
