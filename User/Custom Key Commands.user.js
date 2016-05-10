@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Custom Key Commands
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Allows custom key commands in text fields, so far I have added Bold and Italic
 // @author       PXgamer
-// @match        *kat.cr/*
+// @include      *kat.cr/*
+// @require      https://madapaja.github.io/jquery.selection/src/jquery.selection.js
 // @grant        none
 // ==/UserScript==
 
@@ -37,16 +38,22 @@
         switch (fx) {
             case 'bold':
                 strings[0] = "[b]";
-                strings[1] = "[/b]";
+                strings[2] = "[/b]";
                 break;
             case 'italic':
                 strings[0] = "[i]";
-                strings[1] = "[/i]";
+                strings[2] = "[/i]";
                 break;
             default:
                 strings[0] = "";
-                strings[1] = "";
+                strings[2] = "";
+        }
+        if (window.getSelection) {
+            strings[1] = window.getSelection().toString();
+        } else if (document.selection && document.selection.type != "Control") {
+            strings[1] = document.selection.createRange().text;
         }
 
+        ta.selection('replace', { text: strings[0]+strings[1]+strings[2] });
     }
 })();
