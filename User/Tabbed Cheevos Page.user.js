@@ -1,0 +1,44 @@
+// ==UserScript==
+// @name         Tabbed Cheevos Page
+// @namespace    PXgamer
+// @version      0.1
+// @description  Creates a tab system for the achievements page.
+// @author       PXgamer
+// @include      *kat.cr/achievements/
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    $('h1').after(
+        '<div class="tabs"> <ul class="tabNavigation"> <li><a class="darkButton allCheevos cheevoTab"><span>All</span></a></li> <li><a class="darkButton specialCheevos cheevoTab"><span>Special</span></a></li> <li><a class="darkButton goldCheevos cheevoTab"><span>Gold</span></a></li> <li><a class="darkButton silverCheevos cheevoTab"><span>Silver</span></a></li> <li><a class="darkButton bronzeCheevos cheevoTab"><span>Bronze</span></a></li> <li><a class="darkButton simpleCheevos cheevoTab"><span>Simple</span></a></li> </ul> <hr class="tabsSeparator"></div>'
+    );
+
+    $('.cheevoTab').on('click', function() {
+        $('.achTable tbody tr').hide();
+        var tabType = $(this).attr('class').split(" ")[1];
+        switch (tabType) {
+            case 'allCheevos':
+                $('.achTable tbody tr').show();
+                break;
+            case 'specialCheevos':
+                $('img[src="//kastatic.com/images/achMedal_special.jpg"]').parent().parent().show();
+                break;
+            case 'goldCheevos':
+                $('img[src="//kastatic.com/images/achMedal_gold.jpg"]').parent().parent().show();
+                break;
+            case 'silverCheevos':
+                $('img[src="//kastatic.com/images/achMedal_silver.jpg"]').parent().parent().show();
+                break;
+            case 'bronzeCheevos':
+                $('img[src="//kastatic.com/images/achMedal_bronze.jpg"]').parent().parent().show();
+                break;
+            case 'simpleCheevos':
+                $('img[src="//kastatic.com/images/achMedal_simple.jpg"]').parent().parent().show();
+                break;
+            default:
+                $('.achTable tbody tr').show();
+        }
+    });
+})();
