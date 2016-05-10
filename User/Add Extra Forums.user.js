@@ -22,7 +22,7 @@ $(function(){
     $('#fcf').after('<tbody id="forum_custom_forums">'+
                                         '<tr class="odd">'+
                                             '<td>'+
-                                                 '<div class="bart">'+
+                                                 '<div>'+
                                                      '<a class="cellMainLink" href="/community/torrent-requests/"><strong>Torrent Requests</strong></a>'+
                                                  '</div>'+
                                             '</td>'+
