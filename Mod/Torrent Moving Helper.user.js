@@ -7,7 +7,7 @@
 // @include     *kickass.to/user/*/uploads/*
 // @include     *kat.cr/usearch/*
 // @include     *kat.cr/search/*
-// @include     *kat.cr/user/*/uploads/*
+// @exclude     *kat.cr/user/*/uploads/*
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
 // @version     3.0
 // @grant       none
