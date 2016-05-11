@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Add edit torrent button next to the torrent info.
 // @author       PXgamer
-// @match        https://kat.cr/*-t*.html
+// @include      *kat.cr/*-t*.html
 // @grant        none
 // ==/UserScript==
 

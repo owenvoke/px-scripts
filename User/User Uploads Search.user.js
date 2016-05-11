@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  Search a user's uploads... kinda.
 // @author       PXgamer
-// @match        *kat.cr/user/*/uploads/
+// @include      *kat.cr/user/*/uploads/
 // @grant        none
 // ==/UserScript==
 

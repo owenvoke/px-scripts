@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  A library for getting the current csrf token for POSTs on Kickass Torrents.
 // @author       PXgamer
-// @match        *kat.cr*
+// @include      *kat.cr*
 // @grant        none
 // ==/UserScript==
 

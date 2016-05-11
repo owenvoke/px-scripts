@@ -4,7 +4,7 @@
 // @version      0.5
 // @description  Filter un-obtainable cheevos
 // @author       PXgamer
-// @match        *kat.cr/achievements/
+// @include      *kat.cr/achievements/
 // @grant        none
 // ==/UserScript==
 

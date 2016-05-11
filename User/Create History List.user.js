@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  Creates a list of your download history.
 // @author       PXgamer
-// @match        *kat.cr/account/history*
+// @include      *kat.cr/account/history*
 // @grant        GM_setValue
 // @grant        GM_getValue
 // ==/UserScript==

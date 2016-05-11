@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Filter user uploads by their type
 // @author       PXgamer
-// @match        *kat.cr/user/*/uploads/
+// @include      *kat.cr/user/*/uploads/
 // @grant        none
 // ==/UserScript==
 
