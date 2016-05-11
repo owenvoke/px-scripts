@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Report thread spammers
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Adds button to report thread and user.
 // @author       PXgamer
 // @include      *kat.cr/community/show/*
