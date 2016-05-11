@@ -4,10 +4,10 @@
 // @description Helps moving torrents by setting (not moving to) the right category for all torrents on a page
 // @include     *kickass.to/usearch/*
 // @include     *kickass.to/search/*
-// @include     *kickass.to/user/*/uploads/*
+// @include     *kickass.to/user/*/uploads/
 // @include     *kat.cr/usearch/*
 // @include     *kat.cr/search/*
-// @exclude     *kat.cr/user/*/uploads/*
+// @include     *kat.cr/user/*/uploads/
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
 // @version     3.0
 // @grant       none
