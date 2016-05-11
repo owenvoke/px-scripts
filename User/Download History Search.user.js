@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Download History Search
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Search your account downloads.
 // @author       PXgamer
-// @match        *kat.cr/account/history/*
+// @include      *kat.cr/account/history/*
 // @grant        none
 // ==/UserScript==
 
@@ -18,9 +18,12 @@
         });
         var searchParam = $('input#historySearch').val().toLowerCase();
         $('#wrapperInner div.mainpart table tbody tr td:nth-child(1) table tbody tr td:nth-child(2) div.markeredBlock.torType a.cellMainLink').each(function() {
-        if ($(this).html().toLowerCase().indexOf(searchParam) === -1) {
-          $(this).parent().parent().parent().hide();
-        }
-    });
+            var list = searchParam.split(' ');
+            for (var i=0; i<list.length; ++i) {
+                if ($(this).html().toLowerCase().indexOf(list[i]) === -1) {
+                    $(this).parent().parent().parent().hide();
+                }
+            }
+        });
     });
 })();
