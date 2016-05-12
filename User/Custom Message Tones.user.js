@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Custom Message Tones
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  Adds options to load in custom tones when a message is received.
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -10,7 +10,8 @@
 
 (function() {
 
-    var AUDIO_FILE = "";
+    var AUDIO_FILE   = ""; // URL of audio file (MP3, WAV, OGG)
+    var AUDIO_LENGTH = 5000;  // Length in Ticks
 
     // Do Not Edit Below Here
     var acMethod = jQuery.fn.addClass;
@@ -30,6 +31,7 @@
         var msgBarElem = $('.chat-bar-new');
         if (msgBarElem.length > 0) {
             audio1.play();
+            setTimeout(function() { audio1.pause(); audio1.currentTime = 0; }, AUDIO_LENGTH);
         }
     });
 
