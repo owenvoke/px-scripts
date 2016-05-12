@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Get Online Users By ACL
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Get list of users from Community page by ACL
 // @author       PXgamer
 // @grant        none
@@ -16,6 +16,8 @@ function gouba(aclRank) {
     aclIds.staff = '9'; aclIds.admin = '10';
 
     var returnedData;
+    var matches;
+    var onlineUsers = [];
     var searchString = new RegExp('<a href="\/user\/[a-z)-9_.-]+\/" class="tag1 aclColor_\{customACL\}">([a-z)-9_.-]+)<\/a>','gi');
     "\{customACL\}".replace(searchString, aclIds[aclRank]);
 
