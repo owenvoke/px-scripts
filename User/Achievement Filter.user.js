@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Achievement Filter
 // @namespace    PXgamer
-// @version      0.6
+// @version      0.7
 // @description  Filter cheevos on the cheevo page.
 // @author       PXgamer
 // @include      *kat.cr/achievements/
@@ -13,9 +13,10 @@
 
     var year = new Date().getFullYear();
 
-    var assigned = $('table.achTable tbody tr td.width100perc ul li span.achBadge.assignedAchievement').length;
+    var assigned   = $('table.achTable tbody tr td.width100perc ul li span.achBadge.assignedAchievement').length;
+    var unassigned = $('table.achTable tbody tr td.width100perc ul li span.achBadge').length - assigned;
 
-    $('table.achTable').before('<div style="margin-bottom: 5px;"><span class="showAllCheevos kaButton smallButton normalText">Show All</span> <span class="showOnlyCollected kaButton smallButton normalText">Show Only Achieved ('+assigned+')</span> <span class="showCurrentCheevos kaButton smallButton normalText">Show Current Achievements</span> <span class="showNonCollected kaButton smallButton normalText">Show Non-Collected Achievements</span></div><hr>');
+    $('table.achTable').before('<div style="margin-bottom: 5px;"><span class="showAllCheevos kaButton smallButton normalText">Show All</span> <span class="showOnlyCollected kaButton smallButton normalText">Show Only Achieved ('+assigned+')</span> <span class="showNonCollected kaButton smallButton normalText">Show Non-Collected Achievements ('+unassigned+')</span> <span class="showCurrentCheevos kaButton smallButton normalText">Show Current Achievements</span></div><hr>');
 
     // Only show achievements you've already got
     $('.showOnlyCollected').on('click', function() {
@@ -28,7 +29,7 @@
             }
         });
     });
-    
+
     // Only show achievements you haven't got
     $('.showNonCollected').on('click', function() {
         $('table.achTable tbody tr td.width100perc ul li').each(function() {
