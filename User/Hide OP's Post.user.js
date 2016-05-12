@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hide OP's post
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Hides the OP in a thread.
 // @author       PXgamer
 // @include      *kat.cr/community/show/*
@@ -11,7 +11,11 @@
 (function() {
     'use strict';
 
+    $('.commentHeadLine:first .floatright').prepend('<span class="ka ka16 ka-eye toggleOP" title="Toggle OP"></span> ');
     if ($('.firstPost').length > 0) {
         $('div[id^="post"]:first').hide();
     }
+    $('.toggleOP').on('click', function() {
+        $('div[id^="post"]:first').toggle();
+    });
 })();
