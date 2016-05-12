@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Custom Message Tones
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Adds options to load in custom tones when a message is received.
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -9,6 +9,10 @@
 // ==/UserScript==
 
 (function() {
+
+    var AUDIO_FILE = "";
+
+    // Do Not Edit Below Here
     var acMethod = jQuery.fn.addClass;
     var audio1;
 
@@ -56,6 +60,6 @@
         }
     }
 
-    audio1 = pxS("audio.mp3");
+    audio1 = pxS(AUDIO_FILE);
 
 })();
