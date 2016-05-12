@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Custom Message Tones
 // @namespace    PXgamer
-// @version      0.4
+// @version      0.5
 // @description  Adds options to load in custom tones when a message is received.
 // @author       PXgamer
 // @include      *kat.cr/*
