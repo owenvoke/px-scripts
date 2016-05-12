@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Achievement Filter
 // @namespace    PXgamer
-// @version      0.5
-// @description  Filter un-obtainable cheevos
+// @version      0.6
+// @description  Filter cheevos on the cheevo page.
 // @author       PXgamer
 // @include      *kat.cr/achievements/
 // @grant        none
@@ -15,7 +15,7 @@
 
     var assigned = $('table.achTable tbody tr td.width100perc ul li span.achBadge.assignedAchievement').length;
 
-    $('table.achTable').before('<div style="margin-bottom: 5px;"><span class="showAllCheevos kaButton smallButton normalText">Show All</span> <span class="showOnlyCollected kaButton smallButton normalText">Show Only Achieved ('+assigned+')</span> <span class="showCurrentCheevos kaButton smallButton normalText">Show Current Achievements</span></div><hr>');
+    $('table.achTable').before('<div style="margin-bottom: 5px;"><span class="showAllCheevos kaButton smallButton normalText">Show All</span> <span class="showOnlyCollected kaButton smallButton normalText">Show Only Achieved ('+assigned+')</span> <span class="showCurrentCheevos kaButton smallButton normalText">Show Current Achievements</span> <span class="showNonCollected kaButton smallButton normalText">Show Non-Collected Achievements</span></div><hr>');
 
     // Only show achievements you've already got
     $('.showOnlyCollected').on('click', function() {
@@ -24,6 +24,18 @@
         });
         $('table.achTable tbody tr td.width100perc ul li span.achBadge').each(function() {
             if (!$(this).hasClass('assignedAchievement')) {
+                $(this).parent().hide();
+            }
+        });
+    });
+    
+    // Only show achievements you haven't got
+    $('.showNonCollected').on('click', function() {
+        $('table.achTable tbody tr td.width100perc ul li').each(function() {
+            $(this).show();
+        });
+        $('table.achTable tbody tr td.width100perc ul li span.achBadge').each(function() {
+            if ($(this).hasClass('assignedAchievement')) {
                 $(this).parent().hide();
             }
         });
