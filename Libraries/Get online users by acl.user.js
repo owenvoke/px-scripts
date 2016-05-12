@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Get Online Users By ACL
 // @namespace    PXgamer
-// @version      0.4
+// @version      0.5
 // @description  Get list of users from Community page by ACL
 // @author       PXgamer
 // @grant        none
@@ -33,7 +33,6 @@ function gouba(aclRank) {
                 while (matches = searchString.exec(returnedData.html)) {
                     onlineUsers.push(matches[1]);
                 }
-                console.log(onlineUsers);
             },
             returnData: "json"
         });
