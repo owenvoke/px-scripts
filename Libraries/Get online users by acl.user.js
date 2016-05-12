@@ -7,7 +7,7 @@
 // @grant        none
 // ==/UserScript==
 
-function gou(aclRank) {
+function gouba(aclRank) {
     'use strict';
 
     var aclIds = [];
