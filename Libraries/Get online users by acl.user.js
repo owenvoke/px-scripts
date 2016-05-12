@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Get Online Users By ACL
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Get list of users from Community page by ACL
 // @author       PXgamer
 // @grant        none
