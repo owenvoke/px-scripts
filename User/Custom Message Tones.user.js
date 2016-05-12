@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Custom Message Tones
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Adds options to load in custom tones when a message is received.
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -10,6 +10,7 @@
 
 (function() {
     var acMethod = jQuery.fn.addClass;
+    var audio1;
 
     jQuery.fn.addClass = function() {
         var result = acMethod.apply(this, arguments);
@@ -18,6 +19,15 @@
 
         return result;
     };
+
+    $('body').append('<span id="chatMsgHandler"></span>');
+    $('#chatMsgHandler').css('display', 'none');
+    $(document).on('cssClassChanged', function() {
+        var msgBarElem = $('.chat-bar-new');
+        if (msgBarElem.length > 0) {
+            audio1.play();
+        }
+    });
 
     var audioTypes = {
         "mp3": "audio/mpeg",
@@ -46,16 +56,6 @@
         }
     }
 
-    $('body').append('<span id="chatMsgHandler"></span>');
-    $('#chatMsgHandler').css('display', 'none');
-
-    var audio1 = pxS("audio.mp3");
-
-    $("#chatMsgHandler").bind('cssClassChanged', function() {
-        var msgBarElem = $('.chat-bar-new');
-        if (msgBarElem.length > 0) {
-            audio1.play();
-        }
-    });
+    audio1 = pxS("audio.mp3");
 
 })();
