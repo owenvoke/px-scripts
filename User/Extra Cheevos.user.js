@@ -4,7 +4,7 @@
 // @description Adds more cheevos
 // @include     *kat.cr/achievements*
 // @author      PXgamer
-// @version     0.4
+// @version     0.5
 // @grant       none
 // ==/UserScript==
 
@@ -13,8 +13,8 @@ $(function(){
     var cheevoDescriptions = ["Oh no, you've been muted!"];
     var i = 0;
     var username = $('#navigation li a span.usernameProfile.menuItem').text();
-    var rep = "0";
-    var acl = 1;
+    var rep = "129.82K";
+    var acl = "3";
     var loc = window.location.href;
 
     if (loc.substr(loc.length - 14) == "/achievements/") {
@@ -36,7 +36,7 @@ $(function(){
                                  '<div class="bottmarg20px accentbox textcontent inlineblock noBulletsList"> '+
                                  '<ul class="fourcols"> '+
                                  '<li '+
-                                 '<span class="badgeInline"><span class="online" title="online"></span><span class="aclColor_"><a class="plain" href="/user/'+username+'">'+username+'</a></span><span title="Reputation" class="repValue positive">'+rep+'</span></span></li>'
+                                 '<span class="badgeInline"><span class="online" title="online"></span><span class="aclColor_'+acl+'"><a class="plain" href="/user/'+username+'">'+username+'</a></span><span title="Reputation" class="repValue positive">'+rep+'</span></span></li>'
                                 );
             $('.errorpage').css("background", "none");
             $('.errorpage').removeClass('errorpage');
