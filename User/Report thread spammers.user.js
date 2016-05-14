@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Report thread spammers
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  Adds button to report thread and user.
 // @author       PXgamer
 // @include      *kat.cr/community/show/*
@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-    $('a.ka.ka16.ka-report.ka-red[title="Report thread"]').after(' <a class="ka ka16 ka-report reportSpammer" title="Report thread spammer"></a>');
+    $('a.ka.ka16.ka-report.ka-red[title="Report thread"]').after(' <a class="ka ka16 ka-report reportSpammer" style="background: #8B0000;" title="Report thread spammer"></a>');
     var threadRep = $('#report_thread_div form').attr('action');
     var username  = $('div[id^="post"]:first .commentbody div.userPicSize100px .badge .badgeInfo .badgeUsernamejs a.plain[href^="/user/"]').text();
     var userHash  = guh(username);
@@ -31,6 +31,9 @@
             url: "/account/report/"+userHash+"/",
             data: { reason: "Thread Spammer" }
         });
+
+        //Refresh to complete.
+        location.refresh();
     });
 
 })();
