@@ -33,7 +33,7 @@
 // @include     *kat.cr/other/
 // @include     *kat.cr/xxx/
 // @include     *kat.cr/usearch/*
-// @version     1.2
+// @version     1.3
 // @grant       none
 // ==/UserScript==
 
