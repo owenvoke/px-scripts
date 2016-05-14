@@ -32,6 +32,7 @@
 // @include     *kat.cr/anime/
 // @include     *kat.cr/other/
 // @include     *kat.cr/xxx/
+// @include     *kat.cr/usearch/*
 // @version     1.2
 // @grant       none
 // ==/UserScript==
