@@ -36,7 +36,7 @@ $(function(){
                                  '<div class="bottmarg20px accentbox textcontent inlineblock noBulletsList"> '+
                                  '<ul class="fourcols"> '+
                                  '<li '+
-                                 '<span class="badgeInline"><span class="online" title="online"></span><span class="aclColor_'+acl+'"><a class="plain" href="/user/'+username+'">'+username+'</a></span><span title="Reputation" class="repValue positive">'+rep+'</span></span></li>'
+                                 '<span class="badgeInline"><span class="online" title="online"></span><span class="aclColor_'+acl+'"><a class="plain" href="/user/'+username+'"> '+username+'</a></span><span title="Reputation" class="repValue positive">'+rep+'</span></span></li>'
                                 );
             $('.errorpage').css("background", "none");
             $('.errorpage').removeClass('errorpage');
