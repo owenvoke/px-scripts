@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Filter Uploads by UL Status
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Filter uploads by the uploader's status (Uploader, Verified Uploader, Elite Uploader)
 // @author       PXgamer
 // @include      *kat.cr/new/*
@@ -20,11 +20,12 @@
         switch (ulSortType) {
             case 'all':
                 $('table.data tr').show();
+                $('.ka.ka-verify').parent().parent().parent().parent().show();
                 break;
             case 'uploader':
                 $('table.data tr').show();
                 $('.ka.ka-verify').parent().parent().parent().parent().hide();
-                $('.ka.ka-vul2').parent().parent().parent().parent().hide();
+                $('.ka.ka-star').parent().parent().parent().parent().parent().hide();
                 break;
             case 'verified':
                 $('table.data tr').hide();
