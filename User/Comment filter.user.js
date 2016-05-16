@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Comment filter
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Filter comments with keywords
 // @author       PXgamer
 // @include      *kat.cr/*.html
@@ -16,7 +16,7 @@
     $('.commentText').each(
         function() {
             for (var i = 0; i < searchStrings.length; i++) {
-                if ($(this).html().toLowerCase().indexOf(searchStrings[i]) > -1) {
+                if ($(this).html().toLowerCase().indexOf(searchStrings[i].toLowerCase()) > -1) {
                     $(this).parent().parent().parent().hide();
                 }
             }
