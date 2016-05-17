@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Thread Post Drafts
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Save drafts of posts
 // @author       PXgamer
 // @include      *kat.cr/community/update/*/
@@ -18,7 +18,7 @@
 
     $('.bbedit-toolbar').css('width', '500px');
 
-    dataPreview.after(' <span class="ka saveDraftPX"><img src="https://pximg.xyz/images/b0d12ae13df1b376ac6557c488fb50f4.png" style="padding: 0 0 0px 2px; height: 18px; width: 18px;" /></span> <span class="ka openDraftPX"><img src="https://pximg.xyz/images/cd7c008c14979811583db3afc7b83fed.png" style="padding: 0 0 0px 2px; height: 18px; width: 18px;" /></span>');
+    dataPreview.after(' <span title="Save Draft" class="ka saveDraftPX"><img src="https://pximg.xyz/images/b0d12ae13df1b376ac6557c488fb50f4.png" style="padding: 0 0 0px 2px; height: 18px; width: 18px;" /></span> <span title="Open Draft" class="ka openDraftPX"><img src="https://pximg.xyz/images/cd7c008c14979811583db3afc7b83fed.png" style="padding: 0 0 0px 2px; height: 18px; width: 18px;" /></span>');
 
     $('.saveDraftPX').on('click', function() {
         GM_setValue('thread_' + threadId, fieldArea.val());
