@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Image Favourites
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Add favourites for images.
 // @author       PXgamer
 // @include      *kat.cr/user/*/albums/
@@ -38,7 +38,7 @@
         else {
             for (var i = 0; i < data.length; i++) {
                 imgCan.append('<div class="galleryThumbSizerStills inlineblock">\
-<a class="topmarg2px leftmarg2px absolute favRemove"><i class="ka ka16 ka-delete ka-green"></i></a>\
+<a data-point="'+i+'" class="topmarg2px leftmarg2px absolute favRemove"><i class="ka ka16 ka-delete ka-green"></i></a>\
 <a data-href="'+data[i].imageUrl+'" class="galleryThumb favouritePop">\
 <img class="lazyjs" data-id="'+data[i].imageId+'" data-original="'+data[i].imageUrl+'" src="'+data[i].imageUrl+'" style="display: inline;" />\
 </a>\
@@ -53,6 +53,13 @@
             var h = ($( window ).height()/100*80);
             htmlD = '<div style="width: '+w+'px; height: '+h+'px; overflow: auto; scroll: hidden; position:relative;"><img src="'+imgLoc+'" style="width: '+(w-5)+'px; height: '+(h-5)+'px;" /></div>';
             $.fancybox(htmlD);
+        });
+
+        $('a.favRemove').on('click', function() {
+            var dPoint = $(this).attr('data-point');
+            data.splice(dPoint, 1);
+            $(this).parent().remove();
+            GM_setValue('favouriteImagesData', JSON.stringify(data));
         });
     });
 
