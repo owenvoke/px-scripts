@@ -11,7 +11,7 @@ function gbu() {
     'use strict';
 
     var returnedData;
-    var searchString = /<span class="aclColor_.*"><a class="plain" href="\/user\/.*\/">([a-z0-9_.-]+)<\/a>/gi, matches, blockedUsers = [];
+    var searchString = /<span class="aclColor_.*"><a class="plain" href="\/user\/.*\/">([a-z0-9 _.-]+)<\/a>/gi, matches, blockedUsers = [];
 
     $.ajax({
         type: "GET",
