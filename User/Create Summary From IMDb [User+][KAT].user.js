@@ -6,7 +6,7 @@
 // @include     *imdb.com/title/tt*
 // @include     *imdb.com/search/title?*
 // @author      PXgamer
-// @version     1.2
+// @version     1.3
 // @grant       none
 // ==/UserScript==
 
