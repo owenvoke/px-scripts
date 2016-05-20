@@ -27,7 +27,7 @@ if (/.*-i\d{5,7}\//.test(url)) { /* KAT Metadata Page */
         if ($('.movieCover img[src=""]').length) { /* If no metadata */
             $('.dataList [href*="imdb.com/title/tt"]').after(' <i class="ka ka16 ka-torrent" id="generateMetadata"></i>'); /* For when was not auto */
             generateMetadata(); /* Auto generate some */
-        }else if (!$('#summary > div').length){ /* If summary isn't there */
+        }else if (!$('div#summary').length){ /* If summary isn't there */
             addSummary(); /* Auto create summary */
         }
     }
@@ -94,7 +94,7 @@ function addSummary() {
         data: { objectId: movieid, text: decodeURIComponent(summary) },
         dataType: "json",
         success: function(response) {
-            window.location.reload(true); /* Reload page - DONE */
+            window.location = window.location.split("?")[0]; /* Reload page - DONE */
         }
     });
     return false;
