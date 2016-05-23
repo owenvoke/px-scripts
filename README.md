@@ -19,6 +19,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 *If you have an issue with any of these scripts, either [PM me on KAT](https://kat.cr/messenger/create/PXgamer/) or open an issue [here](https://github.com/PXgamer/PX-Scripts/issues).*
 
 ##Libraries:
+[Console Tools](https://greasyfork.org/en/scripts/19894)
 [Get Blocked Users](https://greasyfork.org/en/scripts/19498) [Returns Array]  
 [Get CSRF Token](https://greasyfork.org/en/scripts/19500) [Returns String]  
 [Get DMCA'd Torrents](https://greasyfork.org/en/scripts/19538) [Returns Object]  
