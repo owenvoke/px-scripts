@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Avvy Pirate
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Steals people's avatars anywhere on KAT.
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -12,21 +12,26 @@
 (function() {
     'use strict';
 
-    $('div.userPic div.userPicHeight a[href^="/user/"] img').after(
-        ' <a class="stealAvvy siteButton textButton"">Steal User\'s avatar</a>'
+    $('.userPic div.badgeSiteStatus').prepend(
+        '<a title="steal user\'s avatar" class="stealAvvy"><i class="icon16 ka ka16 ka-user""></i></a> '
     );
+
+
+    var csrf = $('form input[name="csrf_token"]').val();
 
     $('.stealAvvy').on(
         'click',
         function() {
-            var imgData = $(this).prev('img').attr('src');
+            var imgId = '';
+            var imgData = "image_id="+imgId;
+
+            //$(this).prev('a[href^="/user/"]').find('img').attr('src');
+            console.info(imgData);
             $.ajax(
                 {
                     type: 'POST',
                     url: '/account/setuserpic/',
-                    data: {
-                        avatar: imgData
-                    },
+                    data: imgData,
                     error: function() {
                         console.info('AP: An error occurred');
                     },
