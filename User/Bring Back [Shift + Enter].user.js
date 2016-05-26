@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bring Back [Shift + Enter]
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Adds the old post method to post boxes (Shift + Enter)
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -47,5 +47,6 @@
         if (postAction === true) {
             $('form[action^="/community/post/"] div.buttonsline button.siteButton.bigButton[type="submit"]').click();
         }
+        postAction = false;
     }
 })();
