@@ -1,10 +1,9 @@
 // ==UserScript==
 // @name         Console Tools
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  A library for shortened console.log, console.info, console.error
 // @author       PXgamer
-// @include      *kat.cr*
 // @grant        none
 // ==/UserScript==
 
