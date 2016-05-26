@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bring Back [Shift + Enter]
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Adds the old post method to post boxes (Shift + Enter)
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -11,19 +11,19 @@
 (function() {
     'use strict';
 
-    var arrShortCut = [{ name: 'Post', key: 16, fx: 'post' }];
+    var arrShortCut = [{ name: 'Post', key: 13, fx: 'post' }];
 
-    var ctrl = 17; // CTRL Key
-    var ctrlKeyActived = false;
+    var shift = 16; // SHIFT Key
+    var shiftKeyActived = false;
     var ta = $('.quicksubmit');
     var isBBaction = false;
     var postAction = false;
 
     $(document).keyup(function(e) {
-        if (e.which == ctrl) ctrlKeyActived = false;
+        if (e.which == shift) shiftKeyActived = false;
     }).keydown(function(e) {
-        if (e.which == ctrl) ctrlKeyActived = true;
-        if (ctrlKeyActived === true && ta.is(":focus")) {
+        if (e.which == shift) shiftKeyActived = true;
+        if (shiftKeyActived === true && ta.is(":focus")) {
             jQuery.each(arrShortCut, function(i) {
                 if (arrShortCut[i].key == e.which) {
                     exec(arrShortCut[i].fx, ta);
@@ -36,7 +36,7 @@
     function exec(fx, ta) {
         console.info(fx);
         switch (fx) {
-            case 'preview':
+            case 'post':
                 isBBaction = false;
                 postAction = true;
                 break;
@@ -48,5 +48,6 @@
             $('form[action^="/community/post/"] div.buttonsline button.siteButton.bigButton[type="submit"]').click();
         }
         postAction = false;
+        shiftKeyActived = false;
     }
 })();
