@@ -1,11 +1,10 @@
-// ==UserScript==
-// @name         Get Total Download Count
-// @namespace    PXgamer
-// @version      0.2
-// @description  Gets a total value as the count for downloads.
-// @author       PXgamer
-// @grant        none
-// ==/UserScript==
+/*
+ *  @name         Get Total Download Count
+ *  @namespace    PXgamer
+ *  @version      0.2
+ *  @description  Gets a total value as the count for downloads.
+ *  @author       PXgamer
+ */
 
 function gtdc() {
     'use strict';

@@ -1,11 +1,10 @@
-// ==UserScript==
-// @name         Get User Hash
-// @namespace    PXgamer
-// @version      0.2
-// @description  Get any user's hash, for various activities
-// @author       PXgamer
-// @grant        none
-// ==/UserScript==
+/*
+ *  @name         Get User Hash
+ *  @namespace    PXgamer
+ *  @version      0.2
+ *  @description  Get any user's hash, for various activities
+ *  @author       PXgamer
+ */
 
 function guh(username) {
         var re = /<a href="\/bookmarks\/[a-z]+\/[a-z]+\/([a-z0-9]+)\/" class="[a-z]+Link kaButton smallButton normalText"><i class="ka ka-bookmark"><\/i>/ig, matches, ret = [];

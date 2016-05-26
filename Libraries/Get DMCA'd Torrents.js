@@ -1,13 +1,11 @@
-// ==UserScript==
-// @name         Get DMCA'd Torrents
-// @namespace    PXgamer
-// @version      0.2
-// @description  Get a list of DMCA'd torrents.
-// @author       PXgamer
-// @require      https://code.jquery.com/jquery-1.12.3.min.js
-// @grant        none
-// ==/UserScript==
-
+/*
+ *  name         Get DMCA'd Torrents
+ *  namespace    PXgamer
+ *  version      0.2
+ *  description  Get a list of DMCA'd torrents.
+ *  author       PXgamer
+ *  require      https://code.jquery.com/jquery-1.12.3.min.js
+ */
 function getDMCAdTorrents(searchParam) {
     'use strict';
 

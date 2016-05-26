@@ -1,11 +1,10 @@
-// ==UserScript==
-// @name         Console Tools
-// @namespace    PXgamer
-// @version      0.2
-// @description  A library for shortened console.log, console.info, console.error
-// @author       PXgamer
-// @grant        none
-// ==/UserScript==
+/*
+ * name         Console Tools
+ * namespace    PXgamer
+ * version      0.2
+ * description  A library for shortened console.log, console.info, console.error
+ * author       PXgamer
+ */
 
 function cl(variable) {
     'use strict';

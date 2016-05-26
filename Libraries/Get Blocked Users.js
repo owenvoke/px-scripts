@@ -1,11 +1,10 @@
-// ==UserScript==
-// @name         Get Blocked Users
-// @namespace    PXgamer
-// @version      0.6
-// @description  Get a list of your blocked users.
-// @author       PXgamer
-// @grant        none
-// ==/UserScript==
+/*
+ *  name         Get Blocked Users
+ *  namespace    PXgamer
+ *  version      0.6
+ *  description  Get a list of your blocked users.
+ *  author       PXgamer
+ */
 
 function gbu() {
     'use strict';

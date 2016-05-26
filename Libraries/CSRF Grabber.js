@@ -1,11 +1,10 @@
-// ==UserScript==
-// @name         CSRF Grabber
-// @namespace    PXgamer
-// @version      0.2
-// @description  A library for getting the current csrf token for POSTs on Kickass Torrents.
-// @author       PXgamer
-// @grant        none
-// ==/UserScript==
+/*
+ *  name         CSRF Grabber
+ *  namespace    PXgamer
+ *  version      0.2
+ *  description  A library for getting the current csrf token for POSTs on Kickass Torrents.
+ *  author       PXgamer
+ */
 
 function csrf() {
     'use strict';

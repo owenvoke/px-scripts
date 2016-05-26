@@ -1,11 +1,10 @@
-// ==UserScript==
-// @name         Get Online Users By ACL
-// @namespace    PXgamer
-// @version      0.5
-// @description  Get list of users from Community page by ACL
-// @author       PXgamer
-// @grant        none
-// ==/UserScript==
+/*
+ *  name         Get Online Users By ACL
+ *  namespace    PXgamer
+ *  version      0.5
+ *  description  Get list of users from Community page by ACL
+ *  author       PXgamer
+ */
 
 function gouba(aclRank) {
 

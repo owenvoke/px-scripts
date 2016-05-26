@@ -1,11 +1,10 @@
-// ==UserScript==
-// @name         Get Online Users
-// @namespace    PXgamer
-// @version      0.2
-// @description  Get list of users from Community page
-// @author       PXgamer
-// @grant        none
-// ==/UserScript==
+/*
+ *  @name         Get Online Users
+ *  @namespace    PXgamer
+ *  @version      0.2
+ *  @description  Get list of users from Community page
+ *  @author       PXgamer
+ */
 
 function gou() {
     'use strict';
