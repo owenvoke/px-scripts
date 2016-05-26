@@ -73,6 +73,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [User Info Popover](https://greasyfork.org/en/scripts/19647)  
 
 ###Images
+[Avvy Pirate](https://greasyfork.org/en/scripts/19983)  
 [Image Favourites](https://greasyfork.org/en/scripts/19816)  
 
 ###Others
