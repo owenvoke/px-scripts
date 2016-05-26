@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Custom Key Commands
 // @namespace    PXgamer
-// @version      0.7
+// @version      0.8
 // @description  Allows custom key commands in text fields, so far I have added Bold and Italic
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -11,12 +11,21 @@
 
 (function() {
     'use strict';
+    
+    // Are you a translator/higher?
+    var isHigh = false; /* Set to true if you're high... */
+    // Do not edit below this line
+    // ---------------------------
 
     var arrShortCut = [{ name: 'Bold', key: 66, fx: 'bold' }, { name: 'Italic', key: 73, fx: 'italic'}, { name: 'Preview', key: 32, fx: 'preview'}];
 
     var ctrl = 17; // CTRL Key
     var ctrlKeyActived = false;
     var ta = $('.quicksubmit');
+    // Check if Trans+ and on FAQ pages
+    if (isHigh && location.href.indexOf('/faq/') > -1) {
+        ta = $('textarea#bbcode');
+    }
     var isBBaction = false;
     var previewAction = false;
 
