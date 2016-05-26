@@ -62,6 +62,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 ###Forum  
 [Add Bookmarks from Browse Pages](https://greasyfork.org/en/scripts/19587)  
 [Add Custom Forums](https://greasyfork.org/en/scripts/18892)  
+[Bring Back \[Shift + Enter\]](https://greasyfork.org/en/scripts/19978)  
 [Custom Key Commands](https://greasyfork.org/en/scripts/19568)  
 [Draggable Sidebar](https://greasyfork.org/en/scripts/9966)  
 [Hide OP's Post](https://greasyfork.org/en/scripts/19630)  
