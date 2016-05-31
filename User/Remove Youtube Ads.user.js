@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Remove Youtube Ads
 // @namespace   PXgamer
-// @description Remove ads
+// @description Remove ads [NO LONGER WORKING SINCE 2013]
 // @include     *youtube.com/*
 // @version     1
 // @grant       none
