@@ -81,6 +81,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [Download History Search](https://greasyfork.org/en/scripts/19521)  
 [Filter Requests by Category](https://greasyfork.org/en/scripts/19758)  
 [Flags for KAT](https://greasyfork.org/en/scripts/9884)  
+[KAT Meta Integration](https://greasyfork.org/en/scripts/20122)  
 [GoodReads Description Generator](https://greasyfork.org/en/scripts/9875)  
 
 ###Other Sites:
