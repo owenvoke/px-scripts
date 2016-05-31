@@ -3,7 +3,7 @@
 // @namespace   PXgamer
 // @description Remove ads [NO LONGER WORKING SINCE 2013]
 // @include     *youtube.com/*
-// @version     1
+// @version     1.1
 // @grant       none
 // ==/UserScript==
 
