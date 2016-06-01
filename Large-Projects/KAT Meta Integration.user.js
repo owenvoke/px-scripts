@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         KAT Meta Integration
 // @namespace    PXgamer
-// @version      0.4
+// @version      0.5
 // @description  Adds a KAT link to other sites using KAT.
 // @author       PXgamer
-// @include      *giantbomb.com/*
+// @include      *giantbomb.com/*/3030-*
 // @include      *imdb.com/title/tt*
 // @include      *trakt.tv/movies/*
 // @include      *trakt.tv/shows/*
