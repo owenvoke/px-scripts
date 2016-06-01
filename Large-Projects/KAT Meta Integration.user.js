@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         KAT Meta Integration
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Adds a KAT link to other sites using KAT.
 // @author       PXgamer
 // @include      *giantbomb.com/*
 // @include      *imdb.com/title/tt*
+// @include      *trakt.tv/movies/*
+// @include      *trakt.tv/shows/*
 // @grant        none
 // ==/UserScript==
 /*jshint multistr: true */
@@ -30,7 +32,15 @@
                 kt.kurl = kt.glin + kt.gurl + '/';
                 kt.cor  = true;
             }
-            else if (kt.url.indexOf('amazon.') >= -1) {
+            else if (kt.url.indexOf('trakt.tv/') >= -1) {
+                if (kt.url.indexOf('/movies/') >= -1) {
+                    kt.glin = 'https://kat.cr/i-i';
+                }
+                else if (kt.url.indexOf('/shows/') >= -1) {
+                    kt.glin = 'https://kat.cr/i-tv';
+                }
+                kt.gurl = $('div.sidebar ul.external li a[href^="http://www.imdb.com/"]').attr('href').split('/')[4].split('tt')[1];
+                kt.kurl = kt.glin + kt.gurl + '/';
                 kt.cor  = true;
             }
             else {kt.cor = false;}
@@ -59,7 +69,8 @@
                     }
                 );
             }
-            else if (kt.url.indexOf('amazon.') >= -1) {
+            else if (kt.url.indexOf('trakt.tv/') >= -1) {
+                $('div.sidebar ul.external').append('<li><a target="_blank" href="'+kt.kurl+'">Kickass<div class="fa fa-external-link"></div></a></li>');
             }
             else {}
         },
