@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         KAT Meta Integration
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  Adds a KAT link to other sites using KAT.
 // @author       PXgamer
 // @include      *giantbomb.com/*
 // @include      *imdb.com/title/tt*
 // @include      *trakt.tv/movies/*
 // @include      *trakt.tv/shows/*
+// @include      *anidb.net/perl-bin/animedb.pl?show=anime&aid=*
 // @grant        none
 // ==/UserScript==
 /*jshint multistr: true */
@@ -51,6 +52,14 @@
                     kt.cor  = true;
                 }
             }
+            else if (kt.url.indexOf('anidb.net/') > -1) {
+                if (kt.url.indexOf('show=anime&aid=') > -1) {
+                    kt.glin = 'https://kat.cr/i-a';
+                    kt.gurl = kt.url.split('&aid=')[1];
+                    kt.kurl = kt.glin + kt.gurl + '/';
+                    kt.cor  = true;
+                }
+            }
             else {kt.cor = false;}
 
             if (kt.checkAvail()) {
@@ -77,14 +86,17 @@
                     }
                 );
             }
-            else if (kt.url.indexOf('trakt.tv/') >= -1) {
+            else if (kt.url.indexOf('trakt.tv/') > -1) {
                 $('div.sidebar ul.external').append('<li><a target="_blank" href="'+kt.kurl+'">Kickass<div class="fa fa-external-link"></div></a></li>');
+            }
+            else if (kt.url.indexOf('anidb.net/') > -1) {
+                $('#tabbed_pane ul.tabs li.save_as_default.tab.fake').before('<li class="tab" style="margin-right: 5px;"><a target="_blank" href="'+kt.kurl+'" style="color: black;">Kickass</a></li>');
             }
             else {}
         },
         checkAvail: function() {
             // REMOVE THIS LATER
-            return true;
+            //return true;
             var returnedData;
             $.ajax({
                 type: "GET",
