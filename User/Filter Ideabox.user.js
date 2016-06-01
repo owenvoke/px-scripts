@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Filter Ideabox
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Sort ideabox ideas by different methods
 // @author       PXgamer
 // @include      *kat.cr/ideabox/*
@@ -11,17 +11,19 @@
 
 (function() {
     'use strict';
+    var rows = [];
 
     $('.buttonsline.floatleft').append('<select id="sortIdeas-select" style="letter-spacing: 0px; width: 220px !important;"><option value="all">Show all</option><option value="az">Sort Alphabetically (A-Z)</option><option value="no">Sort by Age (Newest to Oldest)</option><option value="views">Sort by Views (High to Low)</option></select> <button class="siteButton bigButton" id="sortIdeas"><span>Sort</span></button>');
 
     $('.ideaBox').each(function(){
         var html  = $(this).html();
-        var title = $('.ideaBody h3 span', $(this)).text();
-        var age   = $('.ideaBody div.greyText', $(this)).split('</span>')[7];
-        var views = $('.ideaBody div.greyText', $(this)).split('</span>')[3];
+        var title = $('.ideaBoxBody h3 a', $(this)).text();
+        var age   = $('.ideaBoxBody div.lightgrey:last', $(this)).html().split('</span> ')[6].trim();
+        var views = parseInt($('.ideaBoxBody div.lightgrey:last', $(this)).html().split('</span> ')[2].split(' views')[0], 10);
         rows.push({"title":title,"age":age,"views":views,"html":html});
     });
 
+    console.log(rows);
     $('#sortIdeas').on('click', function() {
         var ideaSortType = $('#sortIdeas-select').val();
 
@@ -61,10 +63,10 @@
 
     function sortIdeas(sortName, sortType) {
         sortByKey(rows, sortName);
-        //rows.reverse();
+        if (sortName !== 'views') { rows.reverse(); }
         $('div.ideaBox').remove();
         for (var i=0;i<rows.length;i++) {
-            $('.buttonsline.floatleft').after('<div class="ideaBox" id="idea_'+i+'">'+rows[i].html+'</div>');
+            $('.buttonsline.floatleft').after('<div class="ideaBox">'+rows[i].html+'</div>');
         }
 
     }
