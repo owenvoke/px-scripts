@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KAT Meta Integration
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Adds a KAT link to other sites using KAT.
 // @author       PXgamer
 // @include      *giantbomb.com/*
@@ -19,6 +19,7 @@
     kt = {
         init: function() {
             kt.cor = false;
+            kt.isValid = false;
             kt.url = location.href;
             if (kt.url.indexOf('giantbomb.com/') > -1) {
                 kt.glin = 'https://kat.cr/g-g';
@@ -32,16 +33,23 @@
                 kt.kurl = kt.glin + kt.gurl + '/';
                 kt.cor  = true;
             }
-            else if (kt.url.indexOf('trakt.tv/') >= -1) {
-                if (kt.url.indexOf('/movies/') >= -1) {
+            else if (kt.url.indexOf('trakt.tv/') > -1) {
+                if (kt.url.indexOf('/movies/') > -1) {
                     kt.glin = 'https://kat.cr/i-i';
                 }
-                else if (kt.url.indexOf('/shows/') >= -1) {
+                else if (kt.url.indexOf('/shows/') > -1) {
                     kt.glin = 'https://kat.cr/i-tv';
                 }
-                kt.gurl = $('div.sidebar ul.external li a[href^="http://www.imdb.com/"]').attr('href').split('/')[4].split('tt')[1];
-                kt.kurl = kt.glin + kt.gurl + '/';
-                kt.cor  = true;
+
+                if ($('h1').text().indexOf('Movies') == -1 && $('h1').text().indexOf('Shows') == -1) {
+                    kt.isValid = true;
+                }
+
+                if (kt.isValid) {
+                    kt.gurl = $('div.sidebar ul.external li a[href^="http://www.imdb.com/"]').attr('href').split('/')[4].split('tt')[1];
+                    kt.kurl = kt.glin + kt.gurl + '/';
+                    kt.cor  = true;
+                }
             }
             else {kt.cor = false;}
 
