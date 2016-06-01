@@ -79,6 +79,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 ###Others
 [Deleted User Check](https://greasyfork.org/en/scripts/19437)  
 [Download History Search](https://greasyfork.org/en/scripts/19521)  
+[Filter Ideabox](https://greasyfork.org/en/scripts/19995)  
 [Filter Requests by Category](https://greasyfork.org/en/scripts/19758)  
 [Flags for KAT](https://greasyfork.org/en/scripts/9884)  
 [KAT Meta Integration](https://greasyfork.org/en/scripts/20122)  
