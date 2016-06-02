@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DuckDuckVader
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Adds a Star Wars theme to DDG.
 // @author       PXgamer
 // @include      *duckduckgo.com/*
@@ -13,6 +13,7 @@
     'use strict';
 
     var icons = {
+        ddv_icon:       'https://pxstat.us/img/ddg.ico',
         duckduckvader:  'https://pximg.xyz/images/b5161751e12e8dd67e9ebd32b9c59cb3.png',
         death_star:     'https://pximg.xyz/images/5e17830c92c9d424583562f325e14993.png',
         clone_trooper:  'https://pximg.xyz/images/d0459862f22a4da2783dd2873351adac.png',
@@ -31,6 +32,15 @@
         tie_fighter:    'https://pximg.xyz/images/c3cb241d0f8d48b65542701d8a857d9d.png',
         admiral_ackbar: 'https://pximg.xyz/images/832b2714f14236164cdc2756a930497b.png'
     };
+
+    // All pages set favicon
+    (function() {
+        var link = document.createElement('link');
+        link.type = 'image/x-icon';
+        link.rel = 'shortcut icon';
+        link.href = icons.ddv_icon;
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }());
 
     // For Home
     if (location.href == 'https://duckduckgo.com/' || location.href == 'https://duckduckgo.com/?q=') {
