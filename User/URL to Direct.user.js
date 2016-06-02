@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL to Direct
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  URL to Direct for Kickass Torrents
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -12,10 +12,10 @@
 (function() {
     'use strict';
 
-    $('a.nofollow.noreferrer').each(function() {
+    $('a[rel="nofollow noopener noreferrer"][href^="//ext.kat.cr"]').each(function() {
         var eurl = $(this).attr('href').split('/')[5];
+        var text = $(this).text();
         var url = window.atob(eurl);
-        $(this).attr('href', url);
-        $(this).attr('target', '_blank');
+        $(this).replaceWith('<a href="'+url+'" target="_blank">'+text+'</a>');
     });
 })();
