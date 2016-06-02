@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DuckDuckVader
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Adds a Star Wars theme to DDG.
 // @author       PXgamer
 // @include      *duckduckgo.com/*
@@ -33,11 +33,14 @@
     };
 
     // For Home
-    if (location.href == 'https://duckduckgo.com/') {
+    if (location.href == 'https://duckduckgo.com/' || location.href == 'https://duckduckgo.com/?q=') {
         $('.logo-wrap--home').html('');
         $('.logo-wrap--home').css('background-image', 'url('+icons.duckduckvader+')');
         $('.logo-wrap--home').css('width', '187px');
         $('.logo-wrap--home').css('height', '103px');
         $('.tag-home').html('<span>May the force be with you</span>');
+        $('.search__button').val('');
+        $('.search__button').css('background-image', 'url('+icons.death_star+')');
+        $('.search__button').css('background-size', 'contain');
     }
 })();
