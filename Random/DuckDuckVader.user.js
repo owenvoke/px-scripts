@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DuckDuckVader
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  Adds a Star Wars theme to DDG.
 // @author       PXgamer
 // @include      *duckduckgo.com/*
@@ -11,6 +11,8 @@
 
 (function() {
     'use strict';
+    // Set dark theme
+    var darktheme = true;
 
     var icons = {
         ddv_icon:       'https://pxstat.us/img/ddg.ico',
@@ -48,6 +50,10 @@
         $('.logo-wrap--home').css('background-image', 'url('+icons.duckduckvader+')');
         $('.logo-wrap--home').css('width', '187px');
         $('.logo-wrap--home').css('height', '103px');
+        if (darktheme) {
+            $('body').css('background-color', 'black');
+            $('.logo-wrap--home').css('-webkit-filter', 'invert(100%)');
+        }
         $('.tag-home').html('<span>May the force be with you</span>');
         $('.search__button').val('');
         $('.search__button').css('background-image', 'url('+icons.death_star+')');
