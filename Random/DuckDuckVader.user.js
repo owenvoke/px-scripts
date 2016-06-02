@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DuckDuckVader
 // @namespace    PXgamer
-// @version      0.4
+// @version      0.5
 // @description  Adds a Star Wars theme to DDG.
 // @author       PXgamer
 // @include      *duckduckgo.com/*
@@ -58,5 +58,23 @@
         $('.search__button').val('');
         $('.search__button').css('background-image', 'url('+icons.death_star+')');
         $('.search__button').css('background-size', 'contain');
+    }
+    if (location.href.indexOf('https://duckduckgo.com/?q=') > -1) {
+        $('.header__logo-wrap').replaceWith('');
+        $('.header__search-wrap').prepend('<a href="/" style="position: absolute; display: inline-block; margin: 2px; left: 5px; top: 0px;"><img style="height: 50px; width: 50px;" src="'+icons.death_star+'"/></a>');
+        if (darktheme) {
+            $('body').css('background-color', 'black');
+            $('.logo-wrap--home').css('-webkit-filter', 'invert(100%)');
+            $(window).load(function() {
+                $('a.result__a').css('color', 'aqua');
+                $('a.result__menu').css('color', 'red');
+                $('div.result__pagenum').css('color', 'white');
+            });
+            $(window).on('scroll touchmove', function(e) {
+                $('a.result__a').css('color', 'aqua');
+                $('a.result__menu').css('color', 'red');
+                $('div.result__pagenum').css('color', 'white');
+            });
+        }
     }
 })();
