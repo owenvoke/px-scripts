@@ -76,6 +76,9 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [Avvy Pirate](https://greasyfork.org/en/scripts/19983)  
 [Image Favourites](https://greasyfork.org/en/scripts/19816)  
 
+###Links
+[URL to Direct](https://greasyfork.org/en/scripts/20167)  
+
 ###Others
 [Deleted User Check](https://greasyfork.org/en/scripts/19437)  
 [Download History Search](https://greasyfork.org/en/scripts/19521)  
