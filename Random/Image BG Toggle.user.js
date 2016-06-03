@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Image BG Toggle
 // @namespace    PXgamer
-// @version      0.1
-// @description  Something
+// @version      0.2
+// @description  Toggles the background colour for images in the browser
 // @author       PXgamer
 // @include      *.png
 // @include      *.jpg
