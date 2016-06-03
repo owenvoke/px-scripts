@@ -52,6 +52,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [Edit Torrent Button (not on sidebar)](https://greasyfork.org/en/scripts/19530)  
 [Filter User Uploads by Type](https://greasyfork.org/en/scripts/19577)  
 [Filter Uploads by UL Status](https://greasyfork.org/en/scripts/19715)  
+[Grab All Uploads Info](https://greasyfork.org/en/scripts/20220)  
 [KatTrak](https://greasyfork.org/en/scripts/19828)  
 [Sort Torrents Alphabetically](https://greasyfork.org/en/scripts/9772)  
 [Sort Uploads Alphabetically](https://greasyfork.org/en/scripts/19572)  
