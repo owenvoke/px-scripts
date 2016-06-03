@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DuckDuckVader
 // @namespace    PXgamer
-// @version      0.7
+// @version      0.8
 // @description  Adds a Star Wars theme to DDG.
 // @author       PXgamer
 // @include      *duckduckgo.com/*
@@ -161,6 +161,7 @@
         $('.logo-wrap--home').css('background-image', 'url('+icons.duckduckvader+')');
         $('.logo-wrap--home').css('width', '187px');
         $('.logo-wrap--home').css('height', '103px');
+        document.title = 'DuckDuckVader';
         if (darktheme) {
             $('body').css('background-color', 'black');
             $('.logo-wrap--home').css('-webkit-filter', 'invert(100%)');
@@ -172,6 +173,7 @@
     }
     if (location.href.indexOf('https://duckduckgo.com/?q=') > -1) {
         $('.header__logo-wrap').replaceWith('<a href="/" style="position: absolute; display: inline-block; left: 5px; top: 0px;"><img style="height: 50px; width: 50px; margin-left: 40%;" src="'+icons.m_falcon+'"/></a>');
+        document.title = document.title.replace('DuckDuckGo', 'DuckDuckVader');
         if (darktheme) {
             // Future features
             //$("head link[rel='stylesheet']").last().after("<style>body { background-color: black; } div.result__pagenum { color: white; } .result.highlight { background-color: #A9A9A9; } a.result__a, .result__a:visited { color: aqua; } .highlight a.result__a { color: white !important; } a.result__url { color: beige; } a.result__menu { color: red; }</style>");
