@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DuckDuckVader
 // @namespace    PXgamer
-// @version      0.5
+// @version      0.6
 // @description  Adds a Star Wars theme to DDG.
 // @author       PXgamer
 // @include      *duckduckgo.com/*
@@ -44,6 +44,14 @@
         document.getElementsByTagName('head')[0].appendChild(link);
     }());
 
+    // Global theme settings
+    if (darktheme) {
+        $("head link[rel='stylesheet']").last().after("<style>.header-wrap, .header-wrap--home { border-top-color: red; }</style>");
+    }
+    if (!darktheme) {
+        $("head link[rel='stylesheet']").last().after("<style>.header-wrap, .header-wrap--home { border-top-color: green; }</style>");
+    }
+
     // For Home
     if (location.href == 'https://duckduckgo.com/' || location.href == 'https://duckduckgo.com/?q=') {
         $('.logo-wrap--home').html('');
@@ -60,21 +68,10 @@
         $('.search__button').css('background-size', 'contain');
     }
     if (location.href.indexOf('https://duckduckgo.com/?q=') > -1) {
-        $('.header__logo-wrap').replaceWith('');
-        $('.header__search-wrap').prepend('<a href="/" style="position: absolute; display: inline-block; margin: 2px; left: 5px; top: 0px;"><img style="height: 50px; width: 50px;" src="'+icons.death_star+'"/></a>');
+        $('.header__logo-wrap').replaceWith('<a href="/" style="position: absolute; display: inline-block; left: 5px; top: 0px;"><img style="height: 50px; width: 50px; margin-left: 40%;" src="'+icons.m_falcon+'"/></a>');
         if (darktheme) {
-            $('body').css('background-color', 'black');
-            $('.logo-wrap--home').css('-webkit-filter', 'invert(100%)');
-            $(window).load(function() {
-                $('a.result__a').css('color', 'aqua');
-                $('a.result__menu').css('color', 'red');
-                $('div.result__pagenum').css('color', 'white');
-            });
-            $(window).on('scroll touchmove', function(e) {
-                $('a.result__a').css('color', 'aqua');
-                $('a.result__menu').css('color', 'red');
-                $('div.result__pagenum').css('color', 'white');
-            });
+            // Future features
+            //$("head link[rel='stylesheet']").last().after("<style>body { background-color: black; } div.result__pagenum { color: white; } .result.highlight { background-color: #A9A9A9; } a.result__a, .result__a:visited { color: aqua; } .highlight a.result__a { color: white !important; } a.result__url { color: beige; } a.result__menu { color: red; }</style>");
         }
     }
 })();
