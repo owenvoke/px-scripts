@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DuckDuckVader
 // @namespace    PXgamer
-// @version      0.6
+// @version      0.7
 // @description  Adds a Star Wars theme to DDG.
 // @author       PXgamer
 // @include      *duckduckgo.com/*
@@ -35,6 +35,109 @@
         admiral_ackbar: 'https://pximg.xyz/images/832b2714f14236164cdc2756a930497b.png'
     };
 
+    var quotes = [
+        "Judge me by my size, do you?",
+        "Do or do not… there is no try.",
+        "Fear leads to anger. Anger leads to hate. Hate leads to suffering.",
+        "Wars not make one great.",
+        "I\'ve got a bad feeling about this",
+        "Truly wonderful, the mind of a child is.",
+        "Your eyes can deceive you, don\'t trust them.",
+        "Who\'s the more foolish, the fool? Or the fool who follows him?",
+        "There\'s always a bigger fish",
+        "Death is a natural part of life.",
+        "I\'m getting too old for this sort of thing.",
+        "…there\'s nothing I can do about it right now. It\'s such a long way from here.",
+        "You must do what you feel is right, of course.",
+        "Don\'t be too proud of this technological terror you\'ve constructed.",
+        "I find your lack of faith disturbing",
+        "I care.",
+        "What good is a reward if you ain\'t around to use it?",
+        "Never tell me the odds.",
+        "Patience!",
+        "Don\'t give in to hate.",
+        "Mind what you have learned. Save you it can.",
+        "I love you. … I know",
+        "May the force be with you.",
+        "Twilight is upon me, and soon night must fall. That is the way of things.",
+        "Already know you that which you need.",
+        "Once you start down the dark path, forever will it dominate your destiny.",
+        "Pass on what you have learned.",
+        "You will find that many of the truths we cling to depend greatly on our own point of view.",
+        "I was wrong.",
+        "You cannot escape your destiny.",
+        "Your insight serves you well.",
+        "I know. Somehow I\'ve always known.",
+        "I can save him. I can turn him back to the good side. I have to try.",
+        "Indeed, you are powerful…",
+        "Search your feelings",
+        "Let go of your hate.",
+        "Your overconfidence is your weakness",
+        "It\'s a trap",
+        "Your thoughts betray you.",
+        "Don\'t center on your anxieties.",
+        "Keep your concentration here and now, where it belongs.",
+        "Mind tricks won\'t work on me, only money.",
+        "Now, be brave and don\'t look back.",
+        "… defiance, I sense in you. Need that, you do not.",
+        "Impossible to see, the future is.",
+        "Always in motion is the future.",
+        "You don\'t want to sell me death sticks. You want to go home and rethink your life.",
+        "It seems your patience has paid off.",
+        "In time you will learn to trust your feelings. Then you will be invincible.",
+        "Do not assume anything. Clear, your mind must be.",
+        "To be angry is to be human.",
+        "I know I\'m better than this.",
+        "We have a job to do.",
+        "Much to learn, you still have.",
+        "Twice the pride, double the fall.",
+        "Rise.",
+        "I must know the truth.",
+        "Your arrogance blinds you",
+        "The ability to speak does not make you intelligent.",
+        "Concentrate on the moment.",
+        "Feel, don\'t think",
+        "Trust your instincts",
+        "Son, my place is here, my future is here. It is time for you to let go.",
+        "Your focus determines your reality.",
+        "You will know when you are calm, at peace, passive.",
+        "Clear your mind of questions.",
+        "I don\'t believe it… … That is why you fail.",
+        "Attachment leads to jealousy. The shadow of greed, that is.",
+        "Luminous beings are we…",
+        "Thank the maker.",
+        "You know better than to trust a strange computer.",
+        "Look, good against remotes is one thing. Good against the living, that\'s something else.",
+        "I\'ll be careful.",
+        "The circle is now complete. When I left you, I was but the learner. Now I am the master.",
+        "You have hate, you have anger, but you don\'t use them.",
+        "Don\'t get cocky.",
+        "Yeah, I\'m responsible now, the price you pay for being successful.",
+        "Strike me down and I will become more powerful than you can possibly imagine.",
+        "What have I done?",
+        "You will not take her from me! … Your anger and lust for power have already done that.",
+        "Compassion, which I would define as unconditional love, is essential…",
+        "Sometimes we must do what is requested of us.",
+        "Just relax, concentrate.",
+        "I wasn\'t strong enough, but I promise I won\'t fail again.",
+        "We live in a real world… come back to it.",
+        "Anything is possible",
+        "I\'m not afraid to die.",
+        "All mentors have a way of seeing more of our faults than we would like. It\'s the only way we grow.",
+        "Sometimes there are things no one can fix.",
+        "The day we stop believing democracy can work is the day we lose it.",
+        "In my experience, there\'s no such thing as luck.",
+        "There is much fear that clouds your judgement.",
+        "Do what must be done.",
+        "Have faith, my love. Everything will soon be set right.",
+        "In a dark place we find ourselves… a little more knowledge might light our way.",
+        "I want more… and I know I shouldn\'t.",
+        "I\'m not afraid … … You will be. You… will… be.",
+        "What\'s in there? … Only what you take with you.",
+        "I can feel your anger, it gives you focus… makes you stronger",
+        "All who gain power are afraid to lose it"
+    ];
+
     // All pages set favicon
     (function() {
         var link = document.createElement('link');
@@ -62,7 +165,7 @@
             $('body').css('background-color', 'black');
             $('.logo-wrap--home').css('-webkit-filter', 'invert(100%)');
         }
-        $('.tag-home').html('<span>May the force be with you</span>');
+        $('.tag-home').html('<span>'+quotes[Math.floor(Math.random()*quotes.length) + 1]+'</span>');
         $('.search__button').val('');
         $('.search__button').css('background-image', 'url('+icons.death_star+')');
         $('.search__button').css('background-size', 'contain');
