@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Grab All Uploads Info
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  Grabs a list of all uploads and their data for a certain user.
 // @author       PXgamer
 // @include      *kat.cr/user/*/uploads/*
@@ -33,8 +33,8 @@
             var url        = 'https://kat.cr/user/'+defined.user+'/uploads/'+defined.data_type+'?page=' + i;
             var ss_title   = /<a href="\/.*-t[0-9]+.html" class="cellMainLink">(.*)<\/a>/ig;
             var ss_url     = /<a href="(\/.*-t[0-9]+.html)" class="cellMainLink">.*<\/a>/ig;
-            var ss_magnet  = /<a data-nop title="Torrent magnet link" href="(magnet:\?xt=urn:btih:.*)" class="icon16 askFeedbackjs" data-id="[A-Z0-9]+"><i class="ka ka16 ka-magnet"><\/i><\/a>/ig;
-            var ss_torrent = /<a data-download title="Download torrent file" href="(\/torrents\/.*-t[0-9]+\/)" class="icon16 askFeedbackjs"><i class="ka ka16 ka-arrow-down"><\/i><\/a>/ig;
+            var ss_magnet  = /<a data-nop title="Torrent magnet link" href="(magnet:\?xt=urn:btih:.*)" class="/ig;
+            var ss_torrent = /<a data-download title="Download torrent file" href="(\/torrents\/.*-t[0-9]+\/)" class="/ig;
             var matches;
             $.ajax({
                 type: "GET",
