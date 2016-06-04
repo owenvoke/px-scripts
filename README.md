@@ -42,6 +42,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [Pages Browsing for Wall](https://greasyfork.org/en/scripts/19595)  
 [Signature Hide on Profiles](https://greasyfork.org/en/scripts/19547)  
 [Tabbed Cheevos Page](https://greasyfork.org/en/scripts/19585)  
+[User RSS on Profile](https://greasyfork.org/en/scripts/20237)
 
 ###Torrent 
 [Anti-DMCA Script](https://greasyfork.org/en/scripts/7718)  
