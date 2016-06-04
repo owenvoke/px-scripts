@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Grab All Uploads Info
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Grabs a list of all uploads and their data for a certain user.
 // @author       PXgamer
 // @include      *kat.cr/user/*/uploads/*
@@ -16,7 +16,8 @@
     var defined = {
         first_page: '1',
         last_page:  $('.pages a.turnoverButton.siteButton.bigButton[rel="nofollow"]:last').text(),
-        data_list: []
+        data_list: [],
+        user: location.href.split('/')[4]
     };
     var eMatch = { titles: [], magnets: [], torrents: [] };
 
@@ -27,7 +28,7 @@
         console.info(defined);
 
         for (var i = 1; i <= defined.last_page; i++) {
-            var url       = 'https://kat.cr/user/XpoZ.Torrent/uploads/?page=' + i;
+            var url       = 'https://kat.cr/user/'+defined.user+'/uploads/?page=' + i;
             var ss_title   = /<a href="\/.*-t[0-9]+.html" class="cellMainLink">(.*)<\/a>/ig;
             var ss_magnet  = /<a data-nop title="Torrent magnet link" href="(magnet:\?xt=urn:btih:.*)" class="icon16 askFeedbackjs" data-id="[A-Z0-9]+"><i class="ka ka16 ka-magnet"><\/i><\/a>/ig;
             var ss_torrent = /<a data-download title="Download torrent file" href="(\/torrents\/.*-t[0-9]+\/)" class="icon16 askFeedbackjs"><i class="ka ka16 ka-arrow-down"><\/i><\/a>/ig;
