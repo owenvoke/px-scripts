@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Grab All Uploads Info
 // @namespace    PXgamer
-// @version      0.4
+// @version      0.5
 // @description  Grabs a list of all uploads and their data for a certain user.
 // @author       PXgamer
 // @include      *kat.cr/user/*/uploads/*
@@ -35,6 +35,7 @@
             var ss_url     = /<a href="(\/.*-t[0-9]+.html)" class="cellMainLink">.*<\/a>/ig;
             var ss_magnet  = /<a data-nop title="Torrent magnet link" href="(magnet:\?xt=urn:btih:.*)" class="/ig;
             var ss_torrent = /<a data-download title="Download torrent file" href="(\/torrents\/.*-t[0-9]+\/)" class="/ig;
+            var ss_delhash = /<a href="javascript: undeleteTorrent\('[0-9]+', '([A-Z0-9]+)', true\)/ig;
             var matches;
             $.ajax({
                 type: "GET",
@@ -45,14 +46,22 @@
                     while (matches = ss_title.exec(data.html)) {
                         eMatch.titles.push(matches[1]);
                     }
-                    while (matches = ss_magnet.exec(data.html)) {
-                        eMatch.magnets.push(matches[1]);
-                    }
-                    while (matches = ss_torrent.exec(data.html)) {
-                        eMatch.torrents.push('https://kat.cr' + matches[1]);
-                    }
                     while (matches = ss_url.exec(data.html)) {
                         eMatch.urls.push('https://kat.cr' + matches[1]);
+                    }
+                    if (defined.data_type == 'deleted') {
+                        while (matches = ss_delhash.exec(data.html)) {
+                            eMatch.magnets.push('magnet:?xt=urn:btih:'+matches[1]);
+                            eMatch.torrents.push('https://torcache.net/torrent/' + matches[1] + '.torrent');
+                        }
+                    }
+                    else {
+                        while (matches = ss_magnet.exec(data.html)) {
+                            eMatch.magnets.push(matches[1]);
+                        }
+                        while (matches = ss_torrent.exec(data.html)) {
+                            eMatch.torrents.push('https://kat.cr' + matches[1]);
+                        }
                     }
                 },
                 returnData: "json"
