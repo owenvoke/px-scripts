@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Script Duplicate Highlighter
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Highlight duplicated @descriptions/@name in the list all scripts thread. [For Boba_Fett]
 // @author       PXgamer
 // @include      *kat.cr/community/show/list-all-scripts-themes-made-our-site-members/*
@@ -28,7 +28,7 @@
     }
 
     for (i = 0; i < dl_v.length; i++) {
-        if (dl_v[i].title == dl_v[i].descr) {
+        if (dl_v[i].title.toLowerCase() == dl_v[i].descr.toLowerCase() {
             console.info(dl_v[i]);
         }
     }
