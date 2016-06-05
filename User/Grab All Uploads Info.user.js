@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Grab All Uploads Info
 // @namespace    PXgamer
-// @version      0.5
+// @version      0.6
 // @description  Grabs a list of all uploads and their data for a certain user.
 // @author       PXgamer
 // @include      *kat.cr/user/*/uploads/*
@@ -11,6 +11,8 @@
 
 (function() {
     'use strict';
+
+    var generateTable = false; // Will choose whether to generate a table at the end.
 
     // Defines vars
     var defined = {
@@ -76,6 +78,18 @@
                 url: eMatch.urls[k]
             });
         }
-        console.log(defined.data_list);
+        if (generateTable) {
+            // Generating HTML table
+            $('table.data tbody').html('');
+            $('h2').text('All Torrents');
+            $('div.pages.botmarg5px.floatright').html('');
+            $('table.data tbody').append('<tr class="firstr"><th class="width100perc nopad">torrent name</th><th class="center">magnet</th><th class="center">torrent</th><th class="center">link</th></tr>');
+            for (var j = 0; j < defined.data_list.length; j++) {
+                $('table.data tbody').append('<tr><td>'+defined.data_list[j].title+'</td><td style="overflow: hidden; max-width: 300px;">'+defined.data_list[j].magnet+'</td><td>'+defined.data_list[j].torrent+'</td><td>'+defined.data_list[j].url+'</td></tr>');
+            }
+        }
+        else {
+            console.info(defined.data_list);
+        }
     });
 })();
