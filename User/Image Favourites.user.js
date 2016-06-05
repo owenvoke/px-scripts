@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         Image Favourites
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  Add favourites for images.
 // @author       PXgamer
 // @include      *kat.cr/user/*/albums/
 // @include      *kat.cr/user/*/recentimages/
 // @grant        GM_getValue
 // @grant        GM_setValue
+// @require      https://code.jquery.com/jquery-1.12.3.min.js
 // ==/UserScript==
 /*jshint multistr: true */
 
