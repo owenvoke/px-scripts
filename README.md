@@ -91,4 +91,5 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [GoodReads Description Generator](https://greasyfork.org/en/scripts/9875)  
 
 ###Other Sites:
+[DuckDuckVader](https://greasyfork.org/en/scripts/20176)  
 [TPB Torrent Downloads](https://greasyfork.org/en/scripts/19591)  
