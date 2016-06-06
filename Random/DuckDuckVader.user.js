@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DuckDuckVader
 // @namespace    PXgamer
-// @version      0.8
+// @version      0.9
 // @description  Adds a Star Wars theme to DDG.
 // @author       PXgamer
 // @include      *duckduckgo.com/*
@@ -12,10 +12,12 @@
 (function() {
     'use strict';
     // Set dark theme
-    var darktheme = true;
+    var darktheme = false;
 
     var icons = {
         ddv_icon:       'https://pxstat.us/img/ddg.ico',
+        empire:         'https://pximg.xyz/images/a2953610cebead141a45dccbcf9b4a26.png',
+        rebellion:      'https://pximg.xyz/images/cbb105c6b990d4377e8caac28f66d3ff.png',
         duckduckvader:  'https://pximg.xyz/images/b5161751e12e8dd67e9ebd32b9c59cb3.png',
         death_star:     'https://pximg.xyz/images/5e17830c92c9d424583562f325e14993.png',
         clone_trooper:  'https://pximg.xyz/images/d0459862f22a4da2783dd2873351adac.png',
@@ -165,18 +167,24 @@
         if (darktheme) {
             $('body').css('background-color', 'black');
             $('.logo-wrap--home').css('-webkit-filter', 'invert(100%)');
+            $('.search__button').css('background-image', 'url('+icons.empire+')');
+        }
+        else {
+            $('.search__button').css('background-image', 'url('+icons.rebellion+')');
         }
         $('.tag-home').html('<span>'+quotes[Math.floor(Math.random()*quotes.length) + 1]+'</span>');
         $('.search__button').val('');
-        $('.search__button').css('background-image', 'url('+icons.death_star+')');
         $('.search__button').css('background-size', 'contain');
     }
     if (location.href.indexOf('https://duckduckgo.com/?q=') > -1) {
-        $('.header__logo-wrap').replaceWith('<a href="/" style="position: absolute; display: inline-block; left: 5px; top: 0px;"><img style="height: 50px; width: 50px; margin-left: 40%;" src="'+icons.m_falcon+'"/></a>');
         document.title = document.title.replace('DuckDuckGo', 'DuckDuckVader');
         if (darktheme) {
+            $('.header__logo-wrap').replaceWith('<a href="/" style="position: absolute; display: inline-block; left: 5px; top: 0px;"><img style="height: 50px; width: 50px; margin-left: 40%;" src="'+icons.tie_fighter+'"/></a>');
             // Future features
             //$("head link[rel='stylesheet']").last().after("<style>body { background-color: black; } div.result__pagenum { color: white; } .result.highlight { background-color: #A9A9A9; } a.result__a, .result__a:visited { color: aqua; } .highlight a.result__a { color: white !important; } a.result__url { color: beige; } a.result__menu { color: red; }</style>");
+        }
+        else {
+            $('.header__logo-wrap').replaceWith('<a href="/" style="position: absolute; display: inline-block; left: 5px; top: 0px;"><img style="height: 50px; width: 50px; margin-left: 40%;" src="'+icons.m_falcon+'"/></a>');
         }
     }
 })();
