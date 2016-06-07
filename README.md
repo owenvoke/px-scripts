@@ -92,4 +92,5 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 
 ###Other Sites:
 [DuckDuckVader](https://greasyfork.org/en/scripts/20176)  
+[GreasyFork Total Scripts](https://greasyfork.org/en/scripts/20343)  
 [TPB Torrent Downloads](https://greasyfork.org/en/scripts/19591)  
