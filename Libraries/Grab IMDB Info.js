@@ -22,7 +22,7 @@ function imdbG(id) {
     };
 
     $.ajax({
-        url: 'http://www.imdb.com/title/tt'+imdb.imdbId+'',
+        url: 'https://www.imdb.com/title/tt'+imdb.imdbId+'',
         method: 'GET',
         returnData: 'html',
         success: function(data) {
