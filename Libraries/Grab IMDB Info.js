@@ -1,16 +1,16 @@
 /*
  *  name         Grab IMDB Info
  *  namespace    PXgamer
- *  version      0.2
- *  description  Grabs the Metacritic metascore for KAT.
+ *  version      0.3
+ *  description  Grabs IMDB info from the provided ID.
  *  author       PXgamer
  */
 
-(function() {
+function imdbG(id) {
     'use strict';
 
     var imdb = {
-        imdbId: "0803096",
+        imdbId: id,
         mScore: '',
         poster: '',
         description: '',
@@ -40,4 +40,4 @@
         }
     });
 
-})();
+}
