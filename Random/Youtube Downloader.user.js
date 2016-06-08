@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Downloader
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Allows you to download videos off YouTube. (Yet another one...)
 // @author       PXgamer
 // @include      *youtube.com/watch?v=*
