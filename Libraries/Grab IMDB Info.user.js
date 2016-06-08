@@ -1,13 +1,10 @@
-// ==UserScript==
-// @name         Grab Metascore For KAT
-// @namespace    PXgamer
-// @version      0.1
-// @description  Grabs the Metacritic metascore for KAT.
-// @author       PXgamer
-// @include      *imdb.com/title/tt*
-// @grant        none
-// ==/UserScript==
-/*jshint multistr: true */
+/*
+ *  name         Grab IMDB Info
+ *  namespace    PXgamer
+ *  version      0.2
+ *  description  Grabs the Metacritic metascore for KAT.
+ *  author       PXgamer
+ */
 
 (function() {
     'use strict';
