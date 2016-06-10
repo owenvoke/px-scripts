@@ -70,6 +70,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [Hide OP's Post](https://greasyfork.org/en/scripts/19630)  
 [More Smileys](https://greasyfork.org/en/scripts/9821)  
 [Report Thread Spammers](https://greasyfork.org/en/scripts/19607)  
+[Sidebar \[Horizontal\]](https://greasyfork.org/en/scripts/20442)  
 [Special Occasions Headers](https://greasyfork.org/en/scripts/9808)  
 [Thread Post Drafts](https://greasyfork.org/en/scripts/19751)  
 [User Info Popover](https://greasyfork.org/en/scripts/19647)  
