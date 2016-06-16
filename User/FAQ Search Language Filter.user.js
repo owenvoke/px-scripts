@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FAQ Search Language Filter
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Filters out any unwanted languages when searching the FAQ.
 // @author       PXgamer
 // @include      *kat.cr/faq/search*
@@ -24,12 +24,12 @@
         "lt"
         */
     ];
-
-    $('ul.textcontent.questionList li').each(function(){
+    $('ul.textcontent.questionList li').hide();
+    $('ul.textcontent.questionList li a').each(function(){
         var url_lang = $(this).attr('href').split('/')[4];
         for (var i = 0; i < langs.length; i++) {
-            if (url_lang !== langs[i]) {
-                $(this).hide();
+            if (url_lang == langs[i]) {
+                $(this).parent().show();
             }
         }
     });
