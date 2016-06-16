@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Search Language Filter
+// @name         FAQ Search Language Filter
 // @namespace    PXgamer
 // @version      0.1
 // @description  Filters out any unwanted languages when searching the FAQ.
