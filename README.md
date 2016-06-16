@@ -76,7 +76,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [User Info Popover](https://greasyfork.org/en/scripts/19647)  
 
 ###FAQ
-[FAQ Search Language Filter](https://greasyfork.org/en/scripts/20631)
+[FAQ Search Language Filter](https://greasyfork.org/en/scripts/20631)  
 
 ###Images
 [Avvy Pirate](https://greasyfork.org/en/scripts/19983)  
