@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         KatTrak
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  A Trakt system for integrating with Kickass Torrents.
 // @author       PXgamer
 // @include      *kat.cr/*
 // @include      *pxstat.us/trakt*
+// @include      *pxgamer.github.io/PX-Scripts/KatTrak/
 // @grant        GM_getValue
 // @grant        GM_setValue
 // ==/UserScript==
@@ -21,19 +22,43 @@
 
     // Config Params
     // ---------------------------
-    // GM_setValue('katTrakAuth', ''); location.reload(); // Uncomment to reset the auth_code.
+    //GM_setValue('katTrakAuth', ''); location.reload(); // Uncomment to reset the auth_code.
 
 
     // DO NOT EDIT BELOW THIS LINE
     // ---------------------------
 
+    function getQV(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+
     var getURL = location.href.toLowerCase();
     var sendData;
 
     if (getURL.indexOf('pxstat.us/trakt/?kattrakauth') > -1) {
-        GM_setValue('katTrakAuth', getURL.split('=')[1]);
+        GM_setValue('katTrakAuth', getQV('katTrakAuth'));
 
-        location.href = 'https://kat.cr/';
+        if (getQV('ret') == 'ktInstall') {
+            location.href = 'https://pxgamer.github.io/PX-Scripts/KatTrak/#checkup';
+        }
+        else {
+            location.href = 'https://kat.cr/';
+        }
+    }
+    if (getURL.indexOf('pxgamer.github.io') > -1) {
+        if (auth_code !== '') {
+            $('.checkup-box').html('<table style="margin-left: 20%;"><tr style="text-align: left;"><td>Status:</td><td style="padding: 15px"></td><td>Success</td></tr><tr style="text-align: left;"><td>Auth Code:</td><td style="padding: 15px"></td><td>' + auth_code + '</td></tr></table>');
+        }
+        else {
+            $('.checkup-box').html('<table style="margin-left: 20%;"><tr style="text-align: left;"><td>Status:</td><td style="padding: 15px"></td><td>Failed</td></tr><tr style="text-align: left;"><td>Auth Code:</td><td style="padding: 15px"></td><td>' + auth_code + '</td></tr></table>');
+        }
     }
     if (getURL.indexOf('kat.cr') > -1 && getURL.indexOf('.html') > -1) {
         var category = $('span[id^="cat_"] strong a[href]:first').text();
