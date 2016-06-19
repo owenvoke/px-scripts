@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KatTrak
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  A Trakt system for integrating with Kickass Torrents.
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -15,7 +15,7 @@
 (function() {
     'use strict';
 
-    // NOTE: To set this up, first go to Trakt.tv here: https://trakt.tv/oauth/authorize?client_id=9efcadc5be0011a406fa0819192bd3aef0b3b2d9fa6ba90f3ffd3907138195d3&redirect_uri=https%3A%2F%2Fpxstat.us%2Ftrakt%2F&response_type=code
+    // NOTE: To set this up, run through the auth process here: https://pxgamer.github.io/PX-Scripts/KatTrak/
     // No, I'm not going to steal your data or anything. This is just a project to add what you download to your Trakt.tv Collection.
 
     var auth_code = GM_getValue('katTrakAuth', '');
@@ -59,6 +59,11 @@
         else {
             $('.checkup-box').html('<table style="margin-left: 20%;"><tr style="text-align: left;"><td>Status:</td><td style="padding: 15px"></td><td>Failed</td></tr><tr style="text-align: left;"><td>Auth Code:</td><td style="padding: 15px"></td><td>' + auth_code + '</td></tr></table>');
         }
+        // Unauth code
+        $('.unauthKt').on('click', function() {
+            GM_setValue('katTrakAuth', '');
+            location.reload();
+        });
     }
     if (getURL.indexOf('kat.cr') > -1 && getURL.indexOf('.html') > -1) {
         var category = $('span[id^="cat_"] strong a[href]:first').text();
