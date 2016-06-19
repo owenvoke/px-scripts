@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KatTrak
 // @namespace    PXgamer
-// @version      0.4
+// @version      0.5
 // @description  A Trakt system for integrating with Kickass Torrents.
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -54,6 +54,7 @@
     }
     if (getURL.indexOf('pxgamer.github.io') > -1) {
         var logged_in_valid = false;
+        $('.unauthKt').parent().replaceWith($('.unauthKt').parent().html());
         $.ajax({
             beforeSend: function (request)
             {
