@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KatTrak
 // @namespace    PXgamer
-// @version      0.7
+// @version      0.8
 // @description  A Trakt system for integrating with Kickass Torrents.
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -22,7 +22,16 @@
     var auth_code = GM_getValue('katTrakAuth', '');
     var info = {
         currentV: parseFloat(GM_info.script.version),
-        latestV: 0.0
+        latestV: 0.0,
+        browser: getBrowser(),
+        scriptManager: getScriptManager()
+    };
+    var settings = {
+        debug: false,
+        logEvents: false,
+        logHTTP: false,
+        logAuth: false,
+        logInfo: false
     };
 
     // Config Params
@@ -35,6 +44,7 @@
 
     function getQV(variable)
     {
+        if (settings.debug && settings.logEvents){console.info('EVENT Getting Query Variable');}
         var query = window.location.search.substring(1);
         var vars = query.split("&");
         for (var i=0;i<vars.length;i++) {
@@ -48,6 +58,7 @@
     var sendData;
 
     if (getURL.indexOf('pxstat.us/trakt/?kattrakauth') > -1) {
+        if (settings.debug && settings.logEvents){console.info('EVENT Redirecting KatTrak');}
         GM_setValue('katTrakAuth', getQV('katTrakAuth'));
 
         if (getQV('ret') == 'ktInstall') {
@@ -58,8 +69,10 @@
         }
     }
     if (getURL.indexOf('pxgamer.github.io') > -1) {
+        if (settings.debug && settings.logEvents){console.info('EVENT Running on Home Page');}
         var logged_in_valid = false;
         $('.unauthKt').parent().replaceWith($('.unauthKt').parent().html());
+        if (settings.debug && settings.logHTTP){console.info('GET https://api-v2launch.trakt.tv/sync/last_activities');}
         $.ajax({
             beforeSend: function (request)
             {
@@ -102,6 +115,7 @@
                 location.href = 'https://trakt.tv/oauth/authorize?client_id=9efcadc5be0011a406fa0819192bd3aef0b3b2d9fa6ba90f3ffd3907138195d3&redirect_uri=https%3A%2F%2Fpxstat.us%2Ftrakt%2F&response_type=code';
             });
         }
+        if (settings.debug && settings.logHTTP){console.info('GET https://pxstat.us/misc/ktcheck/');}
         $.ajax({
             type: "GET",
             async: false,
@@ -116,9 +130,11 @@
         else if (info.latestV == info.currentV) { $('.installBtn').replaceWith('<button class="btn btn-lg btn-success installBtn" type="button">Up to Date</button>'); }
         else { $('.installBtn').replaceWith('<button class="btn btn-lg btn-danger installBtn" type="button">Unable to Check Version</button>'); }
 
-        $('#settings-config').html('Version: ' + info.currentV + ' <br>Success: '+logged_in_valid+' <br>Browser: ' + getBrowser() + ' <br>ScriptManager: ' + getScriptManager());
+        $('#settings-config').html('Version: ' + info.currentV + ' <br>Success: '+logged_in_valid+' <br>Browser: ' + info.browser + ' <br>ScriptManager: ' + info.scriptManager);
+        if (settings.debug && settings.logEvents){console.info('EVENT Finished');}
     }
     if (getURL.indexOf('kat.cr') > -1 && getURL.indexOf('.html') > -1) {
+        if (settings.debug && settings.logEvents){console.info('EVENT Running on Kickass Torrents');}
         var category = $('span[id^="cat_"] strong a[href]:first').text();
         $('a.kaGiantButton[href^="/torrents/"][data-download]').attr('target', '_blank');
         var imdbId = "tt" + $('a.plain[href^="http://www.imdb.com/title/tt"]').text();
@@ -146,6 +162,7 @@
         }
 
         $('a.kaGiantButton[href^="/torrents/"][data-download]').on('click', function() {
+            if (settings.debug && settings.logHTTP){console.info('POST https://api-v2launch.trakt.tv/sync/collection');}
             $.ajax({
                 beforeSend: function (request)
                 {
@@ -164,6 +181,7 @@
             });
         });
         $('a.kaGiantButton[href^="magnet:?xt"][data-nop]').on('click', function() {
+            if (settings.debug && settings.logHTTP){console.info('POST https://api-v2launch.trakt.tv/sync/collection');}
             $.ajax({
                 beforeSend: function (request)
                 {
@@ -181,12 +199,15 @@
                 returnData: "json"
             });
         });
+        if (settings.debug && settings.logEvents){console.info('EVENT Finished');}
     }
+    if (settings.debug && settings.logAuth) {console.info('Auth Code: ' + auth_code);}
+    if (settings.debug && settings.logInfo) {console.info(info);}
 })();
 
 function contains(string, search) {
-      return string.indexOf(search) != -1;
-    }
+    return string.indexOf(search) != -1;
+}
 function getBrowser() {
     var ua = navigator.userAgent;
     if (contains(ua, 'Firefox')) {
@@ -222,27 +243,27 @@ function getBrowser() {
     }
 }
 function getScriptManager() {
-      if (typeof GM_info == 'object') {
+    if (typeof GM_info == 'object') {
         // Greasemonkey (Firefox)
         if (typeof GM_info.uuid != 'undefined') {
-          return 'Greasemonkey';
+            return 'Greasemonkey';
         } // Tampermonkey (Chrome/Opera)
         else if (typeof GM_info.scriptHandler != 'undefined') {
-          return 'Tampermonkey';
+            return 'Tampermonkey';
         }
-      } else {
+    } else {
         // Scriptish (Firefox)
         if (typeof GM_getMetadata == 'function') {
-          return 'Scriptish';
+            return 'Scriptish';
         } // NinjaKit (Safari/Chrome)
         else if (typeof GM_setValue != 'undefined' &&
-          typeof GM_getResourceText == 'undefined' &&
-          typeof GM_getResourceURL == 'undefined' &&
-          typeof GM_openInTab == 'undefined' &&
-          typeof GM_setClipboard == 'undefined') {
-          return 'NinjaKit';
+                 typeof GM_getResourceText == 'undefined' &&
+                 typeof GM_getResourceURL == 'undefined' &&
+                 typeof GM_openInTab == 'undefined' &&
+                 typeof GM_setClipboard == 'undefined') {
+            return 'NinjaKit';
         } else { // Native
-          return 'Native';
+            return 'Native';
         }
-      }
     }
+}
