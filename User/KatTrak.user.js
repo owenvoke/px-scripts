@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KatTrak
 // @namespace    PXgamer
-// @version      0.6
+// @version      0.7
 // @description  A Trakt system for integrating with Kickass Torrents.
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -102,19 +102,21 @@
                 location.href = 'https://trakt.tv/oauth/authorize?client_id=9efcadc5be0011a406fa0819192bd3aef0b3b2d9fa6ba90f3ffd3907138195d3&redirect_uri=https%3A%2F%2Fpxstat.us%2Ftrakt%2F&response_type=code';
             });
         }
-		$.ajax({
+        $.ajax({
             type: "GET",
             async: false,
             url: 'https://pxstat.us/misc/ktcheck/',
             success: function (data) {
                 var ss = /\/\/ @version      ([0-9.]+)\n\/\//g;
-				info.latestV = parseFloat(ss.exec(data)[1]);
+                info.latestV = parseFloat(ss.exec(data)[1]);
             },
             dataType: "html"
         });
-		if (info.latestV > info.currentV) { $('.installBtn').replaceWith('<button class="btn btn-lg btn-warning installBtn" type="button">Update Available</button>'); }
+        if (info.latestV > info.currentV) { $('.installBtn').replaceWith('<button class="btn btn-lg btn-warning installBtn" type="button">Update Available</button>'); }
         else if (info.latestV == info.currentV) { $('.installBtn').replaceWith('<button class="btn btn-lg btn-success installBtn" type="button">Up to Date</button>'); }
         else { $('.installBtn').replaceWith('<button class="btn btn-lg btn-danger installBtn" type="button">Unable to Check Version</button>'); }
+
+        $('#settings-config').html('Version: ' + info.currentV + ' <br>Success: '+logged_in_valid+' <br>Browser: ' + getBrowser() + ' <br>ScriptManager: ' + getScriptManager());
     }
     if (getURL.indexOf('kat.cr') > -1 && getURL.indexOf('.html') > -1) {
         var category = $('span[id^="cat_"] strong a[href]:first').text();
@@ -181,3 +183,66 @@
         });
     }
 })();
+
+function contains(string, search) {
+      return string.indexOf(search) != -1;
+    }
+function getBrowser() {
+    var ua = navigator.userAgent;
+    if (contains(ua, 'Firefox')) {
+        return "Firefox";
+    } else if (contains(ua, 'Sleipnir')) {
+        return "Sleipnir"; // Mobile
+    } else if (contains(ua, 'UCBrowser')) {
+        return "UCBrowser"; // Mobile
+    } else if (contains(ua, 'Dolfin')) {
+        return "Dolphin"; // Mobile
+    } else if (contains(ua, 'MSIE')) {
+        return "InternetExplorer";
+    } else if (contains(ua, 'Midori')) {
+        return "Midori";
+    } else if (contains(ua, 'Opera') || contains(ua, 'OPR')) {
+        return "Opera";
+    } else if (contains(ua, 'Chrome')) {
+        return "Chrome";
+    } else if (contains(ua, 'Safari')) {
+        return "Safari";
+    } else if (contains(ua, 'Konqueror')) {
+        return "Konqueror";
+    } else if (contains(ua, 'PaleMoon')) {
+        return "PaleMoon"; // fork firefox
+    } else if (contains(ua, 'Cyberfox')) {
+        return "Cyberfox"; // fork firefox
+    } else if (contains(ua, 'SeaMonkey')) {
+        return "SeaMonkey"; // fork firefox
+    } else if (contains(ua, 'Iceweasel')) {
+        return "Iceweasel"; // fork firefox
+    } else {
+        return ua;
+    }
+}
+function getScriptManager() {
+      if (typeof GM_info == 'object') {
+        // Greasemonkey (Firefox)
+        if (typeof GM_info.uuid != 'undefined') {
+          return 'Greasemonkey';
+        } // Tampermonkey (Chrome/Opera)
+        else if (typeof GM_info.scriptHandler != 'undefined') {
+          return 'Tampermonkey';
+        }
+      } else {
+        // Scriptish (Firefox)
+        if (typeof GM_getMetadata == 'function') {
+          return 'Scriptish';
+        } // NinjaKit (Safari/Chrome)
+        else if (typeof GM_setValue != 'undefined' &&
+          typeof GM_getResourceText == 'undefined' &&
+          typeof GM_getResourceURL == 'undefined' &&
+          typeof GM_openInTab == 'undefined' &&
+          typeof GM_setClipboard == 'undefined') {
+          return 'NinjaKit';
+        } else { // Native
+          return 'Native';
+        }
+      }
+    }
