@@ -1,14 +1,15 @@
 // ==UserScript==
 // @name         KatTrak
 // @namespace    PXgamer
-// @version      0.5
+// @version      0.6
 // @description  A Trakt system for integrating with Kickass Torrents.
 // @author       PXgamer
 // @include      *kat.cr/*
 // @include      *pxstat.us/trakt*
-// @include      *pxgamer.github.io/PX-Scripts/KatTrak/
+// @include      *pxgamer.github.io/PX-Scripts/KatTrak/*
 // @grant        GM_getValue
 // @grant        GM_setValue
+// @grant        GM_info
 // ==/UserScript==
 /*jshint multistr: true */
 
@@ -19,6 +20,10 @@
     // No, I'm not going to steal your data or anything. This is just a project to add what you download to your Trakt.tv Collection.
 
     var auth_code = GM_getValue('katTrakAuth', '');
+    var info = {
+        currentV: parseFloat(GM_info.script.version),
+        latestV: 0.0
+    };
 
     // Config Params
     // ---------------------------
@@ -97,6 +102,19 @@
                 location.href = 'https://trakt.tv/oauth/authorize?client_id=9efcadc5be0011a406fa0819192bd3aef0b3b2d9fa6ba90f3ffd3907138195d3&redirect_uri=https%3A%2F%2Fpxstat.us%2Ftrakt%2F&response_type=code';
             });
         }
+		$.ajax({
+            type: "GET",
+            async: false,
+            url: 'https://pxstat.us/misc/ktcheck/',
+            success: function (data) {
+                var ss = /\/\/ @version      ([0-9.]+)\n\/\//g;
+				info.latestV = parseFloat(ss.exec(data)[1]);
+            },
+            dataType: "html"
+        });
+		if (info.latestV > info.currentV) { $('.installBtn').replaceWith('<button class="btn btn-lg btn-warning installBtn" type="button">Update Available</button>'); }
+        else if (info.latestV == info.currentV) { $('.installBtn').replaceWith('<button class="btn btn-lg btn-success installBtn" type="button">Up to Date</button>'); }
+        else { $('.installBtn').replaceWith('<button class="btn btn-lg btn-danger installBtn" type="button">Unable to Check Version</button>'); }
     }
     if (getURL.indexOf('kat.cr') > -1 && getURL.indexOf('.html') > -1) {
         var category = $('span[id^="cat_"] strong a[href]:first').text();
