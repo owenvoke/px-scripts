@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KatTrak
 // @namespace    PXgamer
-// @version      0.8
+// @version      0.9
 // @description  A Trakt system for integrating with Kickass Torrents.
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -10,6 +10,7 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_info
+// @grant        GM_registerMenuCommand
 // ==/UserScript==
 /*jshint multistr: true */
 
@@ -27,11 +28,56 @@
         scriptManager: getScriptManager()
     };
     var settings = {
-        debug: false,
+        debug: true,
         logEvents: false,
-        logHTTP: false,
+        logHTTP: true,
         logAuth: false,
         logInfo: false
+    };
+    var KatTrak = {
+        ready : function (callback) {
+            KatTrak.onEvent(window, 'load', callback);
+        },
+        onEvent : function (element, type, listener, bubbles) {
+            if (window.addEventListener) { // For all major browsers, except IE 8 and earlier
+                (element || window).addEventListener(type, listener, bubbles || false);
+            } else { // For IE 8 and earlier versions
+                (element || window).attachEvent('on' + type, listener);
+            }
+            return arguments;
+        },
+        commands : [{
+            caption : 'Homepage',
+            execute : function () {
+                location.href = 'https://pxgamer.github.io/PX-Scripts/KatTrak/';
+            }
+        }, {
+            caption : 'Settings',
+            execute : function () {
+                location.href = 'https://pxgamer.github.io/PX-Scripts/KatTrak/#settings';
+            }
+        }, {
+            caption : 'Update',
+            execute : function () {
+                location.href = 'https://pxgamer.github.io/PX-Scripts/KatTrak/#install';
+            }
+        }
+                   ],
+        addCommands : function (cmd) {
+            if (typeof GM_getValue != 'undefined' && (parent == self) && typeof GM_registerMenuCommand != 'undefined') {
+                GM_registerMenuCommand(['KatTrak', cmd.caption].join(' '), cmd.execute);
+            }
+        },
+        registerCommands : function () {
+            KatTrak.ready(function () {
+                KatTrak.commands.forEach(function (cmd) {
+                    KatTrak.addCommands(cmd);
+                });
+            });
+        },
+        initialize : function () {
+            KatTrak.registerCommands(); // add commands to menu
+        }
     };
 
     // Config Params
@@ -203,6 +249,7 @@
     }
     if (settings.debug && settings.logAuth) {console.info('Auth Code: ' + auth_code);}
     if (settings.debug && settings.logInfo) {console.info(info);}
+    KatTrak.initialize();
 })();
 
 function contains(string, search) {
