@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Image BG Toggle
 // @namespace    PXgamer
-// @version      0.5
+// @version      0.6
 // @description  Toggles the background colour for images in the browser
 // @author       PXgamer
 // @include      *.png*
@@ -14,12 +14,10 @@
 
 (function() {
     'use strict';
-    // EDITABLE VARS
+
     var allowGrey = false;
-    
-    // DO NOT EDIT BELOW
     var col = 'black';
-    $('body').append('<span class="bgToggle" style="cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 999999; float: right; background-color: white; border: 1px solid grey; border-radius: 2px; margin: 5px; padding: 2px; font-family: fantasy;">TOGGLE BG</span>');
+    $('body').append('<span class="bgToggle" style="left: 95.6%; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 999999; position: fixed; float: right; background-color: white; border: 1px solid grey; border-radius: 2px; margin: 5px; padding: 2px; font-family: fantasy;">TOGGLE BG</span>');
     $('.bgToggle').on('click', function() {
         if (col == 'black') {
             $('body').css('background-color', col);
