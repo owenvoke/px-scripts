@@ -1,9 +1,26 @@
 <?php
 
+/*
+ *
+ *  Title:		MovieManager
+ *  Author:		PXgamer
+ *	Usage:		php MovieManager.php [txt|json]
+ *
+ */
+
+if (isset($argv[1])) {
+    $format = $argv[1];
+} else {
+    $format = "json";
+}
+
+$mm = new MovieManager();
+$mm->_construct($format);
+
 class MovieManager {
     
     // The basic constructor
-    function __construct() {
+    function _construct($format) {
         // Get all folders
         $folders = $this->gfl(".");
         $this->init(count($folders));
@@ -16,10 +33,29 @@ class MovieManager {
                 $res   = $this->curl_req($s_URL);
                 // Add the JSON data to an info.json
                 if ($res["STATUS"] && $res["HTTP"] == 200) {
-                    $js   = json_decode($res["DATA"]);
-                    $js   = json_encode($js, JSON_PRETTY_PRINT);
-                    $file = fopen($folder . "/info.json", "w");
-                    fwrite($file, $js);
+                    echo " [" . $format . "]";
+                    switch ($format) {
+                        case 'json':
+                            $js   = json_decode($res["DATA"]);
+                            $js   = json_encode($js, JSON_PRETTY_PRINT);
+                            $file = fopen($folder . "/info.json", "w");
+                            fwrite($file, $js);
+                            break;
+                        case 'txt':
+                            $obj  = json_decode($res["DATA"], true);
+                            $js   = '';
+                            $i    = 0;
+                            $keys = array_keys($obj);
+                            foreach ($obj as $o) {
+                                $js .= $keys[$i] . ":	" . $o . "\n";
+                                $i++;
+                            }
+                            $file = fopen($folder . "/info.txt", "w");
+                            fwrite($file, $js);
+                            break;
+                        default:
+                            
+                    }
                 }
             }
         }
@@ -175,5 +211,3 @@ class MovieManager {
         ;
     }
 }
-
-$mm = new MovieManager();
