@@ -4,7 +4,7 @@
  *
  *  Title:		MovieManager
  *  Author:		PXgamer
- *  Usage:          php MovieManager.php [txt|json]
+ *  Usage:           php MovieManager.php [txt|json]
  *
  */
 
