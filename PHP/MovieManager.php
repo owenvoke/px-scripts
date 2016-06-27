@@ -2,9 +2,9 @@
 
 /*
  *
- *  Title:		MovieManager
- *  Author:		PXgamer
- *  Usage:           php MovieManager.php [txt|json]
+ *  Title:   MovieManager
+ *  Author:  PXgamer
+ *  Usage:   php MovieManager.php [txt|json]
  *
  */
 
