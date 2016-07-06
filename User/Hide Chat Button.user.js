@@ -6,6 +6,7 @@
 // @author       PXgamer
 // @include      *kat.cr/*
 // @grant        none
+// @require.     https://code.jquery.com/jquery-1.12.3.min.js
 // ==/UserScript==
 
 (function() {
