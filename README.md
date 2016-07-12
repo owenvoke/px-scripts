@@ -69,6 +69,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [Custom Key Commands](https://greasyfork.org/en/scripts/19568)  
 [Draggable Sidebar](https://greasyfork.org/en/scripts/9966)  
 [Hide OP's Post](https://greasyfork.org/en/scripts/19630)  
+[Hide Stickied Threads](https://greasyfork.org/en/scripts/21325)  
 [More Smileys](https://greasyfork.org/en/scripts/9821)  
 [Report Thread Spammers](https://greasyfork.org/en/scripts/19607)  
 [Sidebar \[Horizontal\]](https://greasyfork.org/en/scripts/20442)  
