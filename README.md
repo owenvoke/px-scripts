@@ -93,6 +93,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [Filter Ideabox](https://greasyfork.org/en/scripts/19995)  
 [Filter Requests by Category](https://greasyfork.org/en/scripts/19758)  
 [Flags for KAT](https://greasyfork.org/en/scripts/9884)  
+[Hide Chat Button](https://greasyfork.org/en/scripts/21195)  
 [KAT Meta Integration](https://greasyfork.org/en/scripts/20122)  
 [GoodReads Description Generator](https://greasyfork.org/en/scripts/9875)  
 
