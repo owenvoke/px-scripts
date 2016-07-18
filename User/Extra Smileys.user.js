@@ -33,13 +33,13 @@ $(window).load(function(){
     $('.bbedit-smileybar').append('<img title="Coffee" class="cusSmile" alt="coffee" src="https://pximg.xyz/images/b9587160dd9dd695e26583af17287561.gif" />');
     $('.bbedit-smileybar').append('<img title="Puke" class="cusSmile" alt="puke" src="https://pximg.xyz/images/bf20c58502857123051dc81c7aa3d9be.gif" height="19px" width="19px" />');
     if (showFacebookReactions) {
-        $('.bbedit-smileybar').append('<img title="Like" class="cusSmile" alt="like" src="https://pximg.xyz/images/bec9fd1a7049f9ed4c2460d361d7365d.gif" height="19px" width="19px" />');
-        $('.bbedit-smileybar').append('<img title="Love" class="cusSmile" alt="love" src="https://pximg.xyz/images/85d887dc5c2008ad061c6b06a34e4556.gif" height="19px" width="19px" />');
-        $('.bbedit-smileybar').append('<img title="Haha" class="cusSmile" alt="haha" src="https://pximg.xyz/images/fdd08b0d0addd4594be3090fc269461d.gif" height="19px" width="19px" />');
-        $('.bbedit-smileybar').append('<img title="Yay" class="cusSmile" alt="yay" src="https://pximg.xyz/images/67114140811978f7d3d7ed2b68eaab84.gif" height="19px" width="19px" />');
-        $('.bbedit-smileybar').append('<img title="Wow" class="cusSmile" alt="wow" src="https://pximg.xyz/images/09622fc744a50c5abe943267848e6ab4.gif" height="19px" width="19px" />');
-        $('.bbedit-smileybar').append('<img title="Sad" class="cusSmile" alt="sad" src="https://pximg.xyz/images/f8a0e9421d86d82495b255a5d98882fe.gif" height="19px" width="19px" />');
-        $('.bbedit-smileybar').append('<img title="Angry" class="cusSmile" alt="angry" src="https://pximg.xyz/images/1e03ba63be0f68461e5d201f71da1043.gif" height="19px" width="19px" />');
+        $('.bbedit-smileybar').append('<img title="Like" class="cusSmile" alt="like" src="https://pximg.xyz/images/3f1329531b8f6f711a48d2af49087c0a.gif" height="19px" width="19px" />');
+        $('.bbedit-smileybar').append('<img title="Love" class="cusSmile" alt="love" src="https://pximg.xyz/images/56f517e6f066e780ebf811b7cdea1ad2.gif" height="19px" width="19px" />');
+        $('.bbedit-smileybar').append('<img title="Haha" class="cusSmile" alt="haha" src="https://pximg.xyz/images/9fd8b1149f9849a5ff8bad6a68efe710.gif" height="19px" width="19px" />');
+        $('.bbedit-smileybar').append('<img title="Yay" class="cusSmile" alt="yay" src="https://pximg.xyz/images/c4d463e867cb4cb7b646f90b16ca7dde.gif" height="19px" width="19px" />');
+        $('.bbedit-smileybar').append('<img title="Wow" class="cusSmile" alt="wow" src="https://pximg.xyz/images/29987c9c302f9e384c875072bc8da501.gif" height="19px" width="19px" />');
+        $('.bbedit-smileybar').append('<img title="Sad" class="cusSmile" alt="sad" src="https://pximg.xyz/images/b56edce73736263e324a3a7d70e4ce0d.gif" height="19px" width="19px" />');
+        $('.bbedit-smileybar').append('<img title="Angry" class="cusSmile" alt="angry" src="https://pximg.xyz/images/5084d023faa8af5ee9bacfbfcfea7055.gif" height="19px" width="19px" />');
     }
 
     jQuery.fn.extend({
