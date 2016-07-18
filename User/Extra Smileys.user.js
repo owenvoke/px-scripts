@@ -5,7 +5,7 @@
 // @include     *kickass.to/*
 // @include     *kat.cr/*
 // @author      PXgamer
-// @version     2.10
+// @version     2.11
 // @grant       none
 // ==/UserScript==
 
