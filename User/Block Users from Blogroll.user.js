@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Block Users from Blogroll
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Allows you to block selected users from the blogroll.
 // @author       PXgamer
 // @include      *kat.cr/*
@@ -14,7 +14,7 @@
 
     // Begin Blocklist
     var blocklist = [
-        'TheDels'
+        /*'TheDels'*/
     ];
     // End Blocklist
 
