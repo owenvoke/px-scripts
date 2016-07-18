@@ -88,6 +88,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [URL to Direct](https://greasyfork.org/en/scripts/20167)  
 
 ###Others
+[Block Users from Blogroll](https://greasyfork.org/en/scripts/21466)  
 [Deleted User Check](https://greasyfork.org/en/scripts/19437)  
 [Download History Search](https://greasyfork.org/en/scripts/19521)  
 [Filter Ideabox](https://greasyfork.org/en/scripts/19995)  
