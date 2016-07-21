@@ -18,8 +18,12 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 
 *If you have an issue with any of these scripts, either [PM me on KAT](https://kat.cr/messenger/create/PXgamer/) or open an issue [here](https://github.com/PXgamer/PX-Scripts/issues).*
 
+#Global Scripts
 ##Libraries:
 [Console Tools](https://greasyfork.org/en/scripts/19894) [Returns Func Values]  
+
+#Kickass Torrents Scripts
+##Libraries:
 [Get Blocked Users](https://greasyfork.org/en/scripts/19498) [Returns Array]  
 [Get CSRF Token](https://greasyfork.org/en/scripts/19500) [Returns String]  
 [Get DMCA'd Torrents](https://greasyfork.org/en/scripts/19538) [Returns Object]  
@@ -98,7 +102,11 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [KAT Meta Integration](https://greasyfork.org/en/scripts/20122)  
 [GoodReads Description Generator](https://greasyfork.org/en/scripts/9875)  
 
-###Other Sites:
-[DuckDuckVader](https://greasyfork.org/en/scripts/20176)  
+#GreasyFork.org
 [GreasyFork Total Scripts](https://greasyfork.org/en/scripts/20343)  
+
+#DuckDuckGo
+[DuckDuckVader](https://greasyfork.org/en/scripts/20176)  
+
+#The Pirate Bay
 [TPB Torrent Downloads](https://greasyfork.org/en/scripts/19591)  
