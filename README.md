@@ -8,7 +8,7 @@ Most are for [KAT.cr](https://kat.cr/) (Kickass Torrents) - Some will not work a
 Others are just random from when I'm bored.  
 And soon I will be adding some for [PXIMG](https://pximg.xyz/).  
 
-![banner image](https://yuq.me/users/31/364/sTIVLOSXF1.png)
+![banner image](https://pximg.xyz/images/daca506e3fcaf506019d83a1bf583bb5.png)
 
 So, I write a lot of userscripts for doing different things around the site.
 
