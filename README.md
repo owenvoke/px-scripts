@@ -105,6 +105,9 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 #GreasyFork.org
 [GreasyFork Total Scripts](https://greasyfork.org/en/scripts/20343)  
 
+#Discord
+[Change Discord User Colour](https://greasyfork.org/en/scripts/21611)  
+
 #DuckDuckGo
 [DuckDuckVader](https://greasyfork.org/en/scripts/20176)  
 
