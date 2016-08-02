@@ -1,11 +1,14 @@
 // ==UserScript==
 // @name         [Katcr.co] Original Smileys
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Adds the original smileys back
 // @author       PXgamer
 // @include      *katcr.co/community/*
-// @grant        none
+// @include      *pxgamer.github.io/PX-Scripts/ScriptSettings/original_smileys.html*
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @grant        GM_registerMenuCommand
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // ==/UserScript==
 /*jshint multistr: true */
@@ -13,8 +16,14 @@
 (function() {
     'use strict';
 
-    var show_extras = true;
-    var show_reactions = true;
+    var show_extras = GM_getValue("show_extras", "true");
+    var show_reactions = GM_getValue("show_reactions", "true");
+    var show_menu_command = GM_getValue("show_menu_command", "true");
+    if (show_menu_command == 'true') {
+        GM_registerMenuCommand( 'Smiley Settings', function(){window.open('https://pxgamer.github.io/PX-Scripts/ScriptSettings/original_smileys.html');} );
+    }
+    var cTrue = "true";
+    //console.log(show_extras + '|' + show_reactions);
 
     var smilies = {
         'smile' : 'https://i.imgur.com/jDCmN5k.gif',
@@ -47,6 +56,11 @@
         'nod' : 'https://i.imgur.com/1Mge3YI.gif',
         'shake' : 'https://i.imgur.com/VKctnGI.gif',
         'cool' : 'https://i.imgur.com/bFSKaxa.gif',
+        'punch' : 'https://i.imgur.com/jcSMOIz.gif',
+        'yawn' : 'https://i.imgur.com/EItEozy.gif',
+        'point' : 'https://i.imgur.com/2S7ahGT.gif',
+        'sleep' : 'https://i.imgur.com/16gZbHY.gif',
+        'sweat' : 'https://i.imgur.com/gOXCcif.gif',
         'think' : 'https://i.imgur.com/fLaLJRx.gif',
         'thumbup' : 'https://i.imgur.com/xxtKctj.gif',
         'thumbdown' : 'https://i.imgur.com/bkv4kfO.gif'
@@ -108,6 +122,10 @@
         }
     });
 
+    if (cTrue == show_extras) { show_extras = true; }else{ show_extras = false; }
+    if (cTrue == show_reactions) { show_reactions = true; }else{ show_reactions = false; }
+    if (cTrue == show_menu_command) { show_menu_command = true; }else{ show_menu_command = false; }
+
     $('#smileyBox_message div').html('');
     for (var key in smilies) {
         $('#smileyBox_message div').append('<img src="'+smilies[key]+'" align="bottom" alt="'+key+'" title="'+key+'" class="cusSmile" style="cursor: pointer; margin: 1px;" width="19px" heigh="19px">');
@@ -125,5 +143,38 @@
     }
 
     $('.cusSmile').click(function(){ $('textarea',$(this).closest('form')).insertAtCaret( '[img]'+ $(this).attr('src') +'[/img]' );});
+
+    if (location.href.indexOf('ScriptSettings/original_smileys.html') > -1) {
+        $('#settings-config').append('<div id="settings-block" style="width: 400px; margin: 0 auto;"><div class="form-group text-left">\
+<div class="checkbox">\
+<label>\
+<input type="checkbox" id="show_extras"> Show Extra Smileys\
+</label>\
+</div>\
+<div class="checkbox">\
+<label>\
+<input type="checkbox" id="show_reactions"> Show Facebook Reactions\
+</label>\
+</div>\
+<div class="checkbox">\
+<label>\
+<input type="checkbox" id="show_menu_command"> Show Menu Command\
+</label>\
+</div>\
+</div>\
+<button class="btn btn-default" id="save_settings">Save Settings</button></div>');
+
+        $('#show_extras').prop("checked", show_extras);
+        $('#show_reactions').prop("checked", show_reactions);
+        $('#show_menu_command').prop("checked", show_menu_command);
+
+        $('#save_settings').on('click', function() {
+            GM_setValue("show_extras", $('#show_extras').prop( "checked" ).toString());
+            GM_setValue("show_reactions", $('#show_reactions').prop( "checked" ).toString());
+            GM_setValue("show_menu_command", $('#show_menu_command').prop( "checked" ).toString());
+            $('#settings-block').append('<div style="margin-top: 10px;" class="alert alert-success alert_settings"><h4>Successfully updated your settings.</h4></div>');
+            setTimeout(function(){$('.alert_settings').slideUp();}, 2000);
+        });
+    }
 
 })();
