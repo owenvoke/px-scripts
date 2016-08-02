@@ -1,0 +1,129 @@
+// ==UserScript==
+// @name         [Katcr.co] Original Smileys
+// @namespace    PXgamer
+// @version      0.1
+// @description  Adds the original smileys back
+// @author       PXgamer
+// @include      *katcr.co/community/*
+// @grant        none
+// @require      https://code.jquery.com/jquery-3.1.0.min.js
+// ==/UserScript==
+/*jshint multistr: true */
+
+(function() {
+    'use strict';
+
+    var show_extras = true;
+    var show_reactions = true;
+
+    var smilies = {
+        'smile' : 'https://i.imgur.com/jDCmN5k.gif',
+        'biggrin' : 'https://i.imgur.com/Y2IB7c1.gif',
+        'lol' : 'https://i.imgur.com/yrmrqBr.gif',
+        'titter' : 'https://i.imgur.com/3mUNmP8.gif',
+        'titter2' : 'https://i.imgur.com/UQxpJbL.gif',
+        'rofl' : 'https://i.imgur.com/BRNDUiY.gif',
+        'clap' : 'https://i.imgur.com/vBzTQec.gif',
+        'rock' : 'https://i.imgur.com/jNciQTr.gif',
+        'pirate' : 'https://i.imgur.com/c0gTgBS.gif',
+        'joy' : 'https://i.imgur.com/OUzdHNF.gif',
+        'boo' : 'https://i.imgur.com/Rl6QHXw.gif',
+        'inlove' : 'https://i.imgur.com/DjKkEX7.gif',
+        'wave' : 'https://i.imgur.com/vHrmADf.gif',
+        'sad' : 'https://i.imgur.com/xarqUB1.gif',
+        'facepalm' : 'https://i.imgur.com/ky63riP.gif',
+        'dizzy' : 'https://i.imgur.com/Dab19mK.gif',
+        'cry' : 'https://i.imgur.com/31QyqdW.gif',
+        'mad' : 'https://i.imgur.com/zZuLIGb.gif',
+        'huffy' : 'https://i.imgur.com/e1xCAZp.gif',
+        'swear' : 'https://i.imgur.com/Qef0xw8.gif',
+        'spy' : 'https://i.imgur.com/GS4Lctd.gif',
+        'angry' : 'https://i.imgur.com/OelvgkH.gif',
+        'wait' : 'https://i.imgur.com/tkKjFsA.gif',
+        'tongue' : 'https://i.imgur.com/Au91JBC.gif',
+        'shocked' : 'https://i.imgur.com/qi4A3nr.gif',
+        'wink' : 'https://i.imgur.com/ZoWgkuV.gif',
+        'nerd' : 'https://i.imgur.com/gu5gvMk.gif',
+        'nod' : 'https://i.imgur.com/1Mge3YI.gif',
+        'shake' : 'https://i.imgur.com/VKctnGI.gif',
+        'cool' : 'https://i.imgur.com/bFSKaxa.gif',
+        'think' : 'https://i.imgur.com/fLaLJRx.gif',
+        'thumbup' : 'https://i.imgur.com/xxtKctj.gif',
+        'thumbdown' : 'https://i.imgur.com/bkv4kfO.gif'
+    };
+    var extras = {
+        'smoke' : 'https://pximg.xyz/images/e3f6c9546b0b85138856a654b6acee85.gif',
+        'headbang' : 'https://pximg.xyz/images/96c98c900ddcd6c8b14177ffba06ed13.gif',
+        'mooning' : 'https://pximg.xyz/images/4bb967650d41ff6bcd58ac203a797235.gif',
+        'squirrel' : 'https://pximg.xyz/images/3bd96c8fcc699c381f6263e295ad225b.gif',
+        'ninja' : 'https://pximg.xyz/images/0b914e135932cd0da66df267f2d84b34.gif',
+        'beer' : 'https://pximg.xyz/images/6ad8bb13eb3b86c55f624073fd229599.gif',
+        'drink' : 'https://pximg.xyz/images/8a6854009cf40e59a13fc22da1e2f8ae.gif',
+        'cake' : 'https://pximg.xyz/images/9f53064bb76f3774b1c6247453afc715.gif',
+        'pizza' : 'https://pximg.xyz/images/7edc71a4e28a5b9aabb6e9aaec406a9a.gif',
+        'rain' : 'https://pximg.xyz/images/b7a972fb35d04e321f553f29a31899c8.gif',
+        'mail' : 'https://pximg.xyz/images/0637181b7e39d789e56e45806bc6ac9e.gif',
+        'music' : 'https://pximg.xyz/images/16457a3f98d886e7ecb1578f954b38c7.gif',
+        'phone' : 'https://pximg.xyz/images/2534b7ba848c018453470f35d939abd3.gif',
+        'weed' : 'https://pximg.xyz/images/95b0ba9220b7b028454762061b3de42b.gif',
+        'mlph' : 'https://pximg.xyz/images/0b1b423c2a1bde8e3d1f50d125c4808b.gif',
+        'coffee' : 'https://pximg.xyz/images/b9587160dd9dd695e26583af17287561.gif',
+        'puke' : 'https://pximg.xyz/images/bf20c58502857123051dc81c7aa3d9be.gif'
+    };
+    var reactions = {
+        'fb_like' : 'https://pximg.xyz/images/3f1329531b8f6f711a48d2af49087c0a.gif',
+        'fb_love' : 'https://pximg.xyz/images/56f517e6f066e780ebf811b7cdea1ad2.gif',
+        'fb_haha' : 'https://pximg.xyz/images/9fd8b1149f9849a5ff8bad6a68efe710.gif',
+        'fb_yay' : 'https://pximg.xyz/images/c4d463e867cb4cb7b646f90b16ca7dde.gif',
+        'fb_wow' : 'https://pximg.xyz/images/29987c9c302f9e384c875072bc8da501.gif',
+        'fb_sad' : 'https://pximg.xyz/images/b56edce73736263e324a3a7d70e4ce0d.gif',
+        'fb_angry' : 'https://pximg.xyz/images/5084d023faa8af5ee9bacfbfcfea7055.gif'
+    };
+
+    jQuery.fn.extend({
+        insertAtCaret: function(myValue){
+            return this.each(function(i) {
+                if (document.selection) {
+                    //For browsers like Internet Explorer
+                    this.focus();
+                    var sel = document.selection.createRange();
+                    sel.text = myValue;
+                    this.focus();
+                }
+                else if (this.selectionStart || this.selectionStart == '0') {
+                    //For browsers like Firefox and Webkit based
+                    var startPos = this.selectionStart;
+                    var endPos = this.selectionEnd;
+                    var scrollTop = this.scrollTop;
+                    this.value = this.value.substring(0, startPos)+myValue+this.value.substring(endPos,this.value.length);
+                    this.focus();
+                    this.selectionStart = startPos + myValue.length;
+                    this.selectionEnd = startPos + myValue.length;
+                    this.scrollTop = scrollTop;
+                } else {
+                    this.value += myValue;
+                    this.focus();
+                }
+            });
+        }
+    });
+
+    $('#smileyBox_message div').html('');
+    for (var key in smilies) {
+        $('#smileyBox_message div').append('<img src="'+smilies[key]+'" align="bottom" alt="'+key+'" title="'+key+'" class="cusSmile" style="cursor: pointer; margin: 1px;" width="19px" heigh="19px">');
+    }
+
+    if (show_extras) {
+        for (key in extras) {
+            $('#smileyBox_message div').append('<img src="'+extras[key]+'" align="bottom" alt="'+key+'" title="'+key+'" class="cusSmile" style="cursor: pointer; margin: 1px;" width="19px" heigh="19px">');
+        }
+    }
+    if (show_reactions) {
+        for (key in reactions) {
+            $('#smileyBox_message div').append('<img src="'+reactions[key]+'" align="bottom" alt="'+key+'" title="'+key+'" class="cusSmile" style="cursor: pointer; margin: 1px;" width="19px" heigh="19px">');
+        }
+    }
+
+    $('.cusSmile').click(function(){ $('textarea',$(this).closest('form')).insertAtCaret( '[img]'+ $(this).attr('src') +'[/img]' );});
+
+})();
