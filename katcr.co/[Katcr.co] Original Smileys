@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [Katcr.co] Original Smileys
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Adds the original smileys back
 // @author       PXgamer
 // @include      *katcr.co/community/*
@@ -62,6 +62,11 @@
         'sleep' : 'https://i.imgur.com/16gZbHY.gif',
         'sweat' : 'https://i.imgur.com/gOXCcif.gif',
         'think' : 'https://i.imgur.com/fLaLJRx.gif',
+        'drunk' : 'https://i.imgur.com/6amPLB3.gif',
+        'finger' : 'https://i.imgur.com/Zcq1str.gif',
+        'dull' : 'https://i.imgur.com/5T7B0wl.gif',
+        'mute' : 'https://i.imgur.com/S29lZ3e.gif',
+        'smirk' : 'https://i.imgur.com/8Bzq4I8.gif',
         'thumbup' : 'https://i.imgur.com/xxtKctj.gif',
         'thumbdown' : 'https://i.imgur.com/bkv4kfO.gif'
     };
@@ -142,7 +147,7 @@
         }
     }
 
-    $('.cusSmile').click(function(){ $('textarea',$(this).closest('form')).insertAtCaret( '[img]'+ $(this).attr('src') +'[/img]' );});
+    $('.cusSmile').click(function(){ $('textarea',$(this).closest('form')).insertAtCaret( '[img width=19 height=19]'+ $(this).attr('src') +'[/img]' );});
 
     if (location.href.indexOf('ScriptSettings/original_smileys.html') > -1) {
         $('#settings-config').append('<div id="settings-block" style="width: 400px; margin: 0 auto;"><div class="form-group text-left">\
