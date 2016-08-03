@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [Katcr.co] People Page Revive
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Makes the people page thread like the old site again.
 // @author       PXgamer
 // @include      *katcr.co/community/index.php/topic,177*
