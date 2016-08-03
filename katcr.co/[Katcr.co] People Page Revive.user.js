@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Makes the people page thread like the old site again.
 // @author       PXgamer
-// @include      *katcr.co/community/index.php/topic,177.msg964.html*
+// @include      *katcr.co/community/index.php/topic,177*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        none
 // ==/UserScript==
