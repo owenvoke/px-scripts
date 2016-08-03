@@ -104,9 +104,13 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 
 #Katcr.co
 [\[Katcr.co\] Original Smileys](https://greasyfork.org/en/scripts/21934)  
+[\[Katcr.co\] People Page Revive](https://greasyfork.org/en/scripts/21967)  
 
 #GreasyFork.org
 [GreasyFork Total Scripts](https://greasyfork.org/en/scripts/20343)  
+
+#ExtraTorrent
+[\[Extratorrent.cc\] Quick Download](https://greasyfork.org/en/scripts/21961)  
 
 #Discord
 [Change Discord User Colour](https://greasyfork.org/en/scripts/21611)  
