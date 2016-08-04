@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         [Katcr.co] Old Header
 // @namespace    PXgamer
-// @version      0.1
-// @description  Updates the header & footer to be like the old one.
+// @version      0.2
+// @description  Updates the header to be like the old one.
 // @author       PXgamer
 // @include      *katcr.co/community/*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
@@ -36,7 +36,7 @@
     if (settings.sticky_header){
         menu.sticky = 'position: fixed;';
     }
-    $('#wrapper').before('<div id="new_nav" style="background: #594c2d; width: 100%; height: 50px; top: 0;'+menu.sticky+'"><div style="float: right;" class="mbar_div">'+menu.bar+'</div></div>');
+    $('#wrapper').before('<div id="new_nav" style="z-index: 1000; background: #594c2d; width: 100%; height: 50px; top: 0;'+menu.sticky+'"><div style="float: right;" class="mbar_div">'+menu.bar+'</div></div>');
     $('#button_home').remove();
     $('#new_nav').prepend('<a href="/community/" style="position: absolute;"><img src="'+links.logo+'" style="height: 40px; margin: 2% 5px; padding: 0;"/></a>');
     $('#button_profile').remove();
