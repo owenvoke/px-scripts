@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [Katcr.co] Old Header
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Updates the header to be like the old one.
 // @author       PXgamer
 // @include      *katcr.co/community/*
@@ -44,5 +44,5 @@
     var cal_html = $('#button_calendar');
     $('#button_calendar').remove();
     $('#button_mlist').after(cal_html);
-    $('#menu_nav').append('<li id="button_user"> <a class="firstlevel" href="'+links.profile+'"><img src="'+menu.avatar+'" style="width:40px; height: 40px; border-radius: 50%; border: 2px solid green; margin: 5% auto; padding: 0;"></a> <ul style="right: 0;"><li><a href="'+links.forumset+'"><span>Forum Settings</span></a> </li><li> <a href="'+links.settings+'"><span class="last">Settings</span></a></li><li> <a href="'+links.logout+'"><span class="last">Logout</span></a></li>');
+    $('#menu_nav').append('<li id="button_user"> <a class="firstlevel" href="'+links.profile+'"><img src="'+menu.avatar+'" style="width:40px; height: 40px; border-radius: 50%; border: 2px solid #2c240f; margin: 5% auto; padding: 0;"></a> <ul style="right: 0;"><li><a href="'+links.forumset+'"><span>Forum Settings</span></a> </li><li> <a href="'+links.settings+'"><span class="last">Settings</span></a></li><li> <a href="'+links.logout+'"><span class="last">Logout</span></a></li>');
 })();
