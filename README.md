@@ -122,3 +122,6 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 
 #The Pirate Bay
 [TPB Torrent Downloads](https://greasyfork.org/en/scripts/19591)  
+
+#TorrentProject
+[\[TorrentProject.se\] Quick Download](https://greasyfork.org/en/scripts/22047)  
