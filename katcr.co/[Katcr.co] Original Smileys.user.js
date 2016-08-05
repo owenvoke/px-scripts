@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [Katcr.co] Original Smileys
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  Adds the original smileys back
 // @author       PXgamer
 // @include      *katcr.co/community/*
@@ -18,7 +18,9 @@
 
     var show_extras = GM_getValue("show_extras", "true");
     var show_reactions = GM_getValue("show_reactions", "true");
+    var show_da = GM_getValue("show_da", "true");
     var show_menu_command = GM_getValue("show_menu_command", "true");
+
     if (show_menu_command == 'true') {
         GM_registerMenuCommand( 'Smiley Settings', function(){window.open('https://pxgamer.github.io/PX-Scripts/ScriptSettings/original_smileys.html');} );
     }
@@ -98,6 +100,99 @@
         'fb_sad' : 'https://pximg.xyz/images/b56edce73736263e324a3a7d70e4ce0d.gif',
         'fb_angry' : 'https://pximg.xyz/images/5084d023faa8af5ee9bacfbfcfea7055.gif'
     };
+    var deviantArt = {
+        'Smile' : 'http://st.deviantart.net/emoticons/s/smile.gif',
+        'Biggrin' : 'http://st.deviantart.net/emoticons/b/biggrin.gif',
+        'Tongue' : 'http://st.deviantart.net/emoticons/r/razz.gif',
+        'Tongue_wink' : 'http://st.deviantart.net/emoticons/w/winkrazz.gif',
+        'Wink' : 'http://st.deviantart.net/emoticons/w/wink.gif',
+        'Blankstare' : 'http://st.deviantart.net/emoticons/b/blankstare.gif',
+        'Frown' : 'http://st.deviantart.net/emoticons/f/frown.gif',
+        'Cry' : 'http://st.deviantart.net/emoticons/c/cries.gif',
+        'Eek' : 'http://st.deviantart.net/emoticons/e/eek.gif',
+        'Sweat;' : 'http://st.deviantart.net/emoticons/a/animesweat.gif',
+        'Clap' : 'http://st.deviantart.net/emoticons/c/clap2.gif',
+        'Dummy' : 'http://st.deviantart.net/emoticons/d/dummy.gif',
+        'Love' : 'http://st.deviantart.net/emoticons/l/love2.gif',
+        'Meow' : 'http://st.deviantart.net/emoticons/m/meow.gif',
+        'Sing' : 'http://st.deviantart.net/emoticons/l/la.gif',
+        'Nod' : 'http://st.deviantart.net/emoticons/n/nod.gif',
+        'Giggle' : 'http://st.deviantart.net/emoticons/g/giggle.gif',
+        'Oops' : 'http://st.deviantart.net/emoticons/r/redface.gif',
+        'No' : 'http://st.deviantart.net/emoticons/n/no.gif',
+        'RAGE' : 'http://st.deviantart.net/emoticons/r/rage.gif',
+        'Hug' : 'http://st.deviantart.net/emoticons/h/hug.gif',
+        'Favorite' : 'http://st.deviantart.net/emoticons/p/plusfav.gif',
+        'Heart' : 'http://st.deviantart.net/emoticons/h/heart.gif',
+        'Lonely' : 'http://st.deviantart.net/emoticons/l/lonely2.gif',
+        'Doh' : 'http://st.deviantart.net/emoticons/d/doh.gif',
+        'Yawn' : 'http://st.deviantart.net/emoticons/y/yawn2.gif',
+        'Bored' : 'http://st.deviantart.net/emoticons/b/bored.gif',
+        'Eyeroll' : 'http://st.deviantart.net/emoticons/r/rolleyes.gif',
+        'Stare' : 'http://st.deviantart.net/emoticons/s/stare.gif',
+        'Grumpy' : 'http://st.deviantart.net/emoticons/g/grump.gif',
+        'NOOOOOOOO' : 'http://st.deviantart.net/emoticons/n/nuu.gif',
+        'Facepalm' : 'http://st.deviantart.net/emoticons/f/facepalm.gif',
+        'Sad Dummy' : 'http://st.deviantart.net/emoticons/s/saddummy.gif',
+        'Shifty' : 'http://st.deviantart.net/emoticons/s/shifty.gif',
+        'Crying' : 'http://st.deviantart.net/emoticons/c/crying.gif',
+        'Dead' : 'http://st.deviantart.net/emoticons/d/dead.gif',
+        'Disbelief' : 'http://st.deviantart.net/emoticons/d/disbelief.gif',
+        'Oh noes!' : 'http://st.deviantart.net/emoticons/o/ohnoes.gif',
+        'Sunglasses' : 'http://st.deviantart.net/emoticons/c/cool.gif',
+        'Shrug' : 'http://st.deviantart.net/emoticons/s/shrug2.gif',
+        'Zombie' : 'http://st.deviantart.net/emoticons/z/zombie.gif',
+        'Sneeze' : 'http://st.deviantart.net/emoticons/s/sneeze2.gif',
+        'Innocent' : 'http://st.deviantart.net/emoticons/i/innocent.gif',
+        'Psychotic' : 'http://st.deviantart.net/emoticons/p/psychotic.gif',
+        'Woo Hoo!' : 'http://st.deviantart.net/emoticons/w/woohoo.gif',
+        'Head Bang' : 'http://st.deviantart.net/emoticons/h/headbang.gif',
+        'Wave' : 'http://st.deviantart.net/emoticons/w/wave1.gif',
+        'Boing' : 'http://st.deviantart.net/emoticons/b/boing.gif',
+        'Airborne' : 'http://st.deviantart.net/emoticons/a/airborne.gif',
+        'Evil Laughter' : 'http://st.deviantart.net/emoticons/m/mwahaha.gif',
+        'Plotting' : 'http://st.deviantart.net/emoticons/p/plotting.gif',
+        'The Devil' : 'http://st.deviantart.net/emoticons/d/devilish.gif',
+        'Blush' : 'http://st.deviantart.net/emoticons/b/blushes.gif',
+        'Ashamed' : 'http://st.deviantart.net/emoticons/a/ashamed2.gif',
+        'Hhmygod' : 'http://st.deviantart.net/emoticons/o/ohmygod.gif',
+        'Oh?' : 'http://st.deviantart.net/emoticons/w/weirdface2.gif',
+        'Confused' : 'http://st.deviantart.net/emoticons/c/confuse.gif',
+        'What?' : 'http://st.deviantart.net/emoticons/c/confused.gif',
+        'Sherlock' : 'http://st.deviantart.net/emoticons/s/sherlock.gif',
+        'Hmm' : 'http://st.deviantart.net/emoticons/h/hmm2.gif',
+        'Buck-Teeth' : 'http://st.deviantart.net/emoticons/b/bucktooth.gif',
+        'Tamper Tantrum' : 'http://st.deviantart.net/emoticons/t/tantrum.gif',
+        'Bleh' : 'http://st.deviantart.net/emoticons/b/bleh.gif',
+        'Unimpressed' : 'http://st.deviantart.net/emoticons/u/unimpressed.gif',
+        'Woot! Woot!' : 'http://st.deviantart.net/emoticons/w/w00t.gif',
+        'Excited' : 'http://st.deviantart.net/emoticons/e/excited.gif',
+        '#1' : 'http://st.deviantart.net/emoticons/n/number1.gif',
+        'Salute' : 'http://st.deviantart.net/emoticons/s/salute.gif',
+        'Worship' : 'http://st.deviantart.net/emoticons/w/worships.gif',
+        'Yummy!' : 'http://st.deviantart.net/emoticons/c/chewing.gif',
+        'Popcorn' : 'http://st.deviantart.net/emoticons/p/popcorn2.gif',
+        'Hungry' : 'http://st.deviantart.net/emoticons/h/hungry2.gif',
+        'BRUSH YOUR TEETH!' : 'http://st.deviantart.net/emoticons/b/brushteeth.gif',
+        'Meditate' : 'http://st.deviantart.net/emoticons/m/meditate.gif',
+        'Fear' : 'http://st.deviantart.net/emoticons/f/fear.gif',
+        'OMG' : 'http://st.deviantart.net/emoticons/o/omg.gif',
+        'Shocked2' : 'http://st.deviantart.net/emoticons/s/shocked.gif',
+        'OMFG' : 'http://st.deviantart.net/emoticons/o/omfg.gif',
+        'Blush2' : 'http://st.deviantart.net/emoticons/b/blush2.gif',
+        'Petting' : 'http://st.deviantart.net/emoticons/p/petting.gif',
+        'Handshake' : 'http://st.deviantart.net/emoticons/h/handshake.gif',
+        'Happy Tears' : 'http://st.deviantart.net/emoticons/h/happycry2.gif',
+        'Flirty' : 'http://st.deviantart.net/emoticons/f/flirty.gif',
+        'Drooling' : 'http://st.deviantart.net/emoticons/d/drool.gif',
+        'Smoking' : 'http://st.deviantart.net/emoticons/s/smoking.gif',
+        'Sad Rain' : 'http://st.deviantart.net/emoticons/r/raincloud.gif',
+        'Sarcasm' : 'http://st.deviantart.net/emoticons/s/sarcasm.gif',
+        'Sarcastic Clap' : 'http://st.deviantart.net/emoticons/s/sarcasticclap.gif',
+        'Slapping' : 'http://st.deviantart.net/emoticons/s/slap.gif',
+        'Happy Typer' : 'http://st.deviantart.net/emoticons/t/typerhappy.gif',
+        'Dance' : 'https://st.deviantart.net/emoticons/d/dance.gif'
+    };
 
     jQuery.fn.extend({
         insertAtCaret: function(myValue){
@@ -130,6 +225,7 @@
     if (cTrue == show_extras) { show_extras = true; }else{ show_extras = false; }
     if (cTrue == show_reactions) { show_reactions = true; }else{ show_reactions = false; }
     if (cTrue == show_menu_command) { show_menu_command = true; }else{ show_menu_command = false; }
+    if (cTrue == show_da) { show_da = true; }else{ show_da = false; }
 
     $('#smileyBox_message div').html('');
     for (var key in smilies) {
@@ -144,6 +240,11 @@
     if (show_reactions) {
         for (key in reactions) {
             $('#smileyBox_message div').append('<img src="'+reactions[key]+'" align="bottom" alt="'+key+'" title="'+key+'" class="cusSmile" style="cursor: pointer; margin: 1px;" width="19px" heigh="19px">');
+        }
+    }
+    if (show_da) {
+        for (key in deviantArt) {
+            $('#smileyBox_message div').append('<img src="'+deviantArt[key]+'" align="bottom" alt="'+key+'" title="'+key+'" class="cusSmile" style="cursor: pointer; margin: 1px;" width="19px" heigh="19px">');
         }
     }
 
@@ -163,6 +264,11 @@
 </div>\
 <div class="checkbox">\
 <label>\
+<input type="checkbox" id="show_da"> Show Deviant Art Smileys\
+</label>\
+</div>\
+<div class="checkbox">\
+<label>\
 <input type="checkbox" id="show_menu_command"> Show Menu Command\
 </label>\
 </div>\
@@ -171,11 +277,13 @@
 
         $('#show_extras').prop("checked", show_extras);
         $('#show_reactions').prop("checked", show_reactions);
+        $('#show_da').prop("checked", show_da);
         $('#show_menu_command').prop("checked", show_menu_command);
 
         $('#save_settings').on('click', function() {
             GM_setValue("show_extras", $('#show_extras').prop( "checked" ).toString());
             GM_setValue("show_reactions", $('#show_reactions').prop( "checked" ).toString());
+            GM_setValue("show_da", $('#show_da').prop( "checked" ).toString());
             GM_setValue("show_menu_command", $('#show_menu_command').prop( "checked" ).toString());
             $('#settings-block').append('<div style="margin-top: 10px;" class="alert alert-success alert_settings"><h4>Successfully updated your settings.</h4></div>');
             setTimeout(function(){$('.alert_settings').slideUp();}, 2000);
