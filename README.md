@@ -121,6 +121,9 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 #DuckDuckGo
 [DuckDuckVader](https://greasyfork.org/en/scripts/20176)  
 
+#PrivateHD
+[\[PrivateHD.to\] Fix Beta Downloads](https://greasyfork.org/en/scripts/22335)  
+
 #The Pirate Bay
 [TPB Torrent Downloads](https://greasyfork.org/en/scripts/19591)  
 
