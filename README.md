@@ -104,6 +104,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 
 #Katcr.co
 [\[Katcr.co\] Always HTTPS](https://greasyfork.org/en/scripts/22035)  
+[\[Katcr.co\] Bring Back Cheevos](https://greasyfork.org/en/scripts/22323)  
 [\[Katcr.co\] Old Header](https://greasyfork.org/en/scripts/22004)  
 [\[Katcr.co\] Original Smileys](https://greasyfork.org/en/scripts/21934)  
 [\[Katcr.co\] People Page Revive](https://greasyfork.org/en/scripts/21967)  
