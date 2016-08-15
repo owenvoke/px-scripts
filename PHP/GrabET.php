@@ -137,6 +137,20 @@ class ET {
 		}
 	}
 	
+	public function grab_custom ($custom_url) {
+		$custom = $custom_url;
+		
+		$result = $this->curl_grab($custom);
+		
+		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
+		
+		$matches = array_unique($matches[1]);
+		
+		foreach($matches as $match) {
+			$this->grab_torrent('https://extratorrent.cc/download/' . $match . '/', $match);
+		}
+	}
+	
 	private function curl_grab ($url) {
 		$cu = curl_init();
 		
