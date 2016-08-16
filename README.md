@@ -129,3 +129,6 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 
 #TorrentProject
 [\[TorrentProject.se\] Quick Download](https://greasyfork.org/en/scripts/22047)  
+
+#WorldWideTorrents
+[\[WorldWideTorrents.eu\] Load Content Over HTTPS](https://greasyfork.org/en/scripts/22366)  
