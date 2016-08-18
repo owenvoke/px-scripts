@@ -6,7 +6,7 @@
 // @author       PXgamer
 // @match        *worldwidetorrents.eu/mailbox.php*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
-// @require      http://momentjs.com/downloads/moment.min.js
+// @require      https://greasyfork.org/scripts/22406-moment-js/code/Momentjs.js?version=142481
 // @grant        none
 // ==/UserScript==
 /*jshint multistr: true */
