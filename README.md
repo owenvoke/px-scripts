@@ -132,6 +132,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 
 #WorldWideTorrents
 [\[WorldWideTorrents.eu\] Load Content Over HTTPS](https://greasyfork.org/en/scripts/22366)  
+[\[WorldWideTorrents.eu\] PM Enhancements](https://greasyfork.org/en/scripts/22407)  
 
 #FrostTorrents
 [\[FrostTorrents.com\] Better Header](https://greasyfork.org/en/scripts/22403)  
