@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         [WorldWideTorrents.eu] Load Content Over HTTPS
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  Using SSL breaks the site as it tries to load everything from HTTP rather than the server root.
 // @author       PXgamer
-// @match        https://worldwidetorrents.eu/*
+// @include      https://*worldwidetorrents.eu/*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        none
 // ==/UserScript==
@@ -12,13 +12,13 @@
 (function() {
 	'use strict';
 
-	$('img[src^="http://worldwidetorrents.eu/"], script[src^="http://worldwidetorrents.eu/"]').each(function(){
-		var new_src = $(this).attr('src').replace('http://', 'https://');
+	$('img[src^="https://worldwidetorrents.eu/"], script[src^="https://worldwidetorrents.eu/"]').each(function(){
+		var new_src = $(this).attr('src').replace('https://', 'https://www.');
 		$(this).attr('src', new_src);
 	});
 
-	$('link[href^="http://worldwidetorrents.eu/"]').each(function(){
-		var new_href = $(this).attr('href').replace('http://', 'https://');
+	$('link[href^="https://worldwidetorrents.eu/"]').each(function(){
+		var new_href = $(this).attr('href').replace('https://', 'https://www.');
 		$(this).attr('href', new_href);
 	});
 })();
