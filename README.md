@@ -131,6 +131,7 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [\[TorrentProject.se\] Quick Download](https://greasyfork.org/en/scripts/22047)  
 
 #WorldWideTorrents
+[\[WorldWideTorrents.eu\] Fix JS Quoting](https://greasyfork.org/en/scripts/22460)  
 [\[WorldWideTorrents.eu\] Load Content Over HTTPS](https://greasyfork.org/en/scripts/22366)  
 [\[WorldWideTorrents.eu\] PM Enhancements](https://greasyfork.org/en/scripts/22407)  
 
