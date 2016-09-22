@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Image BG Toggle
 // @namespace    PXgamer
-// @version      0.9
+// @version      1.0
 // @description  Toggles the background colour for images in the browser
 // @author       PXgamer
 // @include      /.*(JPG|PNG|GIF|JPEG).*/
-// @require      https://code.jquery.com/jquery-1.12.3.min.js
+// @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        none
 // ==/UserScript==
 /*jshint multistr: true */
@@ -13,29 +13,52 @@
 (function() {
     'use strict';
 
+    function changeImageBG() {
+        if (col == 'black') {
+            $('body').css('background-color', col);
+            if (allowGrey) { col = 'grey'; }
+            else { col = 'white'; }
+        }
+        else if (col == 'grey') {
+            $('body').css('background-color', col);
+            col = 'white';
+        }
+        else if (col == 'white') {
+            $('body').css('background-color', col);
+            col = 'black';
+        }
+        else {
+            $('body').css('background-color', 'white');
+            col = 'black';
+        }
+    }
+
     var allowGrey = false;
     var col = 'black';
     if (document.contentType.indexOf('image') > -1) {
         console.info('IBGT: IS IMAGE');
-        $('body').append('<span class="bgToggle" style="left: 95.6%; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 999999; position: fixed; float: right; background-color: white; border: 1px solid grey; border-radius: 2px; margin: 5px; padding: 2px; font-family: fantasy;">TOGGLE BG</span>');
+        $('body').append('<span id="bgToggle" style="left: 95.6%; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 999999; position: fixed; float: right; background-color: white; border: 1px solid grey; border-radius: 2px; margin: 5px; padding: 2px; font-family: fantasy;">TOGGLE BG</span>');
 
-        $('.bgToggle').on('click', function() {
-            if (col == 'black') {
-                $('body').css('background-color', col);
-                if (allowGrey) { col = 'grey'; }
-                else { col = 'white'; }
+        $('#bgToggle').on('click', function() {changeImageBG(); });
+        var keys = {
+            ctrl: false,
+            b: false
+        };
+        $(document.body).on('keydown', function (e) {
+            if (event.keyCode == 17) {
+                keys.ctrl = true;
+            } else if (event.keyCode == 66) {
+                keys.b = true;
             }
-            else if (col == 'grey') {
-                $('body').css('background-color', col);
-                col = 'white';
+            if (keys.ctrl && keys.b) {
+                changeImageBG();
             }
-            else if (col == 'white') {
-                $('body').css('background-color', col);
-                col = 'black';
-            }
-            else {
-                $('body').css('background-color', 'white');
-                col = 'black';
+        });
+        $(document.body).keyup(function(e) {
+            if (event.keyCode == 17) {
+                keys.ctrl = false;
+            } else if (event.keyCode == 66) {
+                keys.b = false;
             }
         });
     }
