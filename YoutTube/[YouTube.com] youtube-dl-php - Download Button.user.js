@@ -5,6 +5,7 @@
 // @description  For use with: https://github.com/PXgamer/youtube-dl-php
 // @author       PXgamer
 // @include      *youtube.com/watch?v=*
+// @include      *www.youtube.com/watch?v=*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        none
 // ==/UserScript==
