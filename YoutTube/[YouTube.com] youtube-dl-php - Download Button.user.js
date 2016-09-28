@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [YouTube.com] youtube-dl-php - Download Button
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  For use with: https://github.com/PXgamer/youtube-dl-php
 // @author       PXgamer
 // @include      *youtube.com/watch?v=*
