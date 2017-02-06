@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Devrant - Quick Emoji
 // @namespace    PXgamer
-// @version      0.1
+// @version      0.2
 // @description  Something
 // @author       PXgamer
-// @include      *devrant.io/feed/*
+// @include      *devrant.io/*
 // @grant        none
 // ==/UserScript==
 /*jshint multistr: true */
