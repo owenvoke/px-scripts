@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Image BG Toggle
 // @namespace    PXgamer
-// @version      1.2
+// @version      1.3
 // @description  Toggles the background colour for images in the browser
 // @author       PXgamer
 // @include      /.*\.(JPG|PNG|GIF|JPEG).*/
-// @require      https://code.jquery.com/jquery-3.1.0.min.js
+// @require      https://code.jquery.com/jquery-2.2.4.min.js
 // @grant        none
 // ==/UserScript==
 /*jshint multistr: true */
@@ -36,8 +36,7 @@
     var allowGrey = false;
     var col = 'black';
     if (document.contentType.indexOf('image') > -1) {
-        console.info('IBGT: IS IMAGE');
-        $('body').append('<span id="bgToggle" style="right: 5px; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 999999; position: fixed; float: right; background-color: white; border: 1px solid grey; border-radius: 2px; margin: 5px; padding: 2px; font-family: fantasy;">TOGGLE BG</span>');
+        $('body').append('<span id="bgToggle" style="right: 15px; top: 5px; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 999999; position: fixed; float: right; background-color: white; border: 1px solid grey; border-radius: 2px; margin: 5px; padding: 2px; font-family: fantasy;">TOGGLE BG</span>');
 
         $('#bgToggle').on('click', function() {changeImageBG(); });
         var keys = {

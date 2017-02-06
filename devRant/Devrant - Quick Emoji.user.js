@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Devrant - Quick Emoji
+// @name         devRant - Quick Emoji
 // @namespace    PXgamer
 // @version      0.2
-// @description  Something
+// @description  A quick emoji bar for devRant.io
 // @author       PXgamer
 // @include      *devrant.io/*
 // @grant        none
