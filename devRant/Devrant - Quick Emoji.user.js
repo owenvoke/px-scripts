@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         devRant - Quick Emoji
 // @namespace    PXgamer
-// @version      0.2
+// @version      0.3
 // @description  A quick emoji bar for devRant.io
 // @author       PXgamer
 // @include      *devrant.io/*
@@ -60,6 +60,10 @@
 
     $('.quickEmoji').click(function(){
         var emoji = $(this).text();
-        $('#rant').insertAtCaret(emoji);
+        if (location.href.indexOf('rants/') > -1) {
+            $('#comment').insertAtCaret(emoji);
+        } else {
+            $('#rant').insertAtCaret(emoji);
+        }
     });
 })();
