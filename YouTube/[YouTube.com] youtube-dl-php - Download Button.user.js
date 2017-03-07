@@ -14,7 +14,7 @@
 (function() {
     'use strict';
 
-    var searchGET = '/youtube-dl-php/tests/$_GET.test.php'; // Your path to GET based implementation (i.e. /tests/$_GET.test.php)
+    var searchGET = '/public/index.php'; // Your path to GET based implementation (i.e. /tests/$_GET.test.php)
 
     var vid_id = location.href.split('watch?v=')[1].split('&')[0];
 
