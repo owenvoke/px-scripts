@@ -1,40 +1,54 @@
 // ==UserScript==
 // @name         TPB Torrent Downloads
 // @namespace    PXgamer
-// @version      0.3
+// @version      0.4
 // @description  Piratebay download via torrents
 // @author       PXgamer
-// @include      *thepiratebay.se/*
 // @include      *thepiratebay.org/*
+// @require      https://thepiratebay.org/static/js/jquery.min.js
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
-    var user_preferred_cache = 'cache_2';
+    var user_preferred_cache = 'cache_1';
 
     var preferred_caches = {
         cache_1: {
-            name: 'Torcache',
-            url: 'https://torcache.net/torrent/',
-            end: '.torrent'
+            name: 'BTCache',
+            url: 'http://btcache.me/torrent/',
+            end: ''
         },
         cache_2: {
             name: 'Torrage',
-            url: 'http://torrage.info/torrent.php?h=',
+            url: 'https://torrage.info/torrent.php?h=',
             end: ''
         },
         cache_3: {
             name: 'iTorrents',
-            url: 'http://itorrents.org/torrent/',
+            url: 'https://itorrents.org/torrent/',
             end: '.torrent'
         }
     };
 
-    $('a[title="Download this torrent using magnet"][href^="magnet:"]').each(function() {
-        var hash = $(this).attr('href').split(":")[3];
-        hash = hash.split("&")[0];
-        $(this).after('<a href="'+preferred_caches[user_preferred_cache].url+hash.toUpperCase()+preferred_caches[user_preferred_cache].end+'" title="Download using torrent file"><img src="https://pximg.xyz/images/247c550f6ff9d70161fe85b2b31ecbb2.png" style="width: 12px; height: 12px;" alt="Torrent link"></a>');
+    // Download image
+    var dataURI = 'iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAYAAABLcGxfAAAACXBIWXMAAAsSAAALEgHS3X78AAABfklEQVQokWWQzUsbURRHzxtfkknSYq2UKNaiYncVrdBCUAoKKuKi4EKLbioqbrpp9/07unalG1Faa0EoboQoBT+QoKAgook4mMzEySRqJvO60UjihQsXfudwL1cAhOt+aKGal05j0wudiiq6Hnv/tj571pdZAAlQW/8k8vV7jz4QDVfyoKD9XXzas3gQkFWkixqJzGMeAL8sjRLAUSJvu5C0yrkrR7H45xoV9HllQupW3ORdSN5tMPMwG1NYFy6epUCXqiT4u5bmNCH0i7wgdwlGFowr8AcFskbiKkUhEHrL+6V5TVMpqQJacmyy91t1tc6NC0oD7a6LnsAsSOSrvqcF42TE526PCgDRvzI0Nd653NwUwXTAsOHcgoQJiTTYR7uuno23OavjB+L+tqqPq68Hu5vjH6KtvqQJZyacpmEntpEJZQ8azd8TNkBJANBH10ItDc9Ohwc7nh8bRRZ+ru+Hc4dvUr+mS18qEwDCn/4KXyC4mcva27cLAzOV+X9eUpMXhNIxOAAAAABJRU5ErkJggg==';
+
+    function getHash(element) {
+        var hash = $(element).attr('href').split(":")[3];
+        return hash.split("&")[0];
+    }
+
+    // Add to browsing pages
+    $('a[title="Download this torrent using magnet"][href^="magnet:"]').each(function () {
+        var hash = getHash(this);
+        $(this).after('<a href="' + preferred_caches[user_preferred_cache].url + hash.toUpperCase() + preferred_caches[user_preferred_cache].end + '" title="Download using torrent file"><img src="data:image/png;base64,' + dataURI + '" style="width: 12px; height: 12px;" alt="Torrent link"></a>');
+    });
+
+    // Add to torrent pages
+    $('a[href^="magnet:"][title="Get this torrent"]').after(function () {
+        var hash = getHash(this);
+        $(this).after('<a style="background-image: url(data:image/png;base64,' + dataURI + '); background-position: left; background-size: contain; margin-left: 4px" href="' + preferred_caches[user_preferred_cache].url + hash.toUpperCase() + preferred_caches[user_preferred_cache].end + '" title="Download using torrent file">&nbsp;Download torrent file</a>');
     });
 })();
