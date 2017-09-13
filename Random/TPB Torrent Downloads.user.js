@@ -5,7 +5,7 @@
 // @description  Piratebay download via torrents
 // @author       PXgamer
 // @include      *thepiratebay.org/*
-// @require      https://thepiratebay.org/static/js/jquery.min.js
+// @require      https://code.jquery.com/jquery-1.12.4.min.js
 // @grant        none
 // ==/UserScript==
 
