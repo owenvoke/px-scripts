@@ -100,17 +100,17 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [GoodReads Description Generator](https://greasyfork.org/en/scripts/9875)  
 
 # Katcr.co
-[\[Katcr.co\] Always HTTPS](https://greasyfork.org/en/scripts/22035)  
-[\[Katcr.co\] Bring Back Cheevos](https://greasyfork.org/en/scripts/22323)  
-[\[Katcr.co\] Old Header](https://greasyfork.org/en/scripts/22004)  
-[\[Katcr.co\] Original Smileys](https://greasyfork.org/en/scripts/21934)  
-[\[Katcr.co\] People Page Revive](https://greasyfork.org/en/scripts/21967)  
+[Always HTTPS](https://greasyfork.org/en/scripts/22035)  
+[Bring Back Cheevos](https://greasyfork.org/en/scripts/22323)  
+[Old Header](https://greasyfork.org/en/scripts/22004)  
+[Original Smileys](https://greasyfork.org/en/scripts/21934)  
+[People Page Revive](https://greasyfork.org/en/scripts/21967)  
 
 # GreasyFork.org
 [GreasyFork Total Scripts](https://greasyfork.org/en/scripts/20343)  
 
 # ExtraTorrent
-[\[Extratorrent.cc\] Quick Download](https://greasyfork.org/en/scripts/21961)  
+[Quick Download](https://greasyfork.org/en/scripts/21961)  
 
 # Discord
 [Change Discord User Colour](https://greasyfork.org/en/scripts/21611)  
@@ -119,18 +119,18 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [DuckDuckVader](https://greasyfork.org/en/scripts/20176)  
 
 # PrivateHD
-[\[PrivateHD.to\] Fix Beta Downloads](https://greasyfork.org/en/scripts/22335)  
+[Fix Beta Downloads](https://greasyfork.org/en/scripts/22335)  
 
 # The Pirate Bay
 [TPB Torrent Downloads](https://greasyfork.org/en/scripts/19591)  
 
 # TorrentProject
-[\[TorrentProject.se\] Quick Download](https://greasyfork.org/en/scripts/22047)  
+[Quick Download](https://greasyfork.org/en/scripts/22047)  
 
 # WorldWideTorrents
-[\[WorldWideTorrents.eu\] Fix JS Quoting](https://greasyfork.org/en/scripts/22460)  
-[\[WorldWideTorrents.eu\] Load Content Over HTTPS](https://greasyfork.org/en/scripts/22366)  
-[\[WorldWideTorrents.eu\] PM Enhancements](https://greasyfork.org/en/scripts/22407)  
+[Fix JS Quoting](https://greasyfork.org/en/scripts/22460)  
+[Load Content Over HTTPS](https://greasyfork.org/en/scripts/22366)  
+[PM Enhancements](https://greasyfork.org/en/scripts/22407)  
 
 # FrostTorrents
-[\[FrostTorrents.com\] Better Header](https://greasyfork.org/en/scripts/22403)  
+[Better Header](https://greasyfork.org/en/scripts/22403)  
