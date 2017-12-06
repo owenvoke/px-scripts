@@ -133,4 +133,8 @@ To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https
 [PM Enhancements](https://greasyfork.org/en/scripts/22407)  
 
 # FrostTorrents
-[Better Header](https://greasyfork.org/en/scripts/22403)  
+[Better Header](https://greasyfork.org/en/scripts/22403)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
