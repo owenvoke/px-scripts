@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Delete All Comments
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Remove all user's comments
 // @include     *kat.cr/user/*/comments/
 // @include     *kickass.to/user/*/comments/

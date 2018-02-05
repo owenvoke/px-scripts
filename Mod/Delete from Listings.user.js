@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Delete from Listings [MOD]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @include     *kickass.to/community/user/*/*
 // @include     *kat.cr/community/user/*/*
 // @include     *localhost:999/kat/communitySearch

@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name        KAT - Friend Likes Remover
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Torrent Friend Likes Remover
 // @include     *kat.cr/*
 // @version     1.2
 // @grant       none
-// @author      PXgamer (original idea by Keka_Umans)
+// @author      pxgamer (original idea by Keka_Umans)
 // ==/UserScript==
 
 $(function(){

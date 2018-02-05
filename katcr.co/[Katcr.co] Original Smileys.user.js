@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [Katcr.co] Original Smileys
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.5
 // @description  Adds the original smileys back
-// @author       PXgamer
+// @author       pxgamer
 // @include      *katcr.co/community/*
 // @include      *pxgamer.github.io/PX-Scripts/ScriptSettings/original_smileys.html*
 // @grant        GM_setValue

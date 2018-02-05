@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         User Info Popover
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Adds a popover with user info.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/community/show/*
 // @grant        none
 // ==/UserScript==

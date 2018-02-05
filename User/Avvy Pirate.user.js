@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Avvy Pirate
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Steals people's avatars anywhere on KAT.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*
 // @grant        none
 // ==/UserScript==

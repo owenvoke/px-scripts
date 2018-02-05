@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Sort Uploads Alphabetically
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Sort user uploads alphabetically
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/user/*/uploads/
 // @grant        none
 // ==/UserScript==

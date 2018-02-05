@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Thread Post Drafts
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Save drafts of posts
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/community/update/*/
 // @grant        GM_setValue
 // @grant        GM_getValue

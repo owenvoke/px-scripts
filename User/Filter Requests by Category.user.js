@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Filter Requests by Category
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.3
 // @description  Adds a dropdown to filter the requests search by category.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/request/search/*
 // @grant        GM_setValue
 // @grant        GM_getValue

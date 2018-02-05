@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Generate description
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Generates a description for my scripts
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/community/show/*
 // @grant        none
 // ==/UserScript==

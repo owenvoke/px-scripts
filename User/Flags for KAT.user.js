@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Flags for KAT
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Adds Flags
 // @include     *kat.cr/*
 // @include     *kickass.to/*

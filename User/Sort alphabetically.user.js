@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Sort alphabetically
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Sorts torrents alphabetically as an option
 // @include     *kat.cr/new/*
 // @include     *kat.cr/movies/*

@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [WorldWideTorrents.eu] Load Content Over HTTPS
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.3
 // @description  Using SSL breaks the site as it tries to load everything from HTTP rather than the server root.
-// @author       PXgamer
+// @author       pxgamer
 // @include      https://*worldwidetorrents.eu/*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        none

@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Download All Torrents or Magnets
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Adds buttons to download all torrents or magnets on a page.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*
 // @grant        none
 // ==/UserScript==

@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Download History Search
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.3
 // @description  Search your account downloads.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/account/history/*
 // @grant        none
 // ==/UserScript==

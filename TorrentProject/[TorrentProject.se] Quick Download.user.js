@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [TorrentProject.se] Quick Download
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Adds quick download buttons to TorrentProject.se
-// @author       PXgamer
+// @author       pxgamer
 // @include      *torrentproject.se/*
 // @exclude      *torrentproject.se/torrent/*
 // @grant        none

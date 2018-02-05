@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Uploads List Adder
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Adds uploads list button to the sidebar of each torrent
 // @include     http://localhost:999/kat/upload
 // @include     *kickass.to/*

@@ -1,9 +1,9 @@
 /*
  * name         Console Tools
- * namespace    PXgamer
+ * namespace    pxgamer
  * version      0.2
  * description  A library for shortened console.log, console.info, console.error
- * author       PXgamer
+ * author       pxgamer
  */
 
 function cl(variable) {

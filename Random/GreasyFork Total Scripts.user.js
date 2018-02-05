@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         GreasyFork Total Scripts
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Shows a user's total scripts count on GreasyFork
-// @author       PXgamer
+// @author       pxgamer
 // @include      *greasyfork.org/en/users/*
 // @grant        none
 // ==/UserScript==

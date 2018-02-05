@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Clear Wall
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Clears the wall - https://kat.cr/ideabox/show/ability-to-clean-wall/
 // @include     *kat.cr/user/*
 // @version     1

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Subs Adder [KAT]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @include     *kickass.so/*.html*
 // @include     *kickass.to/*.html*
 // @include     *kat.ph/*.html*

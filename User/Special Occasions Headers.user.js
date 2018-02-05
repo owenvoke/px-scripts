@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Special Occasions Headers
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @include     *kickass.to/*
 // @include     *kat.cr/*
 // @include     *localhost:999/kat/*

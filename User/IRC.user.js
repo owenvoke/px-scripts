@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        IRC
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Adds IRC to /irc
 // @include     *kat.cr/irc/
 // @include     *kickass.to/irc/

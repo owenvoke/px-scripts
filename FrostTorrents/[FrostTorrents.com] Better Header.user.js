@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [FrostTorrents.com] Better Header
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Redoes the header on FT
-// @author       PXgamer
+// @author       pxgamer
 // @include      *frosttorrents.com/*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        none

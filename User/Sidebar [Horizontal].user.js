@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Sidebar [Horizontal]
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Puts sidebar elements next to each other in a 2 column layout.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*
 // @grant        none
 // ==/UserScript==

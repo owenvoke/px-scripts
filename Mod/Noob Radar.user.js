@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        KAT - Noob Radar [MOD]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Noob spotted :P
 // @include     *kickass.to/usearch/*/*
 // @include     *kickass.to/search/*/*

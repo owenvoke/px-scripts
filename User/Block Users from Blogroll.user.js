@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Block Users from Blogroll
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Allows you to block selected users from the blogroll.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*
 // @grant        none
 // ==/UserScript==

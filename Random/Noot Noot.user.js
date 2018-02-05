@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Noot Noot
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Pingu is trying to take over the world!
-// @author       PXgamer
+// @author       pxgamer
 // @include      *
 // @grant        none
 // ==/UserScript==

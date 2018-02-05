@@ -5,7 +5,7 @@ namespace pxgamer\MovieManager;
 /*
  *
  *  Title:   MovieManager
- *  Author:  PXgamer
+ *  Author:  pxgamer
  *  Usage:   php MovieManager.php [txt|json]
  *
  */

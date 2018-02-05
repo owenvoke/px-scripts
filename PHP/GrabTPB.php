@@ -3,7 +3,7 @@
 /*
  *
  *  Title:   GrabTPB
- *  Author:  PXgamer
+ *  Author:  pxgamer
  *  Usage:   php GrabTPB.php
  *
  */

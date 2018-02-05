@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        GoodReads Meta Gen [KAT] [Tinks]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Generates a sexy description from GoodReads.com
 // @include     *goodreads.com/book/show/*
 // @include     *localhost:999/other/goodReads.php

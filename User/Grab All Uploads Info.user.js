@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Grab All Uploads Info
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.6
 // @description  Grabs a list of all uploads and their data for a certain user.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/user/*/uploads/*
 // @grant        none
 // ==/UserScript==

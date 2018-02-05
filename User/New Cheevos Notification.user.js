@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         New Cheevos Notification
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Notify when a new cheevo is added.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr*
 // @grant        GM_notification
 // @grant        GM_setValue

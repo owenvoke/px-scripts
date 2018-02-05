@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Torrent Moving Helper [KAT][SU+]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Helps moving torrents by setting (not moving to) the right category for all torrents on a page
 // @include     *kat.cr/usearch/*
 // @include     *kat.cr/search/*

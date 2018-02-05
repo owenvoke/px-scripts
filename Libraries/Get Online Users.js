@@ -1,9 +1,9 @@
 /*
  *  @name         Get Online Users
- *  @namespace    PXgamer
+ *  @namespace    pxgamer
  *  @version      0.2
  *  @description  Get list of users from Community page
- *  @author       PXgamer
+ *  @author       pxgamer
  */
 
 function gou() {

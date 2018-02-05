@@ -13,7 +13,7 @@ I usually go through the [ideabox](https://kat.cr/ideabox) and look for any thin
 
 To use the scripts, you'll need to install either [Greasemonkey (Firefox)](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) or [Tampermonkey (Chrome)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo). I haven't tested these with [Violentmonkey](https://addons.opera.com/en/extensions/details/violent-monkey), but feel free to give them a try.
 
-*If you have an issue with any of these scripts, please open an issue [here](https://github.com/PXgamer/PX-Scripts/issues).*
+*If you have an issue with any of these scripts, please open an issue [here](https://github.com/pxgamer/PX-Scripts/issues).*
 
 # Global Scripts
 ## Libraries:

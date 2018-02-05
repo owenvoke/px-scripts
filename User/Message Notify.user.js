@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Message Notify
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Flash for Message/Title Edit
 // @include     *kat.cr/*
 // @include     *kickass.to/*

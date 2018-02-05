@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [Extratorrent.cc] Quick Download
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.3
 // @description  Converts all ad download links to direct download.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *extratorrent.cc/*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        none

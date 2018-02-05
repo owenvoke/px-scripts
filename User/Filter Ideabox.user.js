@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Filter Ideabox
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.3
 // @description  Sort ideabox ideas by different methods
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/ideabox/*
 // @grant        none
 // ==/UserScript==

@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Add bookmark from browse pages
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Adds a bookmark torrent button in any browse page.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/browse/*
 // @include      *kat.cr/*/
 // @grant        none

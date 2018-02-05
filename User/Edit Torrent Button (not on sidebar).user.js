@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Edit Torrent Button (not on sidebar)
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Add edit torrent button next to the torrent info.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*-t*.html
 // @grant        none
 // ==/UserScript==

@@ -1,9 +1,9 @@
 /*
  *  @name         Get Total Download Count
- *  @namespace    PXgamer
+ *  @namespace    pxgamer
  *  @version      0.2
  *  @description  Gets a total value as the count for downloads.
- *  @author       PXgamer
+ *  @author       pxgamer
  */
 
 function gtdc() {

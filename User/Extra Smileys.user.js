@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name        Extra Smileys
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Adds more smileys to KAT
 // @include     *kickass.to/*
 // @include     *kat.cr/*
-// @author      PXgamer
+// @author      pxgamer
 // @version     2.11
 // @grant       none
 // ==/UserScript==

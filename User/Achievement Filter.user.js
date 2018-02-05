@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Achievement Filter
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.7
 // @description  Filter cheevos on the cheevo page.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/achievements/
 // @grant        none
 // ==/UserScript==

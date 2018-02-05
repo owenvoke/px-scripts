@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Hide Chat Button
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Hides the chat button.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*
 // @grant        none
 // @require.     https://code.jquery.com/jquery-1.12.3.min.js

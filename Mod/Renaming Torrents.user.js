@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Renaming Torrents [KAT][Mod]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Adds torrent rename button to search listings
 // @include     *kickass.to/user/*/uploads/*
 // @include     *kat.cr/user/*/uploads/*

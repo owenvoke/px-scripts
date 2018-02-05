@@ -1,9 +1,9 @@
 /*
  *  name         Grab IMDB Info
- *  namespace    PXgamer
+ *  namespace    pxgamer
  *  version      0.3
  *  description  Grabs IMDB info from the provided ID.
- *  author       PXgamer
+ *  author       pxgamer
  */
 
 function imdbG(id) {

@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Filter user uploads by type
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Filter user uploads by their type
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/user/*/uploads/
 // @grant        none
 // ==/UserScript==

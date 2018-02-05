@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Pages Browsing for Wall
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Adds navigation to the user wall.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/user/*/
 // @include      *kat.cr/user/*/?page=*
 // @grant        none

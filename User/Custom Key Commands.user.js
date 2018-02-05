@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Custom Key Commands
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.8
 // @description  Allows custom key commands in text fields, so far I have added Bold and Italic
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*
-// @require      https://gist.githubusercontent.com/PXgamer/1424ef6972a96c4d4ecf9782d3ab8886/raw/a8cc240c8c9f718fabec4a18cbc3b2e7cbd54a02/.js
+// @require      https://gist.githubusercontent.com/pxgamer/1424ef6972a96c4d4ecf9782d3ab8886/raw/a8cc240c8c9f718fabec4a18cbc3b2e7cbd54a02/.js
 // @grant        none
 // ==/UserScript==
 

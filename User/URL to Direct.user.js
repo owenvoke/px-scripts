@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         URL to Direct
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.4
 // @description  URL to Direct for Kickass Torrents
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*
 // @grant        none
 // ==/UserScript==

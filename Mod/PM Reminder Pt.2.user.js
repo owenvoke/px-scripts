@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        PM Reminder Pt.2
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Part 2
 // @include     *kat.cr/messenger/dialog/*
 // @include     *kickass.to/messenger/dialog/*
@@ -24,7 +24,7 @@ We have a guide of what rep and rep abuse are here:
 [faq=39]
 
 Thanks,
-PXgamer, Kickass Mod Team`);
+pxgamer, Kickass Mod Team`);
 });
 
 $(document).delegate('#warnTor','click', function() {
@@ -37,7 +37,7 @@ $(document).delegate('#warnTor','click', function() {
 Please also read the rules here: https://kat.cr/rules
 
 Thanks,
-PXgamer, Kickass Mod Team`);
+pxgamer, Kickass Mod Team`);
   });
 
 
@@ -48,7 +48,7 @@ $(document).delegate('#warnSig','click', function() {
 And the site rules here if you haven't already: https://kat.cr/rules
 
 Thanks,
-PXgamer, Kickass Mod Team`);
+pxgamer, Kickass Mod Team`);
   });
 
 $(document).delegate('#warnEnc','click', function() {
@@ -60,7 +60,7 @@ The torrents I have removed are:
 Please read the rules: [url="/rules"]https://kat.cr/rules[/url]
 
 Thanks,
-PXgamer, Kickass Mod Team`);
+pxgamer, Kickass Mod Team`);
   });
 
 $(document).delegate('#warnDea','click', function() {
@@ -70,7 +70,7 @@ $(document).delegate('#warnDea','click', function() {
 `+i+`
 
 Thanks,
-PXgamer, Kickass Mod Team`);
+pxgamer, Kickass Mod Team`);
   });
 
 $(document).delegate('#more-options', 'click', function() {

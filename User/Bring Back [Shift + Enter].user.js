@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Bring Back [Shift + Enter]
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.3
 // @description  Adds the old post method to post boxes (Shift + Enter)
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*
 // @grant        none
 // ==/UserScript==

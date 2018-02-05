@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Report thread spammers
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.4
 // @description  Adds button to report thread and user.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/community/show/*
 // @require      https://greasyfork.org/scripts/19550-get-user-hash/code/Get%20User%20Hash.js?version=124786
 // @grant        none

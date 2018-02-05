@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Image BG Toggle
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      1.3
 // @description  Toggles the background colour for images in the browser
-// @author       PXgamer
+// @author       pxgamer
 // @include      /.*\.(JPG|PNG|GIF|JPEG).*/
 // @require      https://code.jquery.com/jquery-2.2.4.min.js
 // @grant        none

@@ -1,9 +1,9 @@
 /*
  *  name         Get DMCA'd Torrents
- *  namespace    PXgamer
+ *  namespace    pxgamer
  *  version      0.2
  *  description  Get a list of DMCA'd torrents.
- *  author       PXgamer
+ *  author       pxgamer
  *  require      https://code.jquery.com/jquery-1.12.3.min.js
  */
 function getDMCAdTorrents(searchParam) {

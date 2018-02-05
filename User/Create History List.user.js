@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Create history list
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Creates a list of your download history.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/account/history*
 // @grant        GM_setValue
 // @grant        GM_getValue

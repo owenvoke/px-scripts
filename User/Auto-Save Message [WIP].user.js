@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Auto-Save Message [WIP]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Auto-Saves message on accidental click.
 // @include     *kat.cr/*
 // @include     *kickass.to/*

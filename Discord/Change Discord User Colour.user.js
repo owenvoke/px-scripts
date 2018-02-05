@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Change Discord User Colour
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Change colour of a username in Discord.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *discordapp.com/channels/*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        none

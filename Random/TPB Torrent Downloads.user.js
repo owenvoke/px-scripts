@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         TPB Torrent Downloads
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.4
 // @description  Piratebay download via torrents
-// @author       PXgamer
+// @author       pxgamer
 // @include      *thepiratebay.org/*
 // @require      https://code.jquery.com/jquery-1.12.4.min.js
 // @grant        none

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        AutoEdit (IMDB) [KAT]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @include     *localhost:999/kat/upload2
 // @include     *kickass.to/*.html
 // @include     *kickass.to/torrents/edit/*

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Work from Reported [KAT] [MOD]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Adds the work button in the report list
 // @include     *kat.cr/moderator/reported/
 // @include     *kat.cr/moderator/reported/torrents/

@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Youtube Downloader
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.4
 // @description  Allows you to download videos off YouTube. (Yet another one...)
-// @author       PXgamer
+// @author       pxgamer
 // @include      *youtube.com/watch?v=*
 // @require      https://code.jquery.com/jquery-1.12.3.min.js
 // @grant        none

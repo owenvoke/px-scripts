@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name        Create Summary From IMDb [User+][KAT]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Creates a summary from any IMDB page.
 // @include     *kat.cr/*-i*/*
 // @include     *imdb.com/title/tt*
 // @include     *imdb.com/search/title?*
-// @author      PXgamer
+// @author      pxgamer
 // @version     1.3
 // @grant       none
 // ==/UserScript==

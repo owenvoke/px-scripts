@@ -1,9 +1,9 @@
 /*
  *  @name         Get User Hash
- *  @namespace    PXgamer
+ *  @namespace    pxgamer
  *  @version      0.2
  *  @description  Get any user's hash, for various activities
- *  @author       PXgamer
+ *  @author       pxgamer
  */
 
 function guh(username) {

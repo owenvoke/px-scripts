@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Image Favourites
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.4
 // @description  Add favourites for images.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/user/*/albums/
 // @include      *kat.cr/user/*/recentimages/
 // @grant        GM_getValue

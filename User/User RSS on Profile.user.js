@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         User RSS on Profile
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Adds user uploads RSS button to their profile.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/user/*/
 // @grant        none
 // ==/UserScript==

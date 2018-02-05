@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [Katcr.co] Bring Back Cheevos
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Allows you to get cheevos back on KAT.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *katcr.co/community/?achievements*
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.1.0.min.js

@@ -1,9 +1,9 @@
 /*
  *  name         Get Blocked Users
- *  namespace    PXgamer
+ *  namespace    pxgamer
  *  version      0.6
  *  description  Get a list of your blocked users.
- *  author       PXgamer
+ *  author       pxgamer
  */
 
 function gbu() {

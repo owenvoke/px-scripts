@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Comment filter
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Filter comments with keywords
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*.html
 // @grant        none
 // ==/UserScript==

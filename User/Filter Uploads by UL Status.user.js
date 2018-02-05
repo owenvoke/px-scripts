@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Filter Uploads by UL Status
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Filter uploads by the uploader's status (Uploader, Verified Uploader, Elite Uploader)
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/new/*
 // @include      *kat.cr/usearch/*
 // @grant        none

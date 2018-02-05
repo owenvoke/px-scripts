@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Anti-DMCA (Download DMCA'd Torrents from KAT)
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @include     *kickass.so/*
 // @include     *kickass.to/*
 // @include     *kat.ph/*
@@ -10,8 +10,8 @@
 // @include     *thekat.tv/*
 // @version     5.0.1
 // @grant       none
-// @description Created by PXgamer & Dr.YeTii
-// @author      PXgamer
+// @description Created by pxgamer & Dr.YeTii
+// @author      pxgamer
 // @contributor q1k
 // ==/UserScript==
 

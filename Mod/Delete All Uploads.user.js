@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Delete All Uploads
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Remove all user's comments
 // @include     *kat.cr/user/*/uploads/
 // @version     1

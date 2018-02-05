@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Hide Stickied Threads
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Hides stickied threads in forum groups
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/community/*/
 // @grant        none
 // ==/UserScript==

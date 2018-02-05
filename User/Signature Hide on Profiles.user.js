@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Signature Hide on Profiles
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Hide signature on profiles
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/user/*/
 // @grant        none
 // ==/UserScript==

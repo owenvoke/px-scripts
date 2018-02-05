@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [WorldWideTorrents.eu] Fix JS Quoting
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Fixes quoting in the Javascript by escaping the single quotes in the function calls.
-// @author       PXgamer
+// @author       pxgamer
 // @include      http*://*worldwidetorrents.eu*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        none

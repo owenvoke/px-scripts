@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         User Uploads Search
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Search a user's uploads... kinda.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/user/*/uploads/
 // @grant        none
 // ==/UserScript==

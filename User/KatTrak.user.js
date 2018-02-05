@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         KatTrak
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.9
 // @description  A Trakt system for integrating with Kickass Torrents.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/*
 // @include      *pxstat.us/trakt*
 // @include      *pxgamer.github.io/PX-Scripts/KatTrak/*

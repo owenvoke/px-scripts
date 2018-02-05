@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Tabbed Cheevos Page
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Creates a tab system for the achievements page.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/achievements/
 // @grant        none
 // ==/UserScript==

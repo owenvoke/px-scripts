@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Hide OP's post
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Hides the OP in a thread.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/community/show/*
 // @grant        none
 // ==/UserScript==

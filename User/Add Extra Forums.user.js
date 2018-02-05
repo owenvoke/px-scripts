@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Add extra forums
-// @namespace    PXgamer
-// @author       PXgamer
+// @namespace    pxgamer
+// @author       pxgamer
 // @description  add extra forums
 // @include      *kat.cr/community/
 // @version      0.4

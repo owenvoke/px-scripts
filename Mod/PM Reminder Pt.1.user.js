@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        PM Reminder Pt.1
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Remind yourself you forgetful piece of shit
 // @include     *kat.cr/user/*/moderation/*
 // @include     *kickass.to/user/*/moderation/*

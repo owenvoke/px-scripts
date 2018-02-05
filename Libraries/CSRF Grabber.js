@@ -1,9 +1,9 @@
 /*
  *  name         CSRF Grabber
- *  namespace    PXgamer
+ *  namespace    pxgamer
  *  version      0.2
  *  description  A library for getting the current csrf token for POSTs on Kickass Torrents.
- *  author       PXgamer
+ *  author       pxgamer
  */
 
 function csrf() {

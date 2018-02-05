@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name        Deleted User Check
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Checks for deleted users in the introduction page.
 // @include     *kat.cr/community/introduction/*
 // @version     0.2
-// @author      Boba Fett & PXgamer
+// @author      Boba Fett & pxgamer
 // @grant       none
 // ==/UserScript==
 

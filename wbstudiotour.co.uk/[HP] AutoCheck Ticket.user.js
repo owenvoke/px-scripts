@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [HP] AutoCheck Ticket
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Automatically checks for new tickets for Harry Potter tour (personal tool)
-// @author       PXgamer
+// @author       pxgamer
 // @include      https://tickets.wbstudiotour.co.uk/webstore/shop/ViewItems.aspx?CG=HPTST2&C=TIX2
 // @include      https://tickets.wbstudiotour.co.uk/WebStore/error.aspx
 // @require      https://code.jquery.com/jquery-2.2.4.min.js

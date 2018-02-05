@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name        Extra Cheevos
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Adds more cheevos
 // @include     *kat.cr/achievements*
 // @include     *kat.cr/user/*/
-// @author      PXgamer
+// @author      pxgamer
 // @version     0.6
 // @grant       none
 // ==/UserScript==

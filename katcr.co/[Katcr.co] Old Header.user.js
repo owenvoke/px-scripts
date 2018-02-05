@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [Katcr.co] Old Header
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.6
 // @description  Updates the header to be like the old one.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *katcr.co/community/*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        GM_getValue

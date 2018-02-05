@@ -1,9 +1,9 @@
 /*
  *  name         Get Online Users By ACL
- *  namespace    PXgamer
+ *  namespace    pxgamer
  *  version      0.5
  *  description  Get list of users from Community page by ACL
- *  author       PXgamer
+ *  author       pxgamer
  */
 
 function gouba(aclRank) {

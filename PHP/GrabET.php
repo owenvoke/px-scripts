@@ -3,7 +3,7 @@
 /*
  *
  *  Title:   GrabET
- *  Author:  PXgamer
+ *  Author:  pxgamer
  *  Usage:   php GrabET.php
  *
  */

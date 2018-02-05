@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [PrivateHD.to] Fix Beta Downloads
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Trying to download through beta beta.privatehd.to/download/torrent/*.torrent causes a 500 error. Simple bug fix to resolve this.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *beta.privatehd.to/*
 // @grant        none
 // ==/UserScript==

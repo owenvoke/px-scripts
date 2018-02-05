@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        IP Check [KAT][Mod]
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Checks IPs against IPVoid
 // @include     *kat.cr/user/*/ips/*
 // @include     *kickass.to/user/*/ips/*

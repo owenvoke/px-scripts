@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         DuckDuckVader
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.9
 // @description  Adds a Star Wars theme to DDG.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *duckduckgo.com/*
 // @grant        none
 // ==/UserScript==

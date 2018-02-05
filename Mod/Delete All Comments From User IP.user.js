@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Delete All Comments From User IP
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Kill That IP's Comments
 // @include     *kat.cr/moderator/listusers/*/comments/
 // @include     *kickass.to/moderator/listusers/*/comments/

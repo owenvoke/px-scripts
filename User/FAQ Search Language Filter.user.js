@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         FAQ Search Language Filter
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.2
 // @description  Filters out any unwanted languages when searching the FAQ.
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/faq/search*
 // @grant        none
 // ==/UserScript==

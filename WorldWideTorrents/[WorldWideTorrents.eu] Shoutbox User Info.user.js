@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [WorldWideTorrents.eu] Shoutbox User Info
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Adds a hover-based info popup for users in the Shoutbox
-// @author       PXgamer
+// @author       pxgamer
 // @include      *worldwidetorrents.eu/index.php
 // @include      *worldwidetorrents.eu/
 // @include      *worldwidetorrents.eu/shoutbox.php*

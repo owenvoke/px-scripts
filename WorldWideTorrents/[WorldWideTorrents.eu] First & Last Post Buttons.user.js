@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         [WorldWideTorrents.eu] First & Last Post Links
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.1
 // @description  Adds links for first and last post to the forums.
-// @author       PXgamer
+// @author       pxgamer
 // @include      https://worldwidetorrents.eu/forums.php?action=viewforum&forumid=*
 // @require      https://code.jquery.com/jquery-3.1.0.min.js
 // @grant        none

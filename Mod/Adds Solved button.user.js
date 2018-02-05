@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Adds Solved button
-// @namespace   PXgamer
+// @namespace   pxgamer
 // @description Perm add Solved button
 // @include     *kat.cr/community/show/*
 // @include     *kickass.to/community/show/*

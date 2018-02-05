@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Block From Profile and Posts
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      1.3
 // @description  Block users from on their profile and/or posts
-// @author       PXgamer & Keka
+// @author       pxgamer & Keka
 // @include      *kat.cr/*
 // @require      https://greasyfork.org/scripts/19498-get-blocked-users/code/Get%20Blocked%20Users.js
 // @grant        none

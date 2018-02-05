@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Script Duplicate Highlighter
-// @namespace    PXgamer
+// @namespace    pxgamer
 // @version      0.3
 // @description  Highlight duplicated @descriptions/@name in the list all scripts thread. [For Boba_Fett]
-// @author       PXgamer
+// @author       pxgamer
 // @include      *kat.cr/community/show/list-all-scripts-themes-made-our-site-members/*
 // @grant        none
 // ==/UserScript==
