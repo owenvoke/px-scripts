@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [PrivateHD.to] Fix Beta Downloads
 // @namespace    pxgamer
-// @version      0.1
+// @version      0.2.0
 // @description  Trying to download through beta beta.privatehd.to/download/torrent/*.torrent causes a 500 error. Simple bug fix to resolve this.
 // @author       pxgamer
 // @include      *beta.privatehd.to/*
@@ -13,7 +13,7 @@
     'use strict';
 
     $('a[href^="https://beta.privatehd.to/download/"]').each(function(){
-        var new_link = $(this).attr('href').replace('beta.','');
-        $(this).attr('href', new_link);
+        let newLink = $(this).attr('href').replace('beta.','');
+        $(this).attr('href', newLink);
     });
 })();
