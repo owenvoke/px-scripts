@@ -1,7 +1,7 @@
 /*
  *  name         Grab IMDB Info
  *  namespace    pxgamer
- *  version      0.3
+ *  version      0.3.1
  *  description  Grabs IMDB info from the provided ID.
  *  author       pxgamer
  */
@@ -9,7 +9,7 @@
 function imdbG(id) {
     'use strict';
 
-    var imdb = {
+    let imdb = {
         imdbId: id,
         mScore: '',
         poster: '',

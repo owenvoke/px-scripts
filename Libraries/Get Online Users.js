@@ -9,8 +9,8 @@
 function gou() {
     'use strict';
 
-    var returnedData;
-    var searchString = /<a href="\/user\/[a-z)-9_.-]+\/" class="tag1 aclColor_[0-9a-z]">([a-z)-9_.-]+)<\/a>/gi, matches, onlineUsers = [];
+    let returnedData;
+    let searchString = /<a href="\/user\/[a-z)-9_.-]+\/" class="tag1 aclColor_[0-9a-z]">([a-z)-9_.-]+)<\/a>/gi, matches, onlineUsers = [];
 
     $.ajax({
         type: "GET",

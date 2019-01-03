@@ -1,7 +1,7 @@
 /*
  *  @name         Get Total Download Count
  *  @namespace    pxgamer
- *  @version      0.2
+ *  @version      0.2.1
  *  @description  Gets a total value as the count for downloads.
  *  @author       pxgamer
  */
@@ -9,8 +9,8 @@
 function gtdc() {
     'use strict';
 
-    var returnedData;
-    var searchString = /<p class=\"lightgrey\">Total download count: ([0-9]+)<\/p>/ig, matches, dl = [];
+    let returnedData;
+    let searchString = /<p class=\"lightgrey\">Total download count: ([0-9]+)<\/p>/ig, matches, dl = [];
 
     $.ajax({
         type: "GET",
