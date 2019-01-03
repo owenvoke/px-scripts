@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DuckDuckVader
 // @namespace    pxgamer
-// @version      0.9
+// @version      1.0.0
 // @description  Adds a Star Wars theme to DDG.
 // @author       pxgamer
 // @include      *duckduckgo.com/*
@@ -12,9 +12,9 @@
 (function() {
     'use strict';
     // Set dark theme
-    var darktheme = false;
+    const darktheme = false;
 
-    var icons = {
+    const icons = {
         ddv_icon:       'https://pxstat.us/img/ddg.ico',
         empire:         'https://pximg.xyz/images/a2953610cebead141a45dccbcf9b4a26.png',
         rebellion:      'https://pximg.xyz/images/cbb105c6b990d4377e8caac28f66d3ff.png',
@@ -37,7 +37,7 @@
         admiral_ackbar: 'https://pximg.xyz/images/832b2714f14236164cdc2756a930497b.png'
     };
 
-    var quotes = [
+    const quotes = [
         "Judge me by my size, do you?",
         "Do or do not… there is no try.",
         "Fear leads to anger. Anger leads to hate. Hate leads to suffering.",
@@ -142,7 +142,7 @@
 
     // All pages set favicon
     (function() {
-        var link = document.createElement('link');
+        let link = document.createElement('link');
         link.type = 'image/x-icon';
         link.rel = 'shortcut icon';
         link.href = icons.ddv_icon;

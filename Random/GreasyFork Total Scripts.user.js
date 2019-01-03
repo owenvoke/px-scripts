@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GreasyFork Total Scripts
 // @namespace    pxgamer
-// @version      0.2
+// @version      0.2.1
 // @description  Shows a user's total scripts count on GreasyFork
 // @author       pxgamer
 // @include      *greasyfork.org/en/users/*
@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-    var l = $('li[data-script-id]').length;
+    let l = $('li[data-script-id]').length;
     if (l == 1) {
         $('div.width-constraint h2:first').append('<span style="font-size: 15px;">  [' + l + ' Total Script]</span>');
     }

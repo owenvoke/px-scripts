@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Generate description
 // @namespace    pxgamer
-// @version      0.1
+// @version      0.1.1
 // @description  Generates a description for my scripts
 // @author       pxgamer
 // @include      *kat.cr/community/show/*
@@ -11,7 +11,7 @@
 (function() {
     'use strict';
 
-    var wordList = [
+    const wordList = [
         "a",
         "a-horizon",
         "a-ok",
@@ -69919,9 +69919,9 @@
         "zymurg"
     ];
 
-    var description = "";
-    for (var i = 0; i < 20; i++) {
-        var d = Math.floor(Math.random() * (69905 - 1 + 1)) + 1;
+    let description = "";
+    for (let i = 0; i < 20; i++) {
+        let d = Math.floor(Math.random() * (69905 - 1 + 1)) + 1;
         description = description + " " + wordList[d];
     }
     console.info(description);
