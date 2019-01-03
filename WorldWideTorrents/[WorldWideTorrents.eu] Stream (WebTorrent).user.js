@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [WorldWideTorrents.eu] Stream (WebTorrent)
 // @namespace    pxgamer
-// @version      0.1
+// @version      0.1.1
 // @description  Allows the streaming of media on WorldWideTorrents
 // @author       pxgamer
 // @include      *worldwidetorrents.eu/torrents-details.php?id=*

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [WorldWideTorrents.eu] Fix JS Quoting
 // @namespace    pxgamer
-// @version      0.1
+// @version      0.2.0
 // @description  Fixes quoting in the Javascript by escaping the single quotes in the function calls.
 // @author       pxgamer
 // @include      http*://*worldwidetorrents.eu*
@@ -22,14 +22,14 @@
 			.replace(/'/g, "&#039;");
 	}
 
-	var reg = /(javascript:SmileIT\(\'\[quote\=)([\s\S]+?)(\[\/quote\]\',[\s\S]+?\'Form\',[\s\S]+?\'body\'\);)/i;
+	const reg = /(javascript:SmileIT\(\'\[quote\=)([\s\S]+?)(\[\/quote\]\',[\s\S]+?\'Form\',[\s\S]+?\'body\'\);)/i;
 	$('a[href^="javascript:SmileIT("]').each(function(){
-		var url   = $(this).attr('href');
-		var match = reg.exec(url);
+		let url   = $(this).attr('href');
+		let match = reg.exec(url);
 		console.log(match);
 		if (match !== null) {
-			var match1 = match[2];
-			var match2 = match[2].replace(/\'/g, "\\'");
+			let match1 = match[2];
+			let match2 = match[2].replace(/\'/g, "\\'");
 			$(this).attr('href', url.replace(match1, match2));
 		}
 	});

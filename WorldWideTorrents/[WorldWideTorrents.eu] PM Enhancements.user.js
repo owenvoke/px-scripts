@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [WorldWideTorrents.eu] PM Enhancements
 // @namespace    pxgamer
-// @version      0.2
+// @version      0.2.1
 // @description  Adds a few changes to the mailbox screen.
 // @author       pxgamer
 // @match        *worldwidetorrents.eu/mailbox.php*
@@ -14,16 +14,16 @@
 (function() {
 	'use strict';
 
-	var i = 0;
-	var end = $('#wrapper > div.myTable > div:nth-child(1) > div.main > table > tbody > tr > td:nth-child(1) > div.myFrame > div.wrapper > div > form > table > tbody > tr > td > table > tbody > tr:not([id^="msg_"])').length;
+	let i = 0;
+	let end = $('#wrapper > div.myTable > div:nth-child(1) > div.main > table > tbody > tr > td:nth-child(1) > div.myFrame > div.wrapper > div > form > table > tbody > tr > td > table > tbody > tr:not([id^="msg_"])').length;
 	$('#wrapper > div.myTable > div:nth-child(1) > div.main > table > tbody > tr > td:nth-child(1) > div.myFrame > div.wrapper > div > form > table > tbody > tr > td > table > tbody > tr:not([id^="msg_"])').each(function() {
-		var html = [];
+		let html = [];
 		$(this).css('border-bottom', '1px solid #ddd');
 		$('th,td', this).each(function(){
 			html.push($(this).html());
 		});
 		if (html[1] === undefined) {
-			var container = $(this).parent().parent().parent().parent().parent().parent();
+			let container = $(this).parent().parent().parent().parent().parent().parent();
 			$(this).remove();
 			container.after('<div>'+ html[0] + '</div>');
 		}
@@ -47,9 +47,9 @@
 	$('#preview_box').css('background', '#ffffff');
 
 	$('[href^="javascript:read("]').on('click', function (e) {
-		var id = e.target.toString().split('read(')[1].split(')')[0];
-		var x = document.getElementById('msg_'+ id);
-		var y = document.getElementById('img_'+ id);
+		let id = e.target.toString().split('read(')[1].split(')')[0];
+		let x = document.getElementById('msg_'+ id);
+		let y = document.getElementById('img_'+ id);
 		if (x.style.display === '') {
 			x.style.display='none';y.src='images/plus.gif';
 		}

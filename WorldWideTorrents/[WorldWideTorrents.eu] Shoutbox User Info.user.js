@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [WorldWideTorrents.eu] Shoutbox User Info
 // @namespace    pxgamer
-// @version      0.1
+// @version      0.1.1
 // @description  Adds a hover-based info popup for users in the Shoutbox
 // @author       pxgamer
 // @include      *worldwidetorrents.eu/index.php
@@ -14,14 +14,14 @@
 
 (function() {
 	'use strict';
-	var user_id = '';
-	var info = null;
+	let userId = '';
+	let info = null;
 	$('body').append('<div class="info_popup" style="display: none; position: fixed; border-radius: 5px 0px 0px 0px; bottom: 0px; right: 0px; width: 200px; height: 100px; background: black; color: white; padding: 5px;"><div><b class="username" style="color: aqua;"></b></div><div><ul><li class="reputation"></li><li class="forumposts"></li><li class="comments"><li class="joindate"></li><li class="class"></li></ul></div></div>');
 	$('a[data-userid]').hover(function() {
-		user_id = $(this).data('userid');
+		userId = $(this).data('userid');
 		$.ajax({
 			type: "GET",
-			url: "/api/user/?id="+user_id,
+			url: "/api/user/?id="+userId,
 			async: false,
 			success: function (data) {
 				info = data;
