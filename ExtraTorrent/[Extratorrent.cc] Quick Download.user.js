@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [Extratorrent.cc] Quick Download
 // @namespace    pxgamer
-// @version      0.3
+// @version      0.3.1
 // @description  Converts all ad download links to direct download.
 // @author       pxgamer
 // @include      *extratorrent.cc/*
@@ -13,8 +13,8 @@
     'use strict';
 
     $('a[href^="/torrent_download/"]').each(function() {
-        var torr_id  = $(this).attr("href").split("/")[2];
-        var new_url  = "/download/" + torr_id;
-        $(this).attr("href", new_url);
+        let torrentId  = $(this).attr("href").split("/")[2];
+        let newUrl  = "/download/" + torrentId;
+        $(this).attr("href", newUrl);
     });
 })();
