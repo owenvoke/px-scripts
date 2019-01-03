@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [YouTube.com] youtube-dl-php - Download Button
 // @namespace    pxgamer
-// @version      0.2
+// @version      0.2.1
 // @description  For use with: https://github.com/pxgamer/youtube-dl-php
 // @author       pxgamer
 // @include      *youtube.com/watch?v=*
@@ -14,9 +14,9 @@
 (function() {
     'use strict';
 
-    var searchGET = '/public/index.php'; // Your path to GET based implementation (i.e. /tests/$_GET.test.php)
+    const searchGet = '/public/index.php'; // Your path to GET based implementation (i.e. /tests/$_GET.test.php)
 
-    var vid_id = location.href.split('watch?v=')[1].split('&')[0];
+    const videoId = location.href.split('watch?v=')[1].split('&')[0];
 
-    $('#watch8-secondary-actions').append('<div class="yt-uix-menu"><a target="_blank" href="'+searchGET+'?vid_id='+vid_id+'"><button class="yt-uix-button yt-uix-button-size-default yt-uix-button-opacity"><span class="yt-uix-button-content">Download/Parse Video</span></button></a></div>');
+    $('#watch8-secondary-actions').append('<div class="yt-uix-menu"><a target="_blank" href="'+searchGet+'?vid_id='+videoId+'"><button class="yt-uix-button yt-uix-button-size-default yt-uix-button-opacity"><span class="yt-uix-button-content">Download/Parse Video</span></button></a></div>');
 })();
