@@ -6,19 +6,19 @@
 // @include     *kat.cr/user/*/uploads/*
 // @include     *kickass.to/usearch/*/*
 // @include     *kat.cr/usearch/*/*
-// @version     1.2
+// @version     1.2.1
 // @grant       none
 // ==/UserScript==
  
-var moving = 0;
+let moving = 0;
     
 $('.data tr:first').prepend('<th></th>');//('colspan', '2');
 $('.data').before('<style>.btnLoading {width:16px;height:16px;background:url(\'http://kastatic.com/images/indicator.gif\');display:block;}.ka-accept.greyButton {background: linear-gradient(to bottom, #929292 0%, #777 100%) repeat scroll 0% 0% transparent !important;text-shadow: 0px 1px 0px #6E6E6E !important;border-radius: 3px;}</style>')
 
 $('.data tr:not(.firstr)').each(function() {
-  var title = $('.cellMainLink', $(this)).text();
-  var hash = $('[href^="/torrents/edit/"]', $(this)).attr('href').split('/')[3];
-  var txt = removeURLs(title).replace(/\"/, '&quot;');
+  let title = $('.cellMainLink', $(this)).text();
+  let hash = $('[href^="/torrents/edit/"]', $(this)).attr('href').split('/')[3];
+  let txt = removeURLs(title).replace(/\"/, '&quot;');
   $(this).prepend('<td>'+(title!=txt ? '<i class="inlineTitleChange ka ka16 ka-edit" torhash="'+hash+'" title="'+txt+'"></i>' : '')+'</td>');
 });
 
@@ -45,8 +45,8 @@ function removeURLs(txt) {
 $(document).delegate('.inlineTitleChange', 'click', function() {
   if (moving < 1) {
     moving++;
-    var elem = $(this).closest('td');
-    var txt = $('.cellMainLink', elem.closest('tr')).text();
+    let elem = $(this).closest('td');
+    let txt = $('.cellMainLink', elem.closest('tr')).text();
     txt = removeURLs(txt).replace(/&quot;/, '\"');
     $.ajax({
   		type: 'POST',

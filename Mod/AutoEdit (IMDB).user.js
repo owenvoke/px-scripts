@@ -7,7 +7,7 @@
 // @include     *kat.cr/*.html
 // @include     *kat.cr/torrents/edit/*
 // @description If possible, will provide the IMDb and will  provide the best detected quality
-// @version     1.4
+// @version     1.4.1
 // @grant       none
 // ==/UserScript==
 
@@ -20,8 +20,9 @@
 
 //gUrl = 'https://www.google.com/search?q='+title+'+site%3Aimdb.com';
 
-var pathname = window.location.pathname;
-var hash = window.location.hash;
+const pathname = window.location.pathname;
+const hash = window.location.hash;
+
 if (pathname.contains('/torrents/edit/')) {
     $('#tvrage_id').focus();
     $('#tvrage_id').select();
@@ -30,12 +31,12 @@ if (pathname.contains('/torrents/edit/')) {
       setTimeout(function() {$('#butupload').click();},250);
     }
     if ($('#bbcode').val().contains("imdb.com/title/tt")) {
-      var txt = $('#bbcode').val();
+      let txt = $('#bbcode').val();
       txt = txt.split("imdb.com/title/tt")[1];
       txt = txt.substring(0, 7);
       $('#imdbid').after(' <span class="pointer" id="setIMDbId">'+txt+'</span> <span class="pointer" id="setIMDbIdAndQuality">[Set both]</span>');
     }
-    var t = $('#output a').first().text().toLowerCase().split("-").join("").split(".").join(" ");
+    let t = $('#output a').first().text().toLowerCase().split("-").join("").split(".").join(" ");
     dq = "Unknown";
 		if (t.contains('camrip')||t.contains(' cam ')||t.contains('hdcam')||t.contains('hqcam')) {
 			dq = "Cam";
@@ -82,7 +83,7 @@ if (pathname.contains('/torrents/edit/')) {
 }
 
 function selectItemByValue(elmnt, value){
-  for(var i=0; i < elmnt.options.length; i++) {
+  for(let i = 0; i < elmnt.options.length; i++) {
     if(elmnt.options[i].value == value)
       elmnt.selectedIndex = i;
   }
@@ -120,10 +121,10 @@ if (hash=="#autoFill"){
 if (pathname.contains('.html')) {
   if ($('span[id^="cat_"]').html().indexOf('Movies') >= 0) {
     if ($('#desc').html().contains("imdb.com/title/tt")) {
-      var txt = $('#desc').html();
+      let txt = $('#desc').html();
       txt = txt.split("imdb.com/title/tt")[1];
       txt = txt.substring(0, 7);
-      var editLink = $('li a[href^="/torrents/edit/"]').first();
+      let editLink = $('li a[href^="/torrents/edit/"]').first();
       editLink.addClass('inlineblock');
       if ($('.dataList a[href*="www.imdb.com/title/tt'+txt+'"]').length > 0) {
         editLink.parent().append(' <a style="opacity:0.33;" class="inlineblock" href="'+editLink.attr('href')+'"><i class="menuValue"> Correct IMDb set</i></a>');
@@ -141,7 +142,7 @@ if (pathname.contains('.html')) {
 }
 
 function printNull(ptxt) {
-  var editLink = $('li a[href^="/torrents/edit/"]').first();
+  let editLink = $('li a[href^="/torrents/edit/"]').first();
   editLink.addClass('inlineblock');
   editLink.parent().append(' <a style="opacity:0.33;" class="inlineblock" href="'+editLink.attr('href')+'"><i class="menuValue"> '+ptxt+'</i></a>');
 }

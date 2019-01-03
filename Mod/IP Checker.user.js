@@ -5,7 +5,7 @@
 // @include     *kat.cr/user/*/ips/*
 // @include     *kickass.to/user/*/ips/*
 // @include     *kat.ph/user/*/ips/*
-// @version     1.1
+// @version     1.2.0
 // @grant       none
 // ==/UserScript==
 
@@ -14,7 +14,7 @@ $('.doublecelltable > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > h
 $('#ahIP').after(' <div style="display:inline-block;"><button id="scanIP" class="btn btn-primary">Scan IP</button></div></div>');
 
 $(document).delegate('#scanIP', 'click', function highlightSearch() {
-    var query = $('#ip_address').val();
+    let query = $('#ip_address').val();
     query = query.trim();
     $('[href^="/moderator/listusers/"').removeClass('high');
     $('[href^="/moderator/listusers/'+query+'"').addClass('high');

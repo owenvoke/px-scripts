@@ -4,11 +4,11 @@
 // @description Remind yourself you forgetful piece of shit
 // @include     *kat.cr/user/*/moderation/*
 // @include     *kickass.to/user/*/moderation/*
-// @version     1.2
+// @version     1.2.1
 // @grant       none
 // ==/UserScript==
 
-var t = $('h1.nickname').html();
+let t = $('h1.nickname').html();
 t = t.split('<span')[0];
 t = t.trim();
 $('div.buttonsline:nth-child(1)').append('<a href="https://kat.cr/messenger/dialog/' + t + '"><button id="sendPM" style="display:inline;" class="siteButton bigButton"><span>SEND PM</span></button></a> ');
@@ -41,7 +41,7 @@ $('.mtSel').one('click', function openMT() {
 }
 )
 
-var template_faker = [
+const templateFaker = [
   `5.79 faker
 Proof: `,
   `UL Request:
@@ -77,7 +77,7 @@ https://kat.cr/user/Shonuz/moderation/
 Infected torrents that start at computer boot. The actual files are also installed to prevent suspicion.`
 ];
 
-var template_action = [
+const templateAction = [
   `Removed comments on undownloaded torrents.`,
   `Removed torrent(s):
 
@@ -85,7 +85,7 @@ Reason: `,
   `Removed uploader status due to: `
 ]
 
-var template_userIssueType = [
+const templateUserIssueType = [
   `Rep abuser.
 Proof: `,
   `Achievement abuser.
@@ -101,7 +101,7 @@ https://www.virustotal.com/en/file/9eab07677f29549c9803ad9f0ad4caf65b4a2837cef7b
 $(document).delegate('#fakerType', 'change', function faker() {
   type = $("select[id='fakerType'] option:selected").val();
   if (type !== 'Fakers') {
-    type = template_faker[type];
+    type = templateFaker[type];
     $('textarea.comareajs:nth-child(4)').val(type);
   }
 })
@@ -109,7 +109,7 @@ $(document).delegate('#fakerType', 'change', function faker() {
 $(document).delegate('#actionType', 'change', function action() {
   type = $("select[id='actionType'] option:selected").val();
   if (type !== 'Actions') {
-    type = template_action[type];
+    type = templateAction[type];
     $('textarea.comareajs:nth-child(4)').val(type);
   }
 })
@@ -117,7 +117,7 @@ $(document).delegate('#actionType', 'change', function action() {
 $(document).delegate('#userIssueType', 'change', function issue() {
   type = $("select[id='userIssueType'] option:selected").val();
   if (type !== 'Issue Type') {
-    type = template_userIssueType[type];
+    type = templateUserIssueType[type];
     $('textarea.comareajs:nth-child(4)').val(type);
   }
 })

@@ -4,7 +4,7 @@
 // @description Part 2
 // @include     *kat.cr/messenger/dialog/*
 // @include     *kickass.to/messenger/dialog/*
-// @version     1.6
+// @version     1.6.1
 // @grant       none
 // ==/UserScript==
 

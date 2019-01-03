@@ -23,13 +23,13 @@
 // @include     *kat.cr/new/*
 // @include     *kat.cr/latest/*
 // @include     *localhost:999/kat/search
-// @version     1.5
+// @version     1.5.1
 // @grant       none
 // ==/UserScript==
 
 $('.data').before('<style>.redden,.redden:hover{background-color:rgba(255,0,0,0.25) !important;}</style><h5 id="reddenCount"></h5>');
 $('.data tr:not(.fristr)').each(function() {
-  var date = $('.markeredBlock .lightgrey', $(this)).html();
+  let date = $('.markeredBlock .lightgrey', $(this)).html();
   if (/year/.test(date)==false&&(/\b[1-2] month/.test(date)||/month/.test(date)==false)&&/class="plain" href="\/user\//.test(date))
     $(this).closest('tr').addClass('redden');
 });
@@ -41,4 +41,3 @@ $('#hideShow').click(function() {
   $('.even').toggle();
   $('.redden').show();
 });
-                     

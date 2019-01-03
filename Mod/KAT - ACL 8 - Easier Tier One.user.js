@@ -3,21 +3,22 @@
 // @namespace   Dr.YeTii
 // @description yeah
 // @include     *kat.cr/moderator/verify/tier1/*
-// @version     1.1
+// @version     1.2.0
 // @grant       none
 // ==/UserScript==
 
 $('body').prepend('<style>.inlineindicator{margin:1px;min-width:16px;height:16px;display:inline-block;vertical-align:top;}.ka-red, .ka-red.ka-180 { background: #D47E3C none repeat scroll 0% 0% !important; text-shadow: 0px 1px 0px #D47E3C; } .ka-grey, .ka-grey.ka-180 { background: #7A7A7A none repeat scroll 0% 0% !important; text-shadow: 0px 1px 0px #7A7A7A; }</style>');
 $('[href^="/moderator/verifycontrol/"]:has(.ka-green)').each(function() {
-	var id = $(this).attr('href').split('/')[3];
+	let id = $(this).attr('href').split('/')[3];
 	$(this).next().remove();
 	$(this).after('<a class="tierOneAccept ka ka16 ka-green ka-verify" title="Accept"></a> <a class="tierOneNotSpecific ka ka16 ka-grey ka-verify ka-180" title="Not Specific Enough\n[Decline - 3 days]"></a> <a class="tierOneDecline ka ka16 ka-red ka-verify ka-180" title="Decline"></a>');
 	$(this).remove();
 });
 
-var templateDecline = 'This is not a valid request. A valid one:\n•Is in English\n•Says something about yourself\n•Explicitly states what you plan to upload (titles, formats, etc)\nSo we will have to decline you [u]for the moment[/u]. Re-apply in 3 days. Don\'t PM mods requesting uploader status as this is not taken lightly.';
+let templateDecline = 'This is not a valid request. A valid one:\n•Is in English\n•Says something about yourself\n•Explicitly states what you plan to upload (titles, formats, etc)\nSo we will have to decline you [u]for the moment[/u]. Re-apply in 3 days. Don\'t PM mods requesting uploader status as this is not taken lightly.';
+
 $(document).delegate('.tierOneAccept:not(.torrentDownloaded)', 'click', function() {
-	var id = $(this).closest('tr').attr('id').split('_')[1];
+	let id = $(this).closest('tr').attr('id').split('_')[1];
 	$.ajax({
 		type: 'POST',
 		url: '/moderator/verifycontrol/'+id+'/',
@@ -32,19 +33,22 @@ $(document).delegate('.tierOneAccept:not(.torrentDownloaded)', 'click', function
 		}
 	});
 });
+
 $(document).delegate('.tierOneNotSpecific:not(.torrentDownloaded)', 'click', function() {
-	var id = $(this).closest('tr').attr('id').split('_')[1];
+	let id = $(this).closest('tr').attr('id').split('_')[1];
 	tierOneDecline(id, templateDecline, 3);
 });
+
 $(document).delegate('.tierOneDecline:not(.torrentDownloaded)', 'click', function() {
-	var id = $(this).closest('tr').attr('id').split('_')[1];
-	var reason = prompt('Enter decline reason:');
+	let id = $(this).closest('tr').attr('id').split('_')[1];
+	let reason = prompt('Enter decline reason:');
 	if (reason) {
-		var days = prompt('How many days should this user wait? (invalid numbers default to 7)');
+		let days = prompt('How many days should this user wait? (invalid numbers default to 7)');
 		if (!isNaN(days))
 			tierOneDecline(id, reason, days);
 	}
 });
+
 function tierOneDecline(id, decline_reason, days) {
 	$.ajax({
 		type: 'POST',
