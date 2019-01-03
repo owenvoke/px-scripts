@@ -10,148 +10,146 @@
 
 class ET {
 
-	private $base_link = "https://extratorrent.cc/";
+	private $baseLink = "https://extratorrent.cc/";
 
-	function __construct ($auto = false) {
+	public function __construct ($auto = false) {
 		if ($auto) {
-			$this->grab_movies();
-			$this->grab_games();
-			$this->grab_tv();
-			$this->grab_music();
-			$this->grab_anime();
-			$this->grab_books();
-			$this->grab_software();
-			$this->grab_xxx();
+			$this->grabMovies();
+			$this->grabGames();
+			$this->grabTv();
+			$this->grabMusic();
+			$this->grabAnime();
+			$this->grabBooks();
+			$this->grabSoftware();
+			$this->grabXxx();
 		}
 	}
 
-	public function grab_movies () {
-		$movies_popular = $this->base_link . "view/popular/Movies.html?srt=added&order=desc&pp=100";
+	public function grabMovies () {
+		$popular = $this->baseLink . "view/popular/Movies.html?srt=added&order=desc&pp=100";
 		
-		$result = $this->curl_grab($movies_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
 		
 		$matches = array_unique($matches[1]);
 		
 		foreach($matches as $match) {
-			$this->grab_torrent('https://extratorrent.cc/download/' . $match . '/', $match);
+			$this->grabTorrent('https://extratorrent.cc/download/' . $match . '/', $match);
 		}
 	}
 	
-	public function grab_games () {
-		$games_popular = $this->base_link . "view/popular/Games.html?srt=added&order=desc&pp=100";
+	public function grabGames () {
+		$popular = $this->baseLink . "view/popular/Games.html?srt=added&order=desc&pp=100";
 		
-		$result = $this->curl_grab($games_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
 		
 		$matches = array_unique($matches[1]);
 		
 		foreach($matches as $match) {
-			$this->grab_torrent('https://extratorrent.cc/download/' . $match . '/', $match);
+			$this->grabTorrent('https://extratorrent.cc/download/' . $match . '/', $match);
 		}
 	}
 	
-	public function grab_tv () {
-		$tv_popular = $this->base_link . "view/popular/TV.html?srt=added&order=desc&pp=100";
+	public function grabTv () {
+		$popular = $this->baseLink . "view/popular/TV.html?srt=added&order=desc&pp=100";
 		
-		$result = $this->curl_grab($tv_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
 		
 		$matches = array_unique($matches[1]);
 		
 		foreach($matches as $match) {
-			$this->grab_torrent('https://extratorrent.cc/download/' . $match . '/', $match);
+			$this->grabTorrent('https://extratorrent.cc/download/' . $match . '/', $match);
 		}
 	}
 	
-	public function grab_music () {
-		$music_popular = $this->base_link . "view/popular/Music.html?srt=added&order=desc&pp=100";
+	public function grabMusic () {
+		$popular = $this->baseLink . "view/popular/Music.html?srt=added&order=desc&pp=100";
 		
-		$result = $this->curl_grab($music_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
 		
 		$matches = array_unique($matches[1]);
 		
 		foreach($matches as $match) {
-			$this->grab_torrent('https://extratorrent.cc/download/' . $match . '/', $match);
+			$this->grabTorrent('https://extratorrent.cc/download/' . $match . '/', $match);
 		}
 	}
 	
-	public function grab_anime () {
-		$anime_popular = $this->base_link . "view/popular/Anime.html?srt=added&order=desc&pp=100";
+	public function grabAnime () {
+		$popular = $this->baseLink . "view/popular/Anime.html?srt=added&order=desc&pp=100";
 		
-		$result = $this->curl_grab($anime_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
 		
 		$matches = array_unique($matches[1]);
 		
 		foreach($matches as $match) {
-			$this->grab_torrent('https://extratorrent.cc/download/' . $match . '/', $match);
+			$this->grabTorrent('https://extratorrent.cc/download/' . $match . '/', $match);
 		}
 	}
 
-	public function grab_books () {
-		$books_popular = $this->base_link . "view/popular/Books.html?srt=added&order=desc&pp=100";
+	public function grabBooks () {
+		$popular = $this->baseLink . "view/popular/Books.html?srt=added&order=desc&pp=100";
 		
-		$result = $this->curl_grab($books_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
 		
 		$matches = array_unique($matches[1]);
 		
 		foreach($matches as $match) {
-			$this->grab_torrent('https://extratorrent.cc/download/' . $match . '/', $match);
+			$this->grabTorrent('https://extratorrent.cc/download/' . $match . '/', $match);
 		}
 	}
 
-	public function grab_software () {
-		$software_popular = $this->base_link . "view/popular/Software.html?srt=added&order=desc&pp=100";
+	public function grabSoftware () {
+		$popular = $this->baseLink . "view/popular/Software.html?srt=added&order=desc&pp=100";
 		
-		$result = $this->curl_grab($software_popular);
-		
-		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
-		
-		$matches = array_unique($matches[1]);
-		
-		foreach($matches as $match) {
-			$this->grab_torrent('https://extratorrent.cc/download/' . $match . '/', $match);
-		}
-	}
-	
-	public function grab_xxx () {
-		$xxx_popular = $this->base_link . "view/popular/Adult+-+Porn.html?srt=added&order=desc&pp=100";
-		
-		$result = $this->curl_grab($xxx_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
 		
 		$matches = array_unique($matches[1]);
 		
 		foreach($matches as $match) {
-			$this->grab_torrent('https://extratorrent.cc/download/' . $match . '/', $match);
+			$this->grabTorrent('https://extratorrent.cc/download/' . $match . '/', $match);
 		}
 	}
 	
-	public function grab_custom ($custom_url) {
-		$custom = $custom_url;
+	public function grabXxx () {
+		$popular = $this->baseLink . "view/popular/Adult+-+Porn.html?srt=added&order=desc&pp=100";
 		
-		$result = $this->curl_grab($custom);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
 		
 		$matches = array_unique($matches[1]);
 		
 		foreach($matches as $match) {
-			$this->grab_torrent('https://extratorrent.cc/download/' . $match . '/', $match);
+			$this->grabTorrent('https://extratorrent.cc/download/' . $match . '/', $match);
 		}
 	}
 	
-	private function curl_grab ($url) {
+	public function grabCustom ($customUrl) {		
+		$result = $this->curlGrab($customUrl);
+		
+		preg_match_all("/<a href=\"\/torrent_download\/([0-9]+)\/.*?\.torrent\" title=\"Download /", $result, $matches);
+		
+		$matches = array_unique($matches[1]);
+		
+		foreach($matches as $match) {
+			$this->grabTorrent('https://extratorrent.cc/download/' . $match . '/', $match);
+		}
+	}
+	
+	private function curlGrab ($url) {
 		$cu = curl_init();
 		
 		curl_setopt_array(
@@ -172,11 +170,11 @@ class ET {
 		return $cu_exec;
 	}
 	
-	private function grab_torrent ($url, $torrent_id) {
+	private function grabTorrent ($url, $torrentId) {
 		$cu = curl_init();
 		
-		if (!file_exists("torrents/$torrent_id.torrent")) {
-			$file = fopen("torrents/$torrent_id.torrent", "w+");
+		if (!file_exists("torrents/$torrentId.torrent")) {
+			$file = fopen("torrents/$torrentId.torrent", "w+");
 			
 			curl_setopt_array(
 			  $cu,
@@ -190,8 +188,8 @@ class ET {
 			);
 
 			// Exec and error catch
-			$cu_exec = curl_exec($cu);
-			$cu_error = curl_error($cu);
+			$curlExec = curl_exec($cu);
+			$curlError = curl_error($cu);
 			curl_close ($cu);
 		}
 	}
@@ -201,4 +199,4 @@ class ET {
 //$et = new ET (true); 	// Create new instance of ET with auto-downloading
 
 //$et = new ET (); 		// Create new instance of ET without auto-downloading
-//$et->grab_movies(); 	// Example function to run
+//$et->grabMovies(); 	// Example function to run

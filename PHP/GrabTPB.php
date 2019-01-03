@@ -10,24 +10,24 @@
 
 class TPB {
 
-	private $base_link = "https://thepiratebay.org/";
+	private $baseLink = "https://thepiratebay.org/";
 
-	function __construct ($auto = false) {
+	public function __construct ($auto = false) {
 		if ($auto) {
-			$this->grab_movies();
-			$this->grab_games();
-			$this->grab_tv();
-			$this->grab_music();
-			$this->grab_books();
-			$this->grab_software();
-			$this->grab_xxx();
+			$this->grabMovies();
+			$this->grabGames();
+			$this->grabTv();
+			$this->grabMusic();
+			$this->grabBooks();
+			$this->grabSoftware();
+			$this->grabXxx();
 		}
 	}
 
-	public function grab_movies () {
-		$movies_popular = $this->base_link . "browse/201/";
+	public function grabMovies () {
+		$popular = $this->baseLink . "browse/201/";
 		
-		$result = $this->curl_grab($movies_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<div class=\"detName\">			<a href=\"\/torrent\/([0-9]+)\/.*?\" class=\"detLink\" title=\"Details for .*?\">(.*?)<\/a>\n<\/div>\n<a href=\"magnet:\?xt=urn:btih:(.*?)&dn=/", $result, $matches);
 		
@@ -36,14 +36,14 @@ class TPB {
 		$matches[3] = array_unique($matches[3]);
 		
 		foreach($matches[3] as $match) {
-			$this->grab_torrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
+			$this->grabTorrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
 		}
 	}
 	
-	public function grab_games () {
-		$games_popular = $this->base_link . "browse/400/";
+	public function grabGames () {
+		$popular = $this->baseLink . "browse/400/";
 		
-		$result = $this->curl_grab($games_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<div class=\"detName\">			<a href=\"\/torrent\/([0-9]+)\/.*?\" class=\"detLink\" title=\"Details for .*?\">(.*?)<\/a>\n<\/div>\n<a href=\"magnet:\?xt=urn:btih:(.*?)&dn=/", $result, $matches);
 		
@@ -52,30 +52,14 @@ class TPB {
 		$matches[3] = array_unique($matches[3]);
 		
 		foreach($matches[3] as $match) {
-			$this->grab_torrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
+			$this->grabTorrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
 		}
 	}
 
-	public function grab_tv () {
-		$tv_popular = $this->base_link . "browse/205/";
+	public function grabTv () {
+		$popular = $this->baseLink . "browse/205/";
 		
-		$result = $this->curl_grab($tv_popular);
-		
-		preg_match_all("/<div class=\"detName\">			<a href=\"\/torrent\/([0-9]+)\/.*?\" class=\"detLink\" title=\"Details for .*?\">(.*?)<\/a>\n<\/div>\n<a href=\"magnet:\?xt=urn:btih:(.*?)&dn=/", $result, $matches);
-		
-		$matches[1] = array_unique($matches[1]);
-		$matches[2] = array_unique($matches[2]);
-		$matches[3] = array_unique($matches[3]);
-		
-		foreach($matches[3] as $match) {
-			$this->grab_torrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
-		}
-	}
-	
-	public function grab_music () {
-		$music_popular = $this->base_link . "browse/101/";
-		
-		$result = $this->curl_grab($music_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<div class=\"detName\">			<a href=\"\/torrent\/([0-9]+)\/.*?\" class=\"detLink\" title=\"Details for .*?\">(.*?)<\/a>\n<\/div>\n<a href=\"magnet:\?xt=urn:btih:(.*?)&dn=/", $result, $matches);
 		
@@ -84,14 +68,14 @@ class TPB {
 		$matches[3] = array_unique($matches[3]);
 		
 		foreach($matches[3] as $match) {
-			$this->grab_torrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
+			$this->grabTorrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
 		}
 	}
 	
-	public function grab_books () {
-		$books_popular = $this->base_link . "browse/601/";
+	public function grabMusic () {
+		$popular = $this->baseLink . "browse/101/";
 		
-		$result = $this->curl_grab($books_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<div class=\"detName\">			<a href=\"\/torrent\/([0-9]+)\/.*?\" class=\"detLink\" title=\"Details for .*?\">(.*?)<\/a>\n<\/div>\n<a href=\"magnet:\?xt=urn:btih:(.*?)&dn=/", $result, $matches);
 		
@@ -100,14 +84,14 @@ class TPB {
 		$matches[3] = array_unique($matches[3]);
 		
 		foreach($matches[3] as $match) {
-			$this->grab_torrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
+			$this->grabTorrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
 		}
 	}
 	
-	public function grab_software () {
-		$software_popular = $this->base_link . "browse/300/";
+	public function grabBooks () {
+		$popular = $this->baseLink . "browse/601/";
 		
-		$result = $this->curl_grab($software_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<div class=\"detName\">			<a href=\"\/torrent\/([0-9]+)\/.*?\" class=\"detLink\" title=\"Details for .*?\">(.*?)<\/a>\n<\/div>\n<a href=\"magnet:\?xt=urn:btih:(.*?)&dn=/", $result, $matches);
 		
@@ -116,14 +100,14 @@ class TPB {
 		$matches[3] = array_unique($matches[3]);
 		
 		foreach($matches[3] as $match) {
-			$this->grab_torrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
+			$this->grabTorrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
 		}
 	}
 	
-	public function grab_xxx () {
-		$xxx_popular = $this->base_link . "browse/500/";
+	public function grabSoftware () {
+		$popular = $this->baseLink . "browse/300/";
 		
-		$result = $this->curl_grab($xxx_popular);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<div class=\"detName\">			<a href=\"\/torrent\/([0-9]+)\/.*?\" class=\"detLink\" title=\"Details for .*?\">(.*?)<\/a>\n<\/div>\n<a href=\"magnet:\?xt=urn:btih:(.*?)&dn=/", $result, $matches);
 		
@@ -132,13 +116,14 @@ class TPB {
 		$matches[3] = array_unique($matches[3]);
 		
 		foreach($matches[3] as $match) {
-			$this->grab_torrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
+			$this->grabTorrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
 		}
 	}
 	
-	public function grab_custom ($custom_url) {
+	public function grabXxx () {
+		$popular = $this->baseLink . "browse/500/";
 		
-		$result = $this->curl_grab($custom_url);
+		$result = $this->curlGrab($popular);
 		
 		preg_match_all("/<div class=\"detName\">			<a href=\"\/torrent\/([0-9]+)\/.*?\" class=\"detLink\" title=\"Details for .*?\">(.*?)<\/a>\n<\/div>\n<a href=\"magnet:\?xt=urn:btih:(.*?)&dn=/", $result, $matches);
 		
@@ -147,11 +132,26 @@ class TPB {
 		$matches[3] = array_unique($matches[3]);
 		
 		foreach($matches[3] as $match) {
-			$this->grab_torrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
+			$this->grabTorrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
 		}
 	}
 	
-	private function curl_grab ($url) {
+	public function grabCustom ($customUrl) {
+		
+		$result = $this->curlGrab($customUrl);
+		
+		preg_match_all("/<div class=\"detName\">			<a href=\"\/torrent\/([0-9]+)\/.*?\" class=\"detLink\" title=\"Details for .*?\">(.*?)<\/a>\n<\/div>\n<a href=\"magnet:\?xt=urn:btih:(.*?)&dn=/", $result, $matches);
+		
+		$matches[1] = array_unique($matches[1]);
+		$matches[2] = array_unique($matches[2]);
+		$matches[3] = array_unique($matches[3]);
+		
+		foreach($matches[3] as $match) {
+			$this->grabTorrent('https://itorrents.org/torrent/' . strtoupper($match) . '.torrent', strtoupper($match));
+		}
+	}
+	
+	private function curlGrab ($url) {
 		$cu = curl_init();
 		
 		curl_setopt_array(
@@ -165,14 +165,14 @@ class TPB {
         );
 
         // Exec and error catch
-        $cu_exec = curl_exec($cu);
-        $cu_error = curl_error($cu);
+        $cuExec = curl_exec($cu);
+        $cuError = curl_error($cu);
 		curl_close ($cu);
 		
-		return $cu_exec;
+		return $cuExec;
 	}
 	
-	private function grab_torrent ($url, $torrent_id) {
+	private function grabTorrent ($url, $torrent_id) {
 		$cu = curl_init();
 		
 		if (!file_exists("torrents/$torrent_id.torrent")) {
@@ -190,8 +190,8 @@ class TPB {
 			);
 
 			// Exec and error catch
-			$cu_exec = curl_exec($cu);
-			$cu_error = curl_error($cu);
+			$cuExec = curl_exec($cu);
+			$cuError = curl_error($cu);
 			curl_close ($cu);
 		}
 	}
@@ -204,6 +204,6 @@ class TPB {
 $tpb = new TPB (); 		// Create new instance of TPB without auto-downloading
 for ($i = 0; $i < 100; $i++) {
 	echo $i;
-	$tpb->grab_custom("https://thepiratebay.org/browse/201/".$i."/3/"); 	// Example function to run
+	$tpb->grabCustom("https://thepiratebay.org/browse/201/".$i."/3/"); 	// Example function to run
 }
 */

@@ -20,8 +20,8 @@ new MovieManager($format);
 
 class MovieManager
 {
-    private $foregroundColors;
-    private $backgroundColors;
+    private $foregroundColours;
+    private $backgroundColours;
 
     // The basic constructor
     public function __construct($format)
@@ -84,13 +84,11 @@ class MovieManager
     // Generate the URL for the API call
     public function formUrl($TITLE, $YEAR, $TYPE = 'Movie')
     {
-        $current_url = "https://omdbapi.com/?t={TTTT}&y={YYYY}&type={TYPE}";
+        $currentUrl = "https://omdbapi.com/?t={TTTT}&y={YYYY}&type={TYPE}";
         // Generates the URL
-        $current_url = preg_replace('/{TTTT}/', urlencode($TITLE), $current_url);
-        $current_url = preg_replace('/{YYYY}/', urlencode($YEAR), $current_url);
-        $current_url = preg_replace('/{TYPE}/', urlencode($TYPE), $current_url);
-
-        return $current_url;
+        $currentUrl = preg_replace('/{TTTT}/', urlencode($TITLE), $currentUrl);
+        $currentUrl = preg_replace('/{YYYY}/', urlencode($YEAR), $currentUrl);
+        return preg_replace('/{TYPE}/', urlencode($TYPE), $currentUrl);
     }
 
     // Call the cURL request
@@ -110,22 +108,22 @@ class MovieManager
         $returned = curl_exec($cm);
         $error = curl_error($cm);
         // Get the HTTP Status
-        $http_status = curl_getinfo($cm, CURLINFO_HTTP_CODE);
+        $httpStatus = curl_getinfo($cm, CURLINFO_HTTP_CODE);
 
         curl_close($cm);
 
         // If there's no errors, and the page didn't 400 (Bad Format response)
-        if ($error === '' && $http_status !== 400) {
+        if ($error === '' && $httpStatus !== 400) {
             return [
                 "STATUS" => true,
                 "DATA"   => $returned,
-                "HTTP"   => $http_status,
+                "HTTP"   => $httpStatus,
             ];
         } else {
             return [
                 "STATUS" => false,
                 "DATA"   => false,
-                "HTTP"   => $http_status,
+                "HTTP"   => $httpStatus,
             ];
         }
     }
@@ -159,63 +157,61 @@ class MovieManager
     // Set up shell colors
     public function colours()
     {
-        $this->foregroundColors['black'] = '0;30';
-        $this->foregroundColors['dark_gray'] = '1;30';
-        $this->foregroundColors['blue'] = '0;34';
-        $this->foregroundColors['light_blue'] = '1;34';
-        $this->foregroundColors['green'] = '0;32';
-        $this->foregroundColors['light_green'] = '1;32';
-        $this->foregroundColors['cyan'] = '0;36';
-        $this->foregroundColors['light_cyan'] = '1;36';
-        $this->foregroundColors['red'] = '0;31';
-        $this->foregroundColors['light_red'] = '1;31';
-        $this->foregroundColors['purple'] = '0;35';
-        $this->foregroundColors['light_purple'] = '1;35';
-        $this->foregroundColors['brown'] = '0;33';
-        $this->foregroundColors['yellow'] = '1;33';
-        $this->foregroundColors['light_gray'] = '0;37';
-        $this->foregroundColors['white'] = '1;37';
+        $this->foregroundColours['black'] = '0;30';
+        $this->foregroundColours['dark_gray'] = '1;30';
+        $this->foregroundColours['blue'] = '0;34';
+        $this->foregroundColours['light_blue'] = '1;34';
+        $this->foregroundColours['green'] = '0;32';
+        $this->foregroundColours['light_green'] = '1;32';
+        $this->foregroundColours['cyan'] = '0;36';
+        $this->foregroundColours['light_cyan'] = '1;36';
+        $this->foregroundColours['red'] = '0;31';
+        $this->foregroundColours['light_red'] = '1;31';
+        $this->foregroundColours['purple'] = '0;35';
+        $this->foregroundColours['light_purple'] = '1;35';
+        $this->foregroundColours['brown'] = '0;33';
+        $this->foregroundColours['yellow'] = '1;33';
+        $this->foregroundColours['light_gray'] = '0;37';
+        $this->foregroundColours['white'] = '1;37';
 
-        $this->backgroundColors['black'] = '40';
-        $this->backgroundColors['red'] = '41';
-        $this->backgroundColors['green'] = '42';
-        $this->backgroundColors['yellow'] = '43';
-        $this->backgroundColors['blue'] = '44';
-        $this->backgroundColors['magenta'] = '45';
-        $this->backgroundColors['cyan'] = '46';
-        $this->backgroundColors['light_gray'] = '47';
+        $this->backgroundColours['black'] = '40';
+        $this->backgroundColours['red'] = '41';
+        $this->backgroundColours['green'] = '42';
+        $this->backgroundColours['yellow'] = '43';
+        $this->backgroundColours['blue'] = '44';
+        $this->backgroundColours['magenta'] = '45';
+        $this->backgroundColours['cyan'] = '46';
+        $this->backgroundColours['light_gray'] = '47';
     }
 
     // Returns colored string
-    public function colourString($string, $foreground_color = null, $background_color = null)
+    public function colourString($string, $foregroundColour = null, $backgroundColour = null)
     {
-        $colored_string = "";
+        $coloredString = "";
 
         // Check if given foreground color found
-        if (isset($this->foreground_colors[$foreground_color])) {
-            $colored_string .= "\033[".$this->foregroundColors[$foreground_color]."m";
+        if (isset($this->foreground_colors[$foregroundColour])) {
+            $coloredString .= "\033[".$this->foregroundColours[$foregroundColour]."m";
         }
         // Check if given background color found
-        if (isset($this->background_colors[$background_color])) {
-            $colored_string .= "\033[".$this->backgroundColors[$background_color]."m";
+        if (isset($this->background_colors[$backgroundColour])) {
+            $coloredString .= "\033[".$this->backgroundColours[$backgroundColour]."m";
         }
 
         // Add string and end coloring
-        $colored_string .= $string."\033[0m";
-
-        return $colored_string;
+        return $coloredString.$string."\033[0m";
     }
 
     // Returns all foreground color names
-    public function getForegroundColors()
+    public function getforegroundColours()
     {
-        return array_keys($this->foregroundColors);
+        return array_keys($this->foregroundColours);
     }
 
     // Returns all background color names
-    public function getBackgroundColors()
+    public function getbackgroundColours()
     {
-        return array_keys($this->backgroundColors);
+        return array_keys($this->backgroundColours);
     }
 
     // End echo.
