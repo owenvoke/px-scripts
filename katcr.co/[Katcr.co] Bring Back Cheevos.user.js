@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [Katcr.co] Bring Back Cheevos
 // @namespace    pxgamer
-// @version      0.1
+// @version      1.0.0
 // @description  Allows you to get cheevos back on KAT.
 // @author       pxgamer
 // @include      *katcr.co/community/?achievements*
@@ -13,7 +13,7 @@
 (function() {
     'use strict';
 
-    var cheevos = [
+    const cheevos = [
         {
             "title":    "2011: Xmas",
             "type":     "special",
@@ -1885,7 +1885,7 @@
     $('#wrapper').html('<style>h1{font-family:Georgia, "Times New Roman", Times, serif;font-size:26px;margin:0 0 10px 0}h1,h2,h3,h4,h5{color:#99742e;font-weight:normal;padding:0;margin-top:0;margin:0 0 5px 0;font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif}#wrapper{font-size:12px;}.simpleAchIcon,.bronzeAchIcon,.silverAchIcon,.goldAchIcon,.specialAchIcon{border-radius:2px 0px 0px 2px;float:left;height:17px;width:17px;background:rgba(0, 0, 0, 0.5) url("https://pximg.xyz/images/c30ed775d9a2180d565eb070846b0737.png") repeat scroll 0% 0%/auto 100%;vertical-align:middle}.achTitle{color:white;padding:1px 4px;font-size:10px;vertical-align:top;display:inline-block;height:15px;line-height:15px}.achBadge{vertical-align:middle;height:17px;min-width:20px;max-width:500px;margin:1px 5px 2px 0px;border-radius:2px;display:inline-block;line-height:1.1em;}.specialAchBack{background-color:#AF9DDC}.goldAchBack{background-color:#BB9B1A}.silverAchBack{background-color:#8D92A3}.bronzeAchBack{background-color:#C27E47}.simpleAchBack{background-color:#939393}.goldAchIcon{background-position:-17px;}.silverAchIcon{background-position:-34px}.bronzeAchIcon{background-position:-51px}.simpleAchIcon{background-position:-68px}</style>\
 <div style="margin-top: 100px; margin-left: 100px;"><h1>Total Achievements ('+cheevos.length+')</h1><ul></ul></div>');
 
-    for (var i = 0; i < cheevos.length; i++) {
+    for (let i = 0; i < cheevos.length; i++) {
         $('#wrapper ul').append('<li style="list-style:none;">\
 <span class="achBadge '+cheevos[i].type+'AchBack "><a title="'+cheevos[i].title+'"><span class="'+cheevos[i].type+'AchIcon"></span><span class="achTitle">'+cheevos[i].title+'</span></a></span>\
 <strong>x ?</strong>&nbsp;&nbsp;<span class="achDesc">'+cheevos[i].desc+'</span>\

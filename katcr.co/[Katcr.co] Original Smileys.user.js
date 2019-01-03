@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [Katcr.co] Original Smileys
 // @namespace    pxgamer
-// @version      0.5
+// @version      0.5.1
 // @description  Adds the original smileys back
 // @author       pxgamer
 // @include      *katcr.co/community/*
@@ -16,18 +16,18 @@
 (function() {
     'use strict';
 
-    var show_extras = GM_getValue("show_extras", "true");
-    var show_reactions = GM_getValue("show_reactions", "true");
-    var show_da = GM_getValue("show_da", "true");
-    var show_menu_command = GM_getValue("show_menu_command", "true");
+    let showExtras = GM_getValue("showExtras", "true");
+    let showReactions = GM_getValue("showReactions", "true");
+    let showDeviantArt = GM_getValue("showDeviantArt", "true");
+    let showMenuCommand = GM_getValue("showMenuCommand", "true");
 
-    if (show_menu_command == 'true') {
+    if (showMenuCommand == 'true') {
         GM_registerMenuCommand( 'Smiley Settings', function(){window.open('https://pxgamer.github.io/PX-Scripts/ScriptSettings/original_smileys.html');} );
     }
-    var cTrue = "true";
-    //console.log(show_extras + '|' + show_reactions);
+    let cTrue = "true";
+    //console.log(showExtras + '|' + showReactions);
 
-    var smilies = {
+    let smilies = {
         'smile' : 'https://i.imgur.com/jDCmN5k.gif',
         'biggrin' : 'https://i.imgur.com/Y2IB7c1.gif',
         'lol' : 'https://i.imgur.com/yrmrqBr.gif',
@@ -72,7 +72,7 @@
         'thumbup' : 'https://i.imgur.com/xxtKctj.gif',
         'thumbdown' : 'https://i.imgur.com/bkv4kfO.gif'
     };
-    var extras = {
+    let extras = {
         'smoke' : 'https://pximg.xyz/images/e3f6c9546b0b85138856a654b6acee85.gif',
         'headbang' : 'https://pximg.xyz/images/96c98c900ddcd6c8b14177ffba06ed13.gif',
         'mooning' : 'https://pximg.xyz/images/4bb967650d41ff6bcd58ac203a797235.gif',
@@ -222,27 +222,27 @@
         }
     });
 
-    if (cTrue == show_extras) { show_extras = true; }else{ show_extras = false; }
-    if (cTrue == show_reactions) { show_reactions = true; }else{ show_reactions = false; }
-    if (cTrue == show_menu_command) { show_menu_command = true; }else{ show_menu_command = false; }
-    if (cTrue == show_da) { show_da = true; }else{ show_da = false; }
+    if (cTrue == showExtras) { showExtras = true; }else{ showExtras = false; }
+    if (cTrue == showReactions) { showReactions = true; }else{ showReactions = false; }
+    if (cTrue == showMenuCommand) { showMenuCommand = true; }else{ showMenuCommand = false; }
+    if (cTrue == showDeviantArt) { showDeviantArt = true; }else{ showDeviantArt = false; }
 
     $('#smileyBox_message div').html('');
     for (var key in smilies) {
         $('#smileyBox_message div').append('<img src="'+smilies[key]+'" align="bottom" alt="'+key+'" title="'+key+'" class="cusSmile" style="cursor: pointer; margin: 1px;" width="19px" heigh="19px">');
     }
 
-    if (show_extras) {
+    if (showExtras) {
         for (key in extras) {
             $('#smileyBox_message div').append('<img src="'+extras[key]+'" align="bottom" alt="'+key+'" title="'+key+'" class="cusSmile" style="cursor: pointer; margin: 1px;" width="19px" heigh="19px">');
         }
     }
-    if (show_reactions) {
+    if (showReactions) {
         for (key in reactions) {
             $('#smileyBox_message div').append('<img src="'+reactions[key]+'" align="bottom" alt="'+key+'" title="'+key+'" class="cusSmile" style="cursor: pointer; margin: 1px;" width="19px" heigh="19px">');
         }
     }
-    if (show_da) {
+    if (showDeviantArt) {
         for (key in deviantArt) {
             $('#smileyBox_message div').append('<img src="'+deviantArt[key]+'" align="bottom" alt="'+key+'" title="'+key+'" class="cusSmile" style="cursor: pointer; margin: 1px;" width="19px" heigh="19px">');
         }
@@ -254,39 +254,39 @@
         $('#settings-config').append('<div id="settings-block" style="width: 400px; margin: 0 auto;"><div class="form-group text-left">\
 <div class="checkbox">\
 <label>\
-<input type="checkbox" id="show_extras"> Show Extra Smileys\
+<input type="checkbox" id="showExtras"> Show Extra Smileys\
 </label>\
 </div>\
 <div class="checkbox">\
 <label>\
-<input type="checkbox" id="show_reactions"> Show Facebook Reactions\
+<input type="checkbox" id="showReactions"> Show Facebook Reactions\
 </label>\
 </div>\
 <div class="checkbox">\
 <label>\
-<input type="checkbox" id="show_da"> Show Deviant Art Smileys\
+<input type="checkbox" id="showDeviantArt"> Show Deviant Art Smileys\
 </label>\
 </div>\
 <div class="checkbox">\
 <label>\
-<input type="checkbox" id="show_menu_command"> Show Menu Command\
+<input type="checkbox" id="showMenuCommand"> Show Menu Command\
 </label>\
 </div>\
 </div>\
 <button class="btn btn-default" id="save_settings">Save Settings</button></div>');
 
-        $('#show_extras').prop("checked", show_extras);
-        $('#show_reactions').prop("checked", show_reactions);
-        $('#show_da').prop("checked", show_da);
-        $('#show_menu_command').prop("checked", show_menu_command);
+        $('#showExtras').prop("checked", showExtras);
+        $('#showReactions').prop("checked", showReactions);
+        $('#showDeviantArt').prop("checked", showDeviantArt);
+        $('#showMenuCommand').prop("checked", showMenuCommand);
 
         $('#save_settings').on('click', function() {
-            GM_setValue("show_extras", $('#show_extras').prop( "checked" ).toString());
-            GM_setValue("show_reactions", $('#show_reactions').prop( "checked" ).toString());
-            GM_setValue("show_da", $('#show_da').prop( "checked" ).toString());
-            GM_setValue("show_menu_command", $('#show_menu_command').prop( "checked" ).toString());
-            $('#settings-block').append('<div style="margin-top: 10px;" class="alert alert-success alert_settings"><h4>Successfully updated your settings.</h4></div>');
-            setTimeout(function(){$('.alert_settings').slideUp();}, 2000);
+            GM_setValue("showExtras", $('#showExtras').prop( "checked" ).toString());
+            GM_setValue("showReactions", $('#showReactions').prop( "checked" ).toString());
+            GM_setValue("showDeviantArt", $('#showDeviantArt').prop( "checked" ).toString());
+            GM_setValue("showMenuCommand", $('#showMenuCommand').prop( "checked" ).toString());
+            $('#settings-block').append('<div style="margin-top: 10px;" class="alert alert-success alert-settings"><h4>Successfully updated your settings.</h4></div>');
+            setTimeout(function(){$('.alert-settings').slideUp();}, 2000);
         });
     }
 

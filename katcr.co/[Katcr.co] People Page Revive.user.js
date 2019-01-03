@@ -13,13 +13,13 @@
 (function() {
     'use strict';
 
-    var titles = {
+    let titles = {
         lower: '<span style="font-size: 12pt;" class="bbc_size"><strong>Forum Moderators</strong></span>',
         middle: '<span style="font-size: 12pt;" class="bbc_size"><strong>Super Moderators</strong></span>',
         upper: '<span style="font-size: 12pt;" class="bbc_size"><strong>Site Administrators</strong></span>'
     };
 
-    var people = {
+    let people = {
         lower: $('#msg_964 > div:nth-child(6) > table > tbody > tr:nth-child(2) > td:nth-child(2)').html(),
         middle: $('#msg_964 > div:nth-child(6) > table > tbody > tr:nth-child(2) > td:nth-child(21)').html(),
         upper: $('#msg_964 > div:nth-child(6) > table > tbody > tr:nth-child(2) > td:nth-child(52)').html()
