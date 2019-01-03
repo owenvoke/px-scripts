@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KatTrak
 // @namespace    pxgamer
-// @version      0.9
+// @version      1.0.0
 // @description  A Trakt system for integrating with Kickass Torrents.
 // @author       pxgamer
 // @include      *kat.cr/*
@@ -20,7 +20,7 @@
     // NOTE: To set this up, run through the auth process here: https://pxgamer.github.io/PX-Scripts/KatTrak/
     // No, I'm not going to steal your data or anything. This is just a project to add what you download to your Trakt.tv Collection.
 
-    var auth_code = GM_getValue('katTrakAuth', '');
+    var authCode = GM_getValue('katTrakAuth', '');
     var info = {
         currentV: parseFloat(GM_info.script.version),
         latestV: 0.0,
@@ -82,7 +82,7 @@
 
     // Config Params
     // ---------------------------
-    //GM_setValue('katTrakAuth', ''); location.reload(); // Uncomment to reset the auth_code.
+    //GM_setValue('katTrakAuth', ''); location.reload(); // Uncomment to reset the authCode.
 
 
     // DO NOT EDIT BELOW THIS LINE
@@ -125,7 +125,7 @@
                 request.setRequestHeader("Content-type", "application/json");
                 request.setRequestHeader("trakt-api-key", "9efcadc5be0011a406fa0819192bd3aef0b3b2d9fa6ba90f3ffd3907138195d3");
                 request.setRequestHeader("trakt-api-version", 2);
-                request.setRequestHeader("Authorization", "Bearer "+auth_code+"");
+                request.setRequestHeader("Authorization", "Bearer "+authCode+"");
             },
             type: "GET",
             async: false,
@@ -137,16 +137,16 @@
             },
             returnData: "json"
         });
-        if (auth_code !== '' && logged_in_valid) {
-            $('.checkup-box').html('<table style="margin-left: 20%;"><tr style="text-align: left;"><td>Status:</td><td style="padding: 15px"></td><td>Success</td></tr><tr style="text-align: left;"><td>Auth Code:</td><td style="padding: 15px"></td><td>' + auth_code + '</td></tr></table>');
+        if (authCode !== '' && logged_in_valid) {
+            $('.checkup-box').html('<table style="margin-left: 20%;"><tr style="text-align: left;"><td>Status:</td><td style="padding: 15px"></td><td>Success</td></tr><tr style="text-align: left;"><td>Auth Code:</td><td style="padding: 15px"></td><td>' + authCode + '</td></tr></table>');
             $('.unauthKt').replaceWith('<button class="btn btn-lg btn-danger unauthKt" type="button">Unauthorise KatTrak</button>');
             $('.unauthKt').on('click', function() {
                 GM_setValue('katTrakAuth', '');
                 location.reload();
             });
         }
-        else if (auth_code !== '') {
-            $('.checkup-box').html('<table style="margin-left: 20%;"><tr style="text-align: left;"><td>Status:</td><td style="padding: 15px"></td><td>Failed: Invalid Auth Code</td></tr><tr style="text-align: left;"><td>Auth Code:</td><td style="padding: 15px"></td><td>' + auth_code + '</td></tr></table>');
+        else if (authCode !== '') {
+            $('.checkup-box').html('<table style="margin-left: 20%;"><tr style="text-align: left;"><td>Status:</td><td style="padding: 15px"></td><td>Failed: Invalid Auth Code</td></tr><tr style="text-align: left;"><td>Auth Code:</td><td style="padding: 15px"></td><td>' + authCode + '</td></tr></table>');
             $('.unauthKt').replaceWith('<button class="btn btn-lg btn-primary unauthKt" type="button">Re-Authorise KatTrak</button>');
             $('.unauthKt').on('click', function() {
                 GM_setValue('katTrakAuth', '');
@@ -154,7 +154,7 @@
             });
         }
         else {
-            $('.checkup-box').html('<table style="margin-left: 20%;"><tr style="text-align: left;"><td>Status:</td><td style="padding: 15px"></td><td>Failed: No Code Provided</td></tr><tr style="text-align: left;"><td>Auth Code:</td><td style="padding: 15px"></td><td>' + auth_code + '</td></tr></table>');
+            $('.checkup-box').html('<table style="margin-left: 20%;"><tr style="text-align: left;"><td>Status:</td><td style="padding: 15px"></td><td>Failed: No Code Provided</td></tr><tr style="text-align: left;"><td>Auth Code:</td><td style="padding: 15px"></td><td>' + authCode + '</td></tr></table>');
             $('.unauthKt').replaceWith('<button class="btn btn-lg btn-primary unauthKt" type="button">Authorise KatTrak</button>');
             $('.unauthKt').on('click', function() {
                 GM_setValue('katTrakAuth', '');
@@ -215,7 +215,7 @@
                     request.setRequestHeader("Content-type", "application/json");
                     request.setRequestHeader("trakt-api-key", "9efcadc5be0011a406fa0819192bd3aef0b3b2d9fa6ba90f3ffd3907138195d3");
                     request.setRequestHeader("trakt-api-version", 2);
-                    request.setRequestHeader("Authorization", "Bearer "+auth_code+"");
+                    request.setRequestHeader("Authorization", "Bearer "+authCode+"");
                 },
                 type: "POST",
                 url: "https://api-v2launch.trakt.tv/sync/collection",
@@ -234,7 +234,7 @@
                     request.setRequestHeader("Content-type", "application/json");
                     request.setRequestHeader("trakt-api-key", "9efcadc5be0011a406fa0819192bd3aef0b3b2d9fa6ba90f3ffd3907138195d3");
                     request.setRequestHeader("trakt-api-version", 2);
-                    request.setRequestHeader("Authorization", "Bearer "+auth_code+"");
+                    request.setRequestHeader("Authorization", "Bearer "+authCode+"");
                 },
                 type: "POST",
                 url: "https://api-v2launch.trakt.tv/sync/collection",
@@ -247,7 +247,7 @@
         });
         if (settings.debug && settings.logEvents){console.info('EVENT Finished');}
     }
-    if (settings.debug && settings.logAuth) {console.info('Auth Code: ' + auth_code);}
+    if (settings.debug && settings.logAuth) {console.info('Auth Code: ' + authCode);}
     if (settings.debug && settings.logInfo) {console.info(info);}
     KatTrak.initialize();
 })();
